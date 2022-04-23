@@ -1,17 +1,17 @@
-import { env } from "process";
-import net,{Socket,Server} from "net"
+//import net,{Socket,Server} from "net"
+import net from "net"
 import { Singleton } from "../Code/Singleton";
 
 export class NetManager extends Singleton<NetManager>
 {
-    private server:Server|undefined;
+    private server: net.Server|undefined;
     /**
      *  Init
      */
     public  Init() {
         this.server = net.createServer();
         this.server.listen(3333,"0.0.0.0",()=>{
-            console.error("启动tcp 监听服务");
+            console.error("启动tcp XB监听服务");
           })
           
           this.server.on("connection",socket =>{
