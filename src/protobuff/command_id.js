@@ -18,24 +18,24 @@ $root.Cmd = (function() {
      */
     var Cmd = {};
 
-    Cmd.User = (function() {
+    Cmd.ID = (function() {
 
         /**
-         * Namespace User.
+         * Namespace ID.
          * @memberof Cmd
          * @namespace
          */
-        var User = {};
+        var ID = {};
 
         /**
          * CMD enum.
-         * @name Cmd.User.CMD
+         * @name Cmd.ID.CMD
          * @enum {number}
          * @property {number} CMD_INVALID=65535 CMD_INVALID value
          * @property {number} CMD_HEART_BEAT_REQ=4096 CMD_HEART_BEAT_REQ value
          * @property {number} CMD_HEART_BEAT_RSP=4097 CMD_HEART_BEAT_RSP value
          */
-        User.CMD = (function() {
+        ID.CMD = (function() {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[65535] = "CMD_INVALID"] = 65535;
             values[valuesById[4096] = "CMD_HEART_BEAT_REQ"] = 4096;
@@ -43,23 +43,7 @@ $root.Cmd = (function() {
             return values;
         })();
 
-        /**
-         * RET enum.
-         * @name Cmd.User.RET
-         * @enum {number}
-         * @property {number} RET_SYS_ERR=-1 RET_SYS_ERR value
-         * @property {number} RET_SUCCESS=0 RET_SUCCESS value
-         * @property {number} RET_MODULE_SWITCH_OFF=256 RET_MODULE_SWITCH_OFF value
-         */
-        User.RET = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[-1] = "RET_SYS_ERR"] = -1;
-            values[valuesById[0] = "RET_SUCCESS"] = 0;
-            values[valuesById[256] = "RET_MODULE_SWITCH_OFF"] = 256;
-            return values;
-        })();
-
-        return User;
+        return ID;
     })();
 
     return Cmd;
