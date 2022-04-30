@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "npx webpack --mode development --config webpack.config.js"
+    "compile": "npx webpack --mode development "
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,8 @@
   "dependencies": {
     "net": "^1.0.2",
     "protobufjs": "^6.11.2",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }

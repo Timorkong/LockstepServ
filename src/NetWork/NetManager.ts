@@ -2,8 +2,8 @@ import net, { Socket, Server } from "net"
 import { Singleton } from "../Code/Singleton/Singleton";
 import { protocol_req } from "./protocol_req";
 import { protocol_rsp } from "./protocol_rsp";
-import { Dispatch } from "src/Code/Event/Dispatch";
-import { Cmd } from "src/protobuff/command_user";
+import { Dispatch } from "./../Code/Event/Dispatch";
+import { Cmd } from "./../protobuff/command_user";
 
 export class NetManager extends Singleton<NetManager>
 {
@@ -19,7 +19,6 @@ export class NetManager extends Singleton<NetManager>
   private InitDispatch(protoTypeOf: any, dispatcher: Dispatch) {
     for (var e in Cmd.User.CMD) {
       var keyToAny: any = e;
-      console.error(keyToAny);
       if (isNaN(keyToAny)) {
         let func = protoTypeOf[e];
         if (func != null) {
@@ -36,10 +35,15 @@ export class NetManager extends Singleton<NetManager>
     this.dispatch_req = new Dispatch();
     this.dispatch_rsp = new Dispatch();
 
-    let protoTypeOf = Object.getPrototypeOf(protocol_req);
+    let protoTypeOf = Object.getPrototypeOf(this.protocol_req);
     this.InitDispatch(protoTypeOf, this.dispatch_req);
-    protoTypeOf = Object.getPrototypeOf(protocol_rsp);
-    this.InitDispatch(protoTypeOf, this.dispatch_req);
+    protoTypeOf = Object.getPrototypeOf(this.protocol_rsp);
+    this.InitDispatch(protoTypeOf, this.dispatch_rsp);
+  }
+
+  constructor() {
+    super();
+    this.Init();
   }
 
   public start() {
