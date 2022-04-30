@@ -1,10 +1,22 @@
 import { NetManager } from "./NetWork/NetManager";
 import { Cmd } from "./protobuff/command_user";
-import { req } from "./NetWork/req";
+import { protocol_req } from "./NetWork/protocol_req";
+import "reflect-metadata";
 
-let netManger:NetManager = new NetManager();
+let netManger: NetManager = new NetManager();
 netManger.Init();
-let _req = new req();
-console.error(Cmd.User.CMD.CMD_GM_CONTROL_PK_REQ);
-let funcCmd = Reflect.getMetadata(Cmd.User.CMD.CMD_GM_CONTROL_PK_REQ,_req);
-console.error(funcCmd);
+let _req = new protocol_req();
+
+let pro = Object.getPrototypeOf(_req);
+
+for (var e in Cmd.User.CMD) {
+  var keyToAny: any = e;
+  if (isNaN(keyToAny)) {
+    var fruitAnyType: any = Cmd.User.CMD[e];
+    let func = pro[e];
+    if (func != null) {
+      func(e);
+    }
+  }
+}
+
