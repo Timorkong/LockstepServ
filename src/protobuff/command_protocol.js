@@ -9,7 +9,7 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.PROTOCOL = (function() {
+$root.PROTOCOL = (function () {
 
     /**
      * Namespace PROTOCOL.
@@ -18,13 +18,14 @@ $root.PROTOCOL = (function() {
      */
     var PROTOCOL = {};
 
-    PROTOCOL.CMD_HEART_BEAT_REQ = (function() {
+    PROTOCOL.CMD_HEART_BEAT_REQ = (function () {
 
         /**
          * Properties of a CMD_HEART_BEAT_REQ.
          * @memberof PROTOCOL
          * @interface ICMD_HEART_BEAT_REQ
          * @property {number|null} [id] CMD_HEART_BEAT_REQ id
+         * @property {string|null} [name] CMD_HEART_BEAT_REQ name
          */
 
         /**
@@ -35,7 +36,7 @@ $root.PROTOCOL = (function() {
          * @constructor
          * @param {PROTOCOL.ICMD_HEART_BEAT_REQ=} [properties] Properties to set
          */
-        function CMD_HEART_BEAT_REQ(properties) {
+        function CMD_HEART_BEAT_REQ (properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -49,6 +50,14 @@ $root.PROTOCOL = (function() {
          * @instance
          */
         CMD_HEART_BEAT_REQ.prototype.id = null;
+
+        /**
+         * CMD_HEART_BEAT_REQ name.
+         * @member {string|null|undefined} name
+         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @instance
+         */
+        CMD_HEART_BEAT_REQ.prototype.name = null;
 
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
@@ -65,6 +74,17 @@ $root.PROTOCOL = (function() {
         });
 
         /**
+         * CMD_HEART_BEAT_REQ _name.
+         * @member {"name"|undefined} _name
+         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @instance
+         */
+        Object.defineProperty(CMD_HEART_BEAT_REQ.prototype, "_name", {
+            get: $util.oneOfGetter($oneOfFields = ["name"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
          * Creates a new CMD_HEART_BEAT_REQ instance using the specified properties.
          * @function create
          * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
@@ -72,7 +92,7 @@ $root.PROTOCOL = (function() {
          * @param {PROTOCOL.ICMD_HEART_BEAT_REQ=} [properties] Properties to set
          * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ instance
          */
-        CMD_HEART_BEAT_REQ.create = function create(properties) {
+        CMD_HEART_BEAT_REQ.create = function create (properties) {
             return new CMD_HEART_BEAT_REQ(properties);
         };
 
@@ -85,11 +105,13 @@ $root.PROTOCOL = (function() {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_REQ.encode = function encode(message, writer) {
+        CMD_HEART_BEAT_REQ.encode = function encode (message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
             return writer;
         };
 
@@ -102,7 +124,7 @@ $root.PROTOCOL = (function() {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        CMD_HEART_BEAT_REQ.encodeDelimited = function encodeDelimited (message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
@@ -117,19 +139,23 @@ $root.PROTOCOL = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_REQ.decode = function decode(reader, length) {
+        CMD_HEART_BEAT_REQ.decode = function decode (reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length,
+                message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
-                case 1:
-                    message.id = reader.int32();
-                    break;
-                default:
-                    reader.skipType(tag & 7);
-                    break;
+                    case 1:
+                        message.id = reader.int32();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                 }
             }
             return message;
@@ -145,7 +171,7 @@ $root.PROTOCOL = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_REQ.decodeDelimited = function decodeDelimited(reader) {
+        CMD_HEART_BEAT_REQ.decodeDelimited = function decodeDelimited (reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
@@ -159,7 +185,7 @@ $root.PROTOCOL = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_HEART_BEAT_REQ.verify = function verify(message) {
+        CMD_HEART_BEAT_REQ.verify = function verify (message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             var properties = {};
@@ -167,6 +193,11 @@ $root.PROTOCOL = (function() {
                 properties._id = 1;
                 if (!$util.isInteger(message.id))
                     return "id: integer expected";
+            }
+            if (message.name != null && message.hasOwnProperty("name")) {
+                properties._name = 1;
+                if (!$util.isString(message.name))
+                    return "name: string expected";
             }
             return null;
         };
@@ -179,12 +210,14 @@ $root.PROTOCOL = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ
          */
-        CMD_HEART_BEAT_REQ.fromObject = function fromObject(object) {
+        CMD_HEART_BEAT_REQ.fromObject = function fromObject (object) {
             if (object instanceof $root.PROTOCOL.CMD_HEART_BEAT_REQ)
                 return object;
             var message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
             if (object.id != null)
                 message.id = object.id | 0;
+            if (object.name != null)
+                message.name = String(object.name);
             return message;
         };
 
@@ -197,7 +230,7 @@ $root.PROTOCOL = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_HEART_BEAT_REQ.toObject = function toObject(message, options) {
+        CMD_HEART_BEAT_REQ.toObject = function toObject (message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -205,6 +238,11 @@ $root.PROTOCOL = (function() {
                 object.id = message.id;
                 if (options.oneofs)
                     object._id = "id";
+            }
+            if (message.name != null && message.hasOwnProperty("name")) {
+                object.name = message.name;
+                if (options.oneofs)
+                    object._name = "name";
             }
             return object;
         };
@@ -216,20 +254,21 @@ $root.PROTOCOL = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_HEART_BEAT_REQ.prototype.toJSON = function toJSON() {
+        CMD_HEART_BEAT_REQ.prototype.toJSON = function toJSON () {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         return CMD_HEART_BEAT_REQ;
     })();
 
-    PROTOCOL.CMD_HEART_BEAT_RSP = (function() {
+    PROTOCOL.CMD_HEART_BEAT_RSP = (function () {
 
         /**
          * Properties of a CMD_HEART_BEAT_RSP.
          * @memberof PROTOCOL
          * @interface ICMD_HEART_BEAT_RSP
          * @property {number|null} [id] CMD_HEART_BEAT_RSP id
+         * @property {string|null} [name] CMD_HEART_BEAT_RSP name
          */
 
         /**
@@ -240,7 +279,7 @@ $root.PROTOCOL = (function() {
          * @constructor
          * @param {PROTOCOL.ICMD_HEART_BEAT_RSP=} [properties] Properties to set
          */
-        function CMD_HEART_BEAT_RSP(properties) {
+        function CMD_HEART_BEAT_RSP (properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -254,6 +293,14 @@ $root.PROTOCOL = (function() {
          * @instance
          */
         CMD_HEART_BEAT_RSP.prototype.id = null;
+
+        /**
+         * CMD_HEART_BEAT_RSP name.
+         * @member {string|null|undefined} name
+         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @instance
+         */
+        CMD_HEART_BEAT_RSP.prototype.name = null;
 
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
@@ -270,6 +317,17 @@ $root.PROTOCOL = (function() {
         });
 
         /**
+         * CMD_HEART_BEAT_RSP _name.
+         * @member {"name"|undefined} _name
+         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @instance
+         */
+        Object.defineProperty(CMD_HEART_BEAT_RSP.prototype, "_name", {
+            get: $util.oneOfGetter($oneOfFields = ["name"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
          * Creates a new CMD_HEART_BEAT_RSP instance using the specified properties.
          * @function create
          * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
@@ -277,7 +335,7 @@ $root.PROTOCOL = (function() {
          * @param {PROTOCOL.ICMD_HEART_BEAT_RSP=} [properties] Properties to set
          * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP instance
          */
-        CMD_HEART_BEAT_RSP.create = function create(properties) {
+        CMD_HEART_BEAT_RSP.create = function create (properties) {
             return new CMD_HEART_BEAT_RSP(properties);
         };
 
@@ -290,11 +348,13 @@ $root.PROTOCOL = (function() {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_RSP.encode = function encode(message, writer) {
+        CMD_HEART_BEAT_RSP.encode = function encode (message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
             return writer;
         };
 
@@ -307,7 +367,7 @@ $root.PROTOCOL = (function() {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        CMD_HEART_BEAT_RSP.encodeDelimited = function encodeDelimited (message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
@@ -322,19 +382,22 @@ $root.PROTOCOL = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_RSP.decode = function decode(reader, length) {
+        CMD_HEART_BEAT_RSP.decode = function decode (reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.CMD_HEART_BEAT_RSP();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
-                case 1:
-                    message.id = reader.int32();
-                    break;
-                default:
-                    reader.skipType(tag & 7);
-                    break;
+                    case 1:
+                        message.id = reader.int32();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                 }
             }
             return message;
@@ -350,7 +413,7 @@ $root.PROTOCOL = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_RSP.decodeDelimited = function decodeDelimited(reader) {
+        CMD_HEART_BEAT_RSP.decodeDelimited = function decodeDelimited (reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
@@ -364,7 +427,7 @@ $root.PROTOCOL = (function() {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_HEART_BEAT_RSP.verify = function verify(message) {
+        CMD_HEART_BEAT_RSP.verify = function verify (message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             var properties = {};
@@ -372,6 +435,11 @@ $root.PROTOCOL = (function() {
                 properties._id = 1;
                 if (!$util.isInteger(message.id))
                     return "id: integer expected";
+            }
+            if (message.name != null && message.hasOwnProperty("name")) {
+                properties._name = 1;
+                if (!$util.isString(message.name))
+                    return "name: string expected";
             }
             return null;
         };
@@ -384,12 +452,14 @@ $root.PROTOCOL = (function() {
          * @param {Object.<string,*>} object Plain object
          * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP
          */
-        CMD_HEART_BEAT_RSP.fromObject = function fromObject(object) {
+        CMD_HEART_BEAT_RSP.fromObject = function fromObject (object) {
             if (object instanceof $root.PROTOCOL.CMD_HEART_BEAT_RSP)
                 return object;
             var message = new $root.PROTOCOL.CMD_HEART_BEAT_RSP();
             if (object.id != null)
                 message.id = object.id | 0;
+            if (object.name != null)
+                message.name = String(object.name);
             return message;
         };
 
@@ -402,7 +472,7 @@ $root.PROTOCOL = (function() {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_HEART_BEAT_RSP.toObject = function toObject(message, options) {
+        CMD_HEART_BEAT_RSP.toObject = function toObject (message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -410,6 +480,11 @@ $root.PROTOCOL = (function() {
                 object.id = message.id;
                 if (options.oneofs)
                     object._id = "id";
+            }
+            if (message.name != null && message.hasOwnProperty("name")) {
+                object.name = message.name;
+                if (options.oneofs)
+                    object._name = "name";
             }
             return object;
         };
@@ -421,7 +496,7 @@ $root.PROTOCOL = (function() {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_HEART_BEAT_RSP.prototype.toJSON = function toJSON() {
+        CMD_HEART_BEAT_RSP.prototype.toJSON = function toJSON () {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 

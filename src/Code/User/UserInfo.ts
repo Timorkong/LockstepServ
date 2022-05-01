@@ -1,4 +1,5 @@
 import { Socket } from "net";
+import { NetManager } from "./../../../src/NetWork/NetManager";
 
 export class UserInfo {
   public socket!: Socket;
@@ -22,7 +23,17 @@ export class UserInfo {
   }
 
   private onData(data: Buffer) {
-    console.error("on Data buffer lenth = ", Buffer.length);
+    try {
+      let size = data.readInt16BE();
+      let msgId = data.readUInt32BE(2);
+      let sequnece = data.readUInt32BE(6);
+      let msgBuffer = data.slice(10);
+      let arr: Uint8Array = new Uint8Array();
+      NetManager.Instance(NetManager).dispatch_req?.DisPatch(msgId, msgBuffer);
+    }
+    catch (err) {
+      console.error(err);
+    }
   }
 
   private onError(err: Error) {

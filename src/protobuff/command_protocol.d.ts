@@ -7,6 +7,9 @@ export namespace PROTOCOL {
 
         /** CMD_HEART_BEAT_REQ id */
         id?: (number|null);
+
+        /** CMD_HEART_BEAT_REQ name */
+        name?: (string|null);
     }
 
     /** Represents a CMD_HEART_BEAT_REQ. */
@@ -21,8 +24,14 @@ export namespace PROTOCOL {
         /** CMD_HEART_BEAT_REQ id. */
         public id?: (number|null);
 
+        /** CMD_HEART_BEAT_REQ name. */
+        public name?: (string|null);
+
         /** CMD_HEART_BEAT_REQ _id. */
         public _id?: "id";
+
+        /** CMD_HEART_BEAT_REQ _name. */
+        public _name?: "name";
 
         /**
          * Creates a new CMD_HEART_BEAT_REQ instance using the specified properties.
@@ -100,6 +109,9 @@ export namespace PROTOCOL {
 
         /** CMD_HEART_BEAT_RSP id */
         id?: (number|null);
+
+        /** CMD_HEART_BEAT_RSP name */
+        name?: (string|null);
     }
 
     /** Represents a CMD_HEART_BEAT_RSP. */
@@ -114,8 +126,14 @@ export namespace PROTOCOL {
         /** CMD_HEART_BEAT_RSP id. */
         public id?: (number|null);
 
+        /** CMD_HEART_BEAT_RSP name. */
+        public name?: (string|null);
+
         /** CMD_HEART_BEAT_RSP _id. */
         public _id?: "id";
+
+        /** CMD_HEART_BEAT_RSP _name. */
+        public _name?: "name";
 
         /**
          * Creates a new CMD_HEART_BEAT_RSP instance using the specified properties.

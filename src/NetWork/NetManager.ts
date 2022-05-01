@@ -8,8 +8,8 @@ import { UserInfo } from "./../Code/User/UserInfo";
 
 export class NetManager extends Singleton<NetManager>
 {
-  private dispatch_req: Dispatch | undefined;
-  private dispatch_rsp: Dispatch | undefined;
+  public dispatch_req: Dispatch | undefined;
+  public dispatch_rsp: Dispatch | undefined;
   private server: net.Server | undefined;
   private protocol_req: protocol_req | undefined;
   private protocol_rsp: protocol_rsp | undefined;
@@ -23,7 +23,8 @@ export class NetManager extends Singleton<NetManager>
       if (isNaN(keyToAny)) {
         let func = protoTypeOf[e];
         if (func != null) {
-          dispatcher.On(keyToAny, func);
+          let msgId = Number.parseInt(Cmd.ID.CMD[keyToAny]);
+          dispatcher.On(msgId, func);
         }
       }
     }

@@ -1,8 +1,8 @@
 export class Singleton<T>
 {
-    private static instance: any = null;
+    private static instance: any;
     public static Instance<T>(c: { new(): T }): T {
         if (this.instance == null) this.instance = new c();
-        return this.instance;
+        return <T>this.instance;
     }
 }
