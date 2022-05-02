@@ -1,8 +1,9 @@
 import { Socket } from "net";
 import { NetManager } from "./../../../src/NetWork/NetManager";
+import { NET_DEFINE } from "./../../../src/NetWork/msgData";
 
 export class UserInfo {
-  public socket!: Socket;
+  public socket: Socket | undefined;
 
   public userLevel!: number;
 
@@ -11,36 +12,31 @@ export class UserInfo {
   public userName!: string;
 
   public onSocket(socket: Socket) {
+    console.error("set socket = ", socket.remotePort);
+
     this.socket = socket;
-    this.socket.on("close", this.onClose);
-    this.socket.on("connect", this.onConnect);
-    this.socket.on("data", this.onData);
-    this.socket.on("error", this.onError);
-  }
 
-  private onConnect() {
-    console.error("on user connect");
-  }
+    this.socket.on("close", (hadError: boolean) => {
+      console.error("onClose hadError = ", hadError);
+    });
+    this.socket.on("connect", () => {
+      console.error("on user connect");
+    });
+    this.socket.on("data", (data: Buffer) => {
 
-  private onData(data: Buffer) {
-    try {
-      let size = data.readInt16BE();
-      let msgId = data.readUInt32BE(2);
-      let sequnece = data.readUInt32BE(6);
-      let msgBuffer = data.slice(10);
-      let arr: Uint8Array = new Uint8Array();
-      NetManager.Instance(NetManager).dispatch_req?.DisPatch(msgId, msgBuffer);
-    }
-    catch (err) {
-      console.error(err);
-    }
-  }
-
-  private onError(err: Error) {
-    console.error("onError = ", err.message);
-  }
-
-  private onClose(hadError: boolean) {
-    console.error("onClose hadError = ", hadError);
+      try {
+        let size = data.readUInt32BE();
+        let msgId = data.readUInt32BE(NET_DEFINE.HEAD_LENTH_SIZE);
+        let sequnece = data.readUInt32BE(NET_DEFINE.HEAD_LENTH_SIZE + NET_DEFINE.HEAD_MSG_ID_SIZE);
+        let msgBuffer = data.slice(NET_DEFINE.HEAD_SIZE);
+        NetManager.Instance(NetManager).dispatch_req?.DisPatch(msgId, msgBuffer, this.socket);
+      }
+      catch (err) {
+        console.error(err);
+      }
+    });
+    this.socket.on("error", (err: Error) => {
+      console.error("onError = ", err.message);
+    });
   }
 }
