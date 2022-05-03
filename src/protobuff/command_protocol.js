@@ -9,7 +9,7 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.PROTOCOL = (function () {
+$root.PROTOCOL = (function() {
 
     /**
      * Namespace PROTOCOL.
@@ -18,7 +18,7 @@ $root.PROTOCOL = (function () {
      */
     var PROTOCOL = {};
 
-    PROTOCOL.CMD_HEART_BEAT_REQ = (function () {
+    PROTOCOL.CMD_HEART_BEAT_REQ = (function() {
 
         /**
          * Properties of a CMD_HEART_BEAT_REQ.
@@ -36,7 +36,7 @@ $root.PROTOCOL = (function () {
          * @constructor
          * @param {PROTOCOL.ICMD_HEART_BEAT_REQ=} [properties] Properties to set
          */
-        function CMD_HEART_BEAT_REQ (properties) {
+        function CMD_HEART_BEAT_REQ(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -92,7 +92,7 @@ $root.PROTOCOL = (function () {
          * @param {PROTOCOL.ICMD_HEART_BEAT_REQ=} [properties] Properties to set
          * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ instance
          */
-        CMD_HEART_BEAT_REQ.create = function create (properties) {
+        CMD_HEART_BEAT_REQ.create = function create(properties) {
             return new CMD_HEART_BEAT_REQ(properties);
         };
 
@@ -105,7 +105,7 @@ $root.PROTOCOL = (function () {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_REQ.encode = function encode (message, writer) {
+        CMD_HEART_BEAT_REQ.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
@@ -124,7 +124,7 @@ $root.PROTOCOL = (function () {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_REQ.encodeDelimited = function encodeDelimited (message, writer) {
+        CMD_HEART_BEAT_REQ.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
@@ -139,23 +139,22 @@ $root.PROTOCOL = (function () {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_REQ.decode = function decode (reader, length) {
+        CMD_HEART_BEAT_REQ.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length,
-                message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
-                    case 1:
-                        message.id = reader.int32();
-                        break;
-                    case 2:
-                        message.name = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                case 1:
+                    message.id = reader.int32();
+                    break;
+                case 2:
+                    message.name = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
                 }
             }
             return message;
@@ -171,7 +170,7 @@ $root.PROTOCOL = (function () {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_REQ.decodeDelimited = function decodeDelimited (reader) {
+        CMD_HEART_BEAT_REQ.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
@@ -185,7 +184,7 @@ $root.PROTOCOL = (function () {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_HEART_BEAT_REQ.verify = function verify (message) {
+        CMD_HEART_BEAT_REQ.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             var properties = {};
@@ -210,7 +209,7 @@ $root.PROTOCOL = (function () {
          * @param {Object.<string,*>} object Plain object
          * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ
          */
-        CMD_HEART_BEAT_REQ.fromObject = function fromObject (object) {
+        CMD_HEART_BEAT_REQ.fromObject = function fromObject(object) {
             if (object instanceof $root.PROTOCOL.CMD_HEART_BEAT_REQ)
                 return object;
             var message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
@@ -230,7 +229,7 @@ $root.PROTOCOL = (function () {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_HEART_BEAT_REQ.toObject = function toObject (message, options) {
+        CMD_HEART_BEAT_REQ.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -254,14 +253,14 @@ $root.PROTOCOL = (function () {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_HEART_BEAT_REQ.prototype.toJSON = function toJSON () {
+        CMD_HEART_BEAT_REQ.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         return CMD_HEART_BEAT_REQ;
     })();
 
-    PROTOCOL.CMD_HEART_BEAT_RSP = (function () {
+    PROTOCOL.CMD_HEART_BEAT_RSP = (function() {
 
         /**
          * Properties of a CMD_HEART_BEAT_RSP.
@@ -279,7 +278,7 @@ $root.PROTOCOL = (function () {
          * @constructor
          * @param {PROTOCOL.ICMD_HEART_BEAT_RSP=} [properties] Properties to set
          */
-        function CMD_HEART_BEAT_RSP (properties) {
+        function CMD_HEART_BEAT_RSP(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -335,7 +334,7 @@ $root.PROTOCOL = (function () {
          * @param {PROTOCOL.ICMD_HEART_BEAT_RSP=} [properties] Properties to set
          * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP instance
          */
-        CMD_HEART_BEAT_RSP.create = function create (properties) {
+        CMD_HEART_BEAT_RSP.create = function create(properties) {
             return new CMD_HEART_BEAT_RSP(properties);
         };
 
@@ -348,7 +347,7 @@ $root.PROTOCOL = (function () {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_RSP.encode = function encode (message, writer) {
+        CMD_HEART_BEAT_RSP.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
@@ -367,7 +366,7 @@ $root.PROTOCOL = (function () {
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_RSP.encodeDelimited = function encodeDelimited (message, writer) {
+        CMD_HEART_BEAT_RSP.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
@@ -382,22 +381,22 @@ $root.PROTOCOL = (function () {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_RSP.decode = function decode (reader, length) {
+        CMD_HEART_BEAT_RSP.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.CMD_HEART_BEAT_RSP();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
-                    case 1:
-                        message.id = reader.int32();
-                        break;
-                    case 2:
-                        message.name = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                case 1:
+                    message.id = reader.int32();
+                    break;
+                case 2:
+                    message.name = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
                 }
             }
             return message;
@@ -413,7 +412,7 @@ $root.PROTOCOL = (function () {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_RSP.decodeDelimited = function decodeDelimited (reader) {
+        CMD_HEART_BEAT_RSP.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
@@ -427,7 +426,7 @@ $root.PROTOCOL = (function () {
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_HEART_BEAT_RSP.verify = function verify (message) {
+        CMD_HEART_BEAT_RSP.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             var properties = {};
@@ -452,7 +451,7 @@ $root.PROTOCOL = (function () {
          * @param {Object.<string,*>} object Plain object
          * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP
          */
-        CMD_HEART_BEAT_RSP.fromObject = function fromObject (object) {
+        CMD_HEART_BEAT_RSP.fromObject = function fromObject(object) {
             if (object instanceof $root.PROTOCOL.CMD_HEART_BEAT_RSP)
                 return object;
             var message = new $root.PROTOCOL.CMD_HEART_BEAT_RSP();
@@ -472,7 +471,7 @@ $root.PROTOCOL = (function () {
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_HEART_BEAT_RSP.toObject = function toObject (message, options) {
+        CMD_HEART_BEAT_RSP.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -496,7 +495,7 @@ $root.PROTOCOL = (function () {
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_HEART_BEAT_RSP.prototype.toJSON = function toJSON () {
+        CMD_HEART_BEAT_RSP.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 

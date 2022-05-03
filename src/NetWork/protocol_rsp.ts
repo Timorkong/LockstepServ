@@ -1,8 +1,11 @@
 import { Socket } from "net";
-import { PROTOCOL } from "./../../src/protobuff/command_protocol";
-import protobuf, { BufferWriter, Writer } from "protobufjs";
+import protobuf, { BufferWriter, Writer, roots, util } from "protobufjs";
 import { Cmd } from "./../../src/protobuff/command_id";
-import { NET_DEFINE } from "./msgData";
+import { UserInfo } from "./../../src/Code/Game/Room/User/UserInfo";
+import { PROTOCOL } from "./../../src/protobuff/command_protocol";
+import { PROTOCOL_ROOM } from "./../../src/protobuff/command_protocol_room";
+import { RoomManager } from "./../../src/Code/Game/Room/RoomManager";
+import { Util } from "./../../src/Code/Util/Util";
 
 export class protocol_rsp {
   public CMD_HEART_BEAT_RSP(socket: Socket) {
@@ -10,8 +13,31 @@ export class protocol_rsp {
     rsp.id = 1;
     rsp.name = "fdafd";
     this.Send(PROTOCOL.CMD_HEART_BEAT_RSP, rsp, socket, Cmd.ID.CMD.CMD_HEART_BEAT_RSP);
-    PROTOCOL.CMD_HEART_BEAT_RSP.encode
   }
+
+  public CMD_ROOM_LIST_RSP(UserInfo: UserInfo) {
+    let rsp = new PROTOCOL_ROOM.CMD_ROOM_LIST_RSP();
+
+    let roomList = Util.GetRoomList();
+    rsp.roomList.concat(roomList)
+    this.Send(PROTOCOL_ROOM.CMD_ROOM_LIST_RSP, rsp, UserInfo.socket, Cmd.ID.CMD.CMD_ROOM_LIST_RSP);
+  }
+
+  public CMD_CREATE_ROOM_RSP(userInfo: UserInfo, req: PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ) {
+    let rsp: PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP = new PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP();
+    let roomInfo = RoomManager.Instance(RoomManager).CreateRoom(req.roomName);
+    RoomManager.Instance(RoomManager).EnterRoom(roomInfo, userInfo);
+    this.Send(PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP, rsp, userInfo.socket, Cmd.ID.CMD.CMD_CREATE_ROOM_RSP);
+  }
+
+  public CMD_LEAVE_ROOM_RSP(userInfo: UserInfo) {
+    RoomManager.Instance(RoomManager).LeaveRoom(userInfo);
+    let rsp = new PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP();
+    let roomList = Util.GetRoomList();
+    rsp.roomList.concat(roomList)
+    this.Send(PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP, rsp, userInfo.socket, Cmd.ID.CMD.CMD_LEAVE_ROOM_RSP);
+  }
+
 
   public Send(encoder: any, rsp: any, socket: Socket, cmd: Cmd.ID.CMD) {
     let buffer = encoder.encode(rsp).finish();

@@ -4,7 +4,8 @@ import { protocol_req } from "./protocol_req";
 import { protocol_rsp } from "./protocol_rsp";
 import { Dispatch } from "./../Code/Event/Dispatch";
 import { Cmd } from "./../protobuff/command_id";
-import { UserInfo } from "./../Code/User/UserInfo";
+import { UserInfo } from "../Code/Game/Room/User/UserInfo";
+import { RoomManager } from "./../../src/Code/Game/Room/RoomManager";
 
 export class NetManager extends Singleton<NetManager> {
   public dispatch_req: Dispatch | undefined;
@@ -52,7 +53,7 @@ export class NetManager extends Singleton<NetManager> {
       console.error("启动tcp XB监听服务");
     })
     this.server && this.server.on("connection", (socket: Socket) => {
-      let userInfo: UserInfo = new UserInfo();
+      let userInfo: UserInfo = RoomManager.Instance(RoomManager).CreateUser("connect name");
       userInfo.onSocket(socket);
       this.userList.push(userInfo);
       console.error(`新客户端连接 ${socket.remoteAddress} 端口 ${socket.remotePort}`)
