@@ -2,6 +2,8 @@ import { Socket } from "net";
 import { NetManager } from "../../../../NetWork/NetManager";
 import { NET_DEFINE } from "../../../../NetWork/msgData";
 import { UniqueIdManager } from "../../UniqueIdManager";
+import { Util } from "./../../../Util/Util";
+import { PROTOCOL_ROOM } from "./../../../../../src/protobuff/command_protocol_room";
 
 export class UserInfo {
   public socket!: Socket;
@@ -20,6 +22,12 @@ export class UserInfo {
     this.roomId = UniqueIdManager.Null;
   }
 
+  public ToProto(): PROTOCOL_ROOM.IUserInfo {
+    let ret = new PROTOCOL_ROOM.UserInfo();
+    ret.userName = this.userName;
+    return ret;
+  }
+
   public onSocket(socket: Socket) {
     console.error("set socket = ", socket.remotePort);
 
@@ -33,11 +41,21 @@ export class UserInfo {
     });
     this.socket.on("data", (data: Buffer) => {
       try {
-        let size = data.readUInt32BE();
-        let msgId = data.readUInt32BE(NET_DEFINE.HEAD_LENTH_SIZE);
-        let sequnece = data.readUInt32BE(NET_DEFINE.HEAD_LENTH_SIZE + NET_DEFINE.HEAD_MSG_ID_SIZE);
-        let msgBuffer = data.slice(NET_DEFINE.HEAD_SIZE);
-        NetManager.Instance(NetManager).dispatch_req?.DisPatch(msgId, msgBuffer, this);
+        let startIndex = 0;
+        let endIndex = 0;
+        while (true) {
+          let size = data.readUInt32BE(endIndex);
+          let msgId = data.readUInt32BE(endIndex + NET_DEFINE.HEAD_LENTH_SIZE);
+          let sequnece = data.readUInt32BE(endIndex + NET_DEFINE.HEAD_LENTH_SIZE + NET_DEFINE.HEAD_MSG_ID_SIZE);
+          startIndex = endIndex + NET_DEFINE.HEAD_SIZE;
+          endIndex = startIndex + size;
+          let packBuffer = data.subarray(startIndex, endIndex);
+          if (process.env.NODE_DEBUG == "true") {
+            console.log(`receive msg size = ${size} msgId = ${msgId} sequnece = ${sequnece} msg = ${Util.Bytes2String(packBuffer)}`)
+          }
+          NetManager.Instance(NetManager).dispatch_req?.DisPatch(msgId, packBuffer, this);
+          if (endIndex >= data.length) break;
+        }
       }
       catch (err) {
         console.error(err);

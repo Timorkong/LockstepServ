@@ -20,10 +20,10 @@ export class protocol_req {
     NetManager.Instance(NetManager).protocol_rsp?.CMD_ROOM_LIST_RSP(userInfo);
   }
   public CMD_CREATE_ROOM_REQ(...args: any[]) {
-    let buffer: Buffer = args[0][0]
-    let userInfo: UserInfo = args[0][1]
-    let buff = Reader.create(buffer);
-    let req = PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ.decode(buff);
+    let buffers: Buffer = args[0];
+    let userInfo: UserInfo = args[0][1];
+    let buffReader = new Reader(buffers);
+    let req = PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ.decode(buffReader);
     NetManager.Instance(NetManager).protocol_rsp?.CMD_CREATE_ROOM_RSP(userInfo, req);
   }
   public CMD_LEAVE_ROOM_REQ(...args: any[]) {

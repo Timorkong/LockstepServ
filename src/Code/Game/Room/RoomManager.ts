@@ -33,10 +33,16 @@ export class RoomManager extends Singleton<RoomManager> {
     this.EnterRoom(roomInfo, userInfo);
   }
 
-  public LeaveRoom(userInfo: UserInfo | undefined) {
-    if (userInfo == null) return;
-    let roomInfo = this.mapRoom.get(userInfo?.uniqueId);
-    if (roomInfo) roomInfo.UserLeave(userInfo);
+  public LeaveRoom(userInfo: UserInfo | undefined): RoomInfo | undefined {
+    if (userInfo == null) return undefined;
+    let roomInfo = this.mapRoom.get(userInfo?.roomId);
+    if (roomInfo) {
+      roomInfo.UserLeave(userInfo);
+      if (roomInfo.MapUser.size == 0) {
+        this.RemoveRoom(roomInfo);
+      }
+    }
+    return roomInfo;
   }
 
   public AddUser2Map(userInfo: UserInfo) {
@@ -84,7 +90,7 @@ export class RoomManager extends Singleton<RoomManager> {
   }
 
   public RemoveRoom(roomInfo: RoomInfo | undefined) {
-
+    if (roomInfo) this.mapRoom.delete(roomInfo.uniqueId);
   }
 
   public RemoveRoomById(roomId: number) {

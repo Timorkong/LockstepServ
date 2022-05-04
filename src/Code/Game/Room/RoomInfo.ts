@@ -1,5 +1,6 @@
 import { UserInfo } from "./User/UserInfo";
 import { UniqueIdManager } from "../UniqueIdManager";
+import { PROTOCOL_ROOM } from "./../../../../src/protobuff/command_protocol_room";
 
 export class RoomInfo {
 
@@ -11,6 +12,16 @@ export class RoomInfo {
 
   public get MapUser(): Map<number, UserInfo> {
     return this.mapUser;
+  }
+
+  public ToProto(): PROTOCOL_ROOM.IRoomInfo {
+    let ret = PROTOCOL_ROOM.RoomInfo.create();
+    ret.userList = [];
+    ret.roomName = this.roomName;
+    this.mapUser.forEach((userInfo, id) => {
+      ret.userList.push(userInfo.ToProto());
+    })
+    return ret;
   }
 
   constructor(roomName: string | null) {
