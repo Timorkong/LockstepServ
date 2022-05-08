@@ -3,10 +3,11 @@ import { NetManager } from "../../../../NetWork/NetManager";
 import { NET_DEFINE } from "../../../../NetWork/msgData";
 import { UniqueIdManager } from "../../UniqueIdManager";
 import { Util } from "./../../../Util/Util";
-import { PROTOCOL_ROOM } from "./../../../../../src/protobuff/command_protocol_room";
+import { PROTOCOL_COMMON } from "./../../../../../src/protobuff/command_protocol_common";
 
 export class UserInfo {
   public socket!: Socket;
+  public seat: number = -1;
 
   public userLevel!: number;
 
@@ -14,16 +15,20 @@ export class UserInfo {
 
   public roomId: number = UniqueIdManager.Null;
 
+  public isStartGame: boolean = false;
+
   public userName: string = "default name";
 
   constructor(userName: string) {
     this.userName = userName;
     this.uniqueId = UniqueIdManager.GetId;
     this.roomId = UniqueIdManager.Null;
+    this.isStartGame = false;
+    this.seat = -1;
   }
 
-  public ToProto(): PROTOCOL_ROOM.IUserInfo {
-    let ret = new PROTOCOL_ROOM.UserInfo();
+  public ToProto(): PROTOCOL_COMMON.IUserInfo {
+    let ret = new PROTOCOL_COMMON.UserInfo();
     ret.userName = this.userName;
     return ret;
   }

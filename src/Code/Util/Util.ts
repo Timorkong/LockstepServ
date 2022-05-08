@@ -1,9 +1,8 @@
-import { PROTOCOL_ROOM } from "./../../protobuff/command_protocol_room";
 import { RoomManager } from "../Game/Room/RoomManager";
-import { RoomInfo } from "../Game/Room/RoomInfo";
+import { PROTOCOL_COMMON } from "src/protobuff/command_protocol_common";
 export class Util {
-  public static GetRoomList(): PROTOCOL_ROOM.IRoomInfo[] {
-    let ret: PROTOCOL_ROOM.IRoomInfo[] = [];
+  public static GetRoomList(): PROTOCOL_COMMON.IRoomInfo[] {
+    let ret: PROTOCOL_COMMON.IRoomInfo[] = [];
     RoomManager.Instance(RoomManager).MapRoom.forEach(roomInfo => {
       let room = roomInfo.ToProto();
       ret.push(room);
@@ -18,4 +17,6 @@ export class Util {
     });
     return ret;
   }
+
+
 }

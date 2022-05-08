@@ -16,7 +16,14 @@ export namespace Cmd {
             CMD_LEAVE_ROOM_RSP = 1005,
             CMD_LEAVE_ROOM_NOTICE = 1006,
             CMD_ROOM_LIST_REQ = 1007,
-            CMD_ROOM_LIST_RSP = 1008
+            CMD_ROOM_LIST_RSP = 1008,
+            CMD_ENTER_GAME_REQ = 1009,
+            CMD_ENTER_GAME_RSP = 1010,
+            CMD_START_GAME_REQ = 1011,
+            CMD_START_GAME_RSP = 1012,
+            CMD_WAR_MOVE_REQ = 1013,
+            CMD_WAR_MOVE_RSP = 1014,
+            CMD_WAR_COMMAND_NOTICE = 1015
         }
     }
 }

@@ -1,6 +1,7 @@
 import { UserInfo } from "./User/UserInfo";
 import { UniqueIdManager } from "../UniqueIdManager";
-import { PROTOCOL_ROOM } from "./../../../../src/protobuff/command_protocol_room";
+import { PROTOCOL_COMMON } from "./../../../../src/protobuff/command_protocol_common";
+import { Writer } from "protobufjs";
 
 export class RoomInfo {
 
@@ -10,12 +11,14 @@ export class RoomInfo {
 
   private mapUser: Map<number, UserInfo> = new Map<number, UserInfo>();
 
+  public warWrater: Writer = new Writer();
+
   public get MapUser(): Map<number, UserInfo> {
     return this.mapUser;
   }
 
-  public ToProto(): PROTOCOL_ROOM.IRoomInfo {
-    let ret = PROTOCOL_ROOM.RoomInfo.create();
+  public ToProto(): PROTOCOL_COMMON.IRoomInfo {
+    let ret = PROTOCOL_COMMON.RoomInfo.create();
     ret.userList = [];
     ret.roomName = this.roomName;
     this.mapUser.forEach((userInfo, id) => {
@@ -48,6 +51,17 @@ export class RoomInfo {
   public UserEnterRoom(userInfo: UserInfo | undefined) {
     if (userInfo == null) return;
     userInfo.roomId = this.uniqueId;
+    userInfo.seat = UniqueIdManager.GetId;
     this.mapUser.set(userInfo.uniqueId, userInfo);
+  }
+
+  public PushCommand(writer: Writer) {
+    this.warWrater.custombytes(writer.finish());
+  }
+
+  public Flush(): Uint8Array {
+    let ret = this.warWrater.finish();
+    this.warWrater.reset();
+    return ret;
   }
 }

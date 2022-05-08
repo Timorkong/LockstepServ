@@ -35,6 +35,7 @@ export class RoomManager extends Singleton<RoomManager> {
 
   public LeaveRoom(userInfo: UserInfo | undefined): RoomInfo | undefined {
     if (userInfo == null) return undefined;
+    userInfo.seat = -1;
     let roomInfo = this.mapRoom.get(userInfo?.roomId);
     if (roomInfo) {
       roomInfo.UserLeave(userInfo);

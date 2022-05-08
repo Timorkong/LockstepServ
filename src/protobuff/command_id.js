@@ -41,6 +41,13 @@ $root.Cmd = (function() {
          * @property {number} CMD_LEAVE_ROOM_NOTICE=1006 CMD_LEAVE_ROOM_NOTICE value
          * @property {number} CMD_ROOM_LIST_REQ=1007 CMD_ROOM_LIST_REQ value
          * @property {number} CMD_ROOM_LIST_RSP=1008 CMD_ROOM_LIST_RSP value
+         * @property {number} CMD_ENTER_GAME_REQ=1009 CMD_ENTER_GAME_REQ value
+         * @property {number} CMD_ENTER_GAME_RSP=1010 CMD_ENTER_GAME_RSP value
+         * @property {number} CMD_START_GAME_REQ=1011 CMD_START_GAME_REQ value
+         * @property {number} CMD_START_GAME_RSP=1012 CMD_START_GAME_RSP value
+         * @property {number} CMD_WAR_MOVE_REQ=1013 CMD_WAR_MOVE_REQ value
+         * @property {number} CMD_WAR_MOVE_RSP=1014 CMD_WAR_MOVE_RSP value
+         * @property {number} CMD_WAR_COMMAND_NOTICE=1015 CMD_WAR_COMMAND_NOTICE value
          */
         ID.CMD = (function() {
             var valuesById = {}, values = Object.create(valuesById);
@@ -54,6 +61,13 @@ $root.Cmd = (function() {
             values[valuesById[1006] = "CMD_LEAVE_ROOM_NOTICE"] = 1006;
             values[valuesById[1007] = "CMD_ROOM_LIST_REQ"] = 1007;
             values[valuesById[1008] = "CMD_ROOM_LIST_RSP"] = 1008;
+            values[valuesById[1009] = "CMD_ENTER_GAME_REQ"] = 1009;
+            values[valuesById[1010] = "CMD_ENTER_GAME_RSP"] = 1010;
+            values[valuesById[1011] = "CMD_START_GAME_REQ"] = 1011;
+            values[valuesById[1012] = "CMD_START_GAME_RSP"] = 1012;
+            values[valuesById[1013] = "CMD_WAR_MOVE_REQ"] = 1013;
+            values[valuesById[1014] = "CMD_WAR_MOVE_RSP"] = 1014;
+            values[valuesById[1015] = "CMD_WAR_COMMAND_NOTICE"] = 1015;
             return values;
         })();
 
