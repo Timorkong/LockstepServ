@@ -100,4 +100,9 @@ export class RoomManager extends Singleton<RoomManager> {
     this.RemoveRoom(roomInfo);
   }
 
+  public Update() {
+    this.MapRoom.forEach((roomInfo, _) => {
+      roomInfo.Update();
+    })
+  }
 }

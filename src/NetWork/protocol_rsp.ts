@@ -8,6 +8,7 @@ import { Util } from "./../../src/Code/Util/Util";
 import { RoomInfo } from "./../../src/Code/Game/Room/RoomInfo";
 import { PROTOCOL_WAR } from "./../../src/protobuff/command_protocol_war";
 import { NetUtil } from "./../../src/Code/Util/NetUtil";
+import { UniqueIdManager } from "./../../src/Code/Game/UniqueIdManager";
 
 export class protocol_rsp {
   public CMD_HEART_BEAT_RSP(socket: Socket) {
@@ -26,8 +27,9 @@ export class protocol_rsp {
   public CMD_CREATE_ROOM_RSP(userInfo: UserInfo, req: PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ) {
     let rsp = PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP.create();
     let roomInfo = RoomManager.Instance(RoomManager).CreateRoom(req.roomName);
-    RoomManager.Instance(RoomManager).EnterRoom(roomInfo, userInfo);
+    roomInfo.UserEnterRoom(userInfo);
     rsp.roomInfo = roomInfo.ToProto();
+    rsp.playerSeat = userInfo.seat;
     NetUtil.Send(PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP, rsp, userInfo.socket, Cmd.ID.CMD.CMD_CREATE_ROOM_RSP);
   }
 
@@ -36,26 +38,28 @@ export class protocol_rsp {
     let rsp = new PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP();
     rsp.roomList = Util.GetRoomList();
     NetUtil.Send(PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP, rsp, userInfo.socket, Cmd.ID.CMD.CMD_LEAVE_ROOM_RSP);
-    this.CMD_LEAVE_ROOM_NOTICE(roomInfo);
+    this.CMD_UPDATE_ROOM_INFO_NOTICE(roomInfo);
   }
 
-  public CMD_LEAVE_ROOM_NOTICE(roomInfo: RoomInfo | undefined) {
+  public CMD_UPDATE_ROOM_INFO_NOTICE(roomInfo: RoomInfo | undefined, ignoreId: number = UniqueIdManager.Null) {
     if (roomInfo && roomInfo.MapUser.size > 0) {
-      let rsp = PROTOCOL_ROOM.CMD_LEAVE_ROOM_NOTICE.create();
-      let roomProto = roomInfo.ToProto();
+      let rsp = PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE.create();
+      let roomProto = roomInfo.ToProto(ignoreId);
       rsp.roomInfo = roomProto;
-      roomInfo.MapUser.forEach((userInfo, id) => {
-        NetUtil.Send(PROTOCOL_ROOM.CMD_LEAVE_ROOM_NOTICE, rsp, userInfo.socket, Cmd.ID.CMD.CMD_LEAVE_ROOM_NOTICE);
-      })
+
+      let writer = NetUtil.Encode(PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE, rsp, Cmd.ID.CMD.CMD_UPDATE_ROOM_INFO_NOTICE);
+      roomInfo.PushCommandByWriter(writer)
+      roomInfo.SendWarMessage();
     }
   }
-  public CMD_ENTER_GAME_RSP(userInfo: UserInfo) {
+  public CMD_ENTER_GAME_RSP(userInfo: UserInfo, req: PROTOCOL_WAR.CMD_ENTER_GAME_REQ) {
     let roomInfo = RoomManager.Instance(RoomManager).MapRoom.get(userInfo.roomId);
     if (roomInfo == null) return;
     let rsp = PROTOCOL_WAR.CMD_ENTER_GAME_RSP.create();
-    roomInfo.MapUser.forEach(user => {
-      NetUtil.Send(PROTOCOL_WAR.CMD_ENTER_GAME_RSP, rsp, user.socket, Cmd.ID.CMD.CMD_ENTER_GAME_RSP)
-    })
+    rsp.data = req.data;
+    let writer = NetUtil.Encode(PROTOCOL_WAR.CMD_ENTER_GAME_RSP, rsp, Cmd.ID.CMD.CMD_ENTER_GAME_RSP);
+    roomInfo.PushCommandByWriter(writer)
+    roomInfo.SendWarMessage();
   }
 
   public CMD_START_GAME_RSP(userInfo: UserInfo) {
@@ -68,9 +72,36 @@ export class protocol_rsp {
     })
     if (sucess) {
       let rsp = PROTOCOL_WAR.CMD_START_GAME_RSP.create();
-      roomInfo.MapUser.forEach(user => {
-        NetUtil.Send(PROTOCOL_WAR.CMD_START_GAME_RSP, rsp, user.socket, Cmd.ID.CMD.CMD_START_GAME_RSP)
-      })
+      rsp.roomInfo = roomInfo.ToProto();
+      let writer = NetUtil.Encode(PROTOCOL_WAR.CMD_START_GAME_RSP, rsp, Cmd.ID.CMD.CMD_START_GAME_RSP);
+      roomInfo.PushCommandByWriter(writer)
+      roomInfo.PushSequence(true);
+      roomInfo.SendWarMessage();
+      roomInfo.Running = true;
     }
+  }
+
+  public CMD_WAR_SEQUENCE_NOTICE(roomInfo: RoomInfo) {
+    roomInfo.SendWarMessage();
+    roomInfo.PushSequence(true);
+  }
+
+  public CMD_JOIN_ROOM_RSP(userInfo: UserInfo) {
+    let roomInfo = <RoomInfo>RoomManager.Instance(RoomManager).MapRoom.get(userInfo.roomId);
+    let rsp = PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP.create();
+    rsp.roomInfo = roomInfo.ToProto();
+    rsp.playerSeat = userInfo.seat;
+    NetUtil.Send(PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP, rsp, userInfo.socket, Cmd.ID.CMD.CMD_JOIN_ROOM_RSP);
+    this.CMD_UPDATE_ROOM_INFO_NOTICE(roomInfo, userInfo.uniqueId);
+  }
+
+  public CMD_WAR_MOVE(userInfo: UserInfo, req: PROTOCOL_WAR.CMD_WAR_MOVE) {
+    let roomInfo = <RoomInfo>RoomManager.Instance(RoomManager).MapRoom.get(userInfo.roomId);
+    let rsp = PROTOCOL_WAR.CMD_WAR_MOVE.create();
+    rsp.seat = req.seat;
+    rsp.moveX = req.moveX;
+    rsp.moveY = req.moveY;
+    let writer = NetUtil.Encode(PROTOCOL_WAR.CMD_WAR_MOVE, rsp, Cmd.ID.CMD.CMD_WAR_MOVE);
+    roomInfo.PushCommandByWriter(writer)
   }
 }

@@ -31,25 +31,41 @@ export class protocol_req {
 
   public CMD_ENTER_GAME_REQ(...args: any[]) {
     let userInfo: UserInfo = args[0][1]
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_ENTER_GAME_RSP(userInfo);
+    let buffers: Buffer = args[0];
+    let buffReader = new Reader(buffers);
+    let req = PROTOCOL_WAR.CMD_ENTER_GAME_REQ.decode(buffReader);
+    NetManager.Instance(NetManager).protocol_rsp?.CMD_ENTER_GAME_RSP(userInfo, req);
   }
   public CMD_START_GAME_REQ(...args: any[]) {
     let userInfo: UserInfo = args[0][1]
     NetManager.Instance(NetManager).protocol_rsp?.CMD_START_GAME_RSP(userInfo);
   }
+  //战斗帧转发数据
+  public CMD_FRAME_TRANSPOND(...args: any[]) {
+    let buffers: Buffer = args[0][0];
+    let userInfo: UserInfo = args[0][1];
+    let roomInfo = RoomManager.Instance(RoomManager).MapRoom.get(userInfo.roomId);
+    if (roomInfo == null) return;
+    roomInfo.PushCommandByBuffer(buffers);
+  }
 
-  public CMD_WAR_MOVE_REQ(...args: any[]) {
+  public CMD_WAR_MOVE(...args: any[]) {
     let buffers: Buffer = args[0];
     let userInfo: UserInfo = args[0][1];
     let buffReader = new Reader(buffers);
-    let req = PROTOCOL_WAR.CMD_WAR_MOVE_REQ.decode(buffReader);
-    let rsp = PROTOCOL_WAR.CMD_WAR_MOVE_RSP.create();
-    rsp.seat = userInfo.seat;
-    rsp.isDown = req.isDown;
-    rsp.degree = req.degree;
-    let moveWriter = NetUtil.Encode(PROTOCOL_WAR.CMD_WAR_MOVE_RSP, rsp, Cmd.ID.CMD.CMD_WAR_MOVE_RSP);
-    let roomInfo = RoomManager.Instance(RoomManager).MapRoom.get(userInfo.roomId);
-    if (roomInfo == null) return;
-    roomInfo.PushCommand(moveWriter);
+    let req = PROTOCOL_WAR.CMD_WAR_MOVE.decode(buffReader);
+    NetManager.Instance(NetManager).protocol_rsp?.CMD_WAR_MOVE(userInfo, req);
+  }
+
+  public CMD_JOIN_ROOM_REQ(...args: any[]) {
+    let buffers: Buffer = args[0];
+    let userInfo: UserInfo = args[0][1];
+    let buffReader = new Reader(buffers);
+    let req = PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ.decode(buffReader);
+    if (RoomManager.Instance(RoomManager).MapRoom.has(<number>req.roomUnquieId)) {
+      let roomInfo = RoomManager.Instance(RoomManager).MapRoom.get(<number>req.roomUnquieId);
+      roomInfo?.UserEnterRoom(userInfo);
+      NetManager.Instance(NetManager).protocol_rsp?.CMD_JOIN_ROOM_RSP(userInfo);
+    }
   }
 }

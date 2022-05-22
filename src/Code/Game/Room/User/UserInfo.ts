@@ -4,11 +4,13 @@ import { NET_DEFINE } from "../../../../NetWork/msgData";
 import { UniqueIdManager } from "../../UniqueIdManager";
 import { Util } from "./../../../Util/Util";
 import { PROTOCOL_COMMON } from "./../../../../../src/protobuff/command_protocol_common";
+import { RoomManager } from "../RoomManager";
+import { Cmd } from "./../../../../../src/protobuff/command_id";
+import { Writer } from "protobufjs";
 
 export class UserInfo {
   public socket!: Socket;
   public seat: number = -1;
-
   public userLevel!: number;
 
   public uniqueId: number = UniqueIdManager.Null;
@@ -30,6 +32,7 @@ export class UserInfo {
   public ToProto(): PROTOCOL_COMMON.IUserInfo {
     let ret = new PROTOCOL_COMMON.UserInfo();
     ret.userName = this.userName;
+    ret.userSeat = this.seat;
     return ret;
   }
 
@@ -40,6 +43,7 @@ export class UserInfo {
 
     this.socket.on("close", (hadError: boolean) => {
       console.error("onClose hadError = ", hadError);
+      RoomManager.Instance(RoomManager).LeaveRoom(this);
     });
     this.socket.on("connect", () => {
       console.error("on user connect");
@@ -51,12 +55,18 @@ export class UserInfo {
         while (true) {
           let size = data.readUInt32BE(endIndex);
           let msgId = data.readUInt32BE(endIndex + NET_DEFINE.HEAD_LENTH_SIZE);
-          let sequnece = data.readUInt32BE(endIndex + NET_DEFINE.HEAD_LENTH_SIZE + NET_DEFINE.HEAD_MSG_ID_SIZE);
           startIndex = endIndex + NET_DEFINE.HEAD_SIZE;
           endIndex = startIndex + size;
-          let packBuffer = data.subarray(startIndex, endIndex);
+          let packBuffer = data.subarray(startIndex, endIndex);;
+          if (msgId > Cmd.ID.CMD.CMD_FRAME_SYNC_MIN && msgId < Cmd.ID.CMD.CMD_FRAME_SYNC_MAX) {
+            packBuffer = data.subarray(startIndex - NET_DEFINE.HEAD_SIZE, endIndex)
+            packBuffer.writeInt32LE(size);
+            packBuffer.writeInt32LE(msgId, NET_DEFINE.HEAD_MSG_ID_SIZE);
+            msgId = Cmd.ID.CMD.CMD_FRAME_TRANSPOND;
+          }
+
           if (process.env.NODE_DEBUG == "true") {
-            console.log(`receive msg size = ${size} msgId = ${msgId} sequnece = ${sequnece} msg = ${Util.Bytes2String(packBuffer)}`)
+            console.log(`receive msg size = ${size} msgId = ${msgId} msg = ${Util.Bytes2String(packBuffer)}`)
           }
           NetManager.Instance(NetManager).dispatch_req?.DisPatch(msgId, packBuffer, this);
           if (endIndex >= data.length) break;

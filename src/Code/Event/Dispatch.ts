@@ -1,3 +1,5 @@
+import { Cmd } from "./../../../src/protobuff/command_id";
+
 export class Dispatch {
     private eventMap: Map<number, Function[]> = new Map<number, Function[]>();
 

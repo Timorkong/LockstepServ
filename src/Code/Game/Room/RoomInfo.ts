@@ -1,7 +1,10 @@
 import { UserInfo } from "./User/UserInfo";
 import { UniqueIdManager } from "../UniqueIdManager";
 import { PROTOCOL_COMMON } from "./../../../../src/protobuff/command_protocol_common";
-import { Writer } from "protobufjs";
+import { Writer, BufferWriter } from "protobufjs";
+import { NetUtil } from "./../../../../src/Code/Util/NetUtil";
+import { PROTOCOL_WAR } from "./../../../../src/protobuff/command_protocol_war";
+import { Cmd } from "./../../../../src/protobuff/command_id";
 
 export class RoomInfo {
 
@@ -11,17 +14,25 @@ export class RoomInfo {
 
   private mapUser: Map<number, UserInfo> = new Map<number, UserInfo>();
 
-  public warWrater: Writer = new Writer();
+  public warWrater: BufferWriter = Writer.create();
+
+  public Running: boolean = false;
+
+  public sequence: number = 0;
+  //角色位置
+  public playerSeat: number = 0;
 
   public get MapUser(): Map<number, UserInfo> {
     return this.mapUser;
   }
 
-  public ToProto(): PROTOCOL_COMMON.IRoomInfo {
+  public ToProto(ignoreId: number = UniqueIdManager.Null): PROTOCOL_COMMON.IRoomInfo {
     let ret = PROTOCOL_COMMON.RoomInfo.create();
     ret.userList = [];
     ret.roomName = this.roomName;
+    ret.roomUniqueId = this.uniqueId;
     this.mapUser.forEach((userInfo, id) => {
+      if (id == ignoreId) return;
       ret.userList.push(userInfo.ToProto());
     })
     return ret;
@@ -29,6 +40,8 @@ export class RoomInfo {
 
   constructor(roomName: string | null) {
     this.roomName = roomName;
+    this.sequence = 0;
+    this.playerSeat = 1;
     this.uniqueId = UniqueIdManager.GetId;
   }
 
@@ -51,17 +64,47 @@ export class RoomInfo {
   public UserEnterRoom(userInfo: UserInfo | undefined) {
     if (userInfo == null) return;
     userInfo.roomId = this.uniqueId;
-    userInfo.seat = UniqueIdManager.GetId;
+    userInfo.seat = this.playerSeat++;
     this.mapUser.set(userInfo.uniqueId, userInfo);
   }
 
-  public PushCommand(writer: Writer) {
-    this.warWrater.custombytes(writer.finish());
+  public PushCommandByWriter(writer: Writer) {
+    let buffer = writer.finish();
+    this.PushCommandByBuffer(buffer);
+  }
+
+  public PushCommandByBuffer(buffer: Uint8Array) {
+    this.warWrater.custombytes(buffer);
   }
 
   public Flush(): Uint8Array {
     let ret = this.warWrater.finish();
     this.warWrater.reset();
     return ret;
+  }
+
+  public PushSequence(isAddSequence: boolean) {
+    let rsp = PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE.create();
+    rsp.sequence = this.sequence;
+    if (isAddSequence) this.sequence++;
+    let writer = NetUtil.Encode(PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE, rsp, Cmd.ID.CMD.CMD_WAR_SEQUENCE_NOTICE);
+    this.PushCommandByWriter(writer)
+  }
+
+  public SendWarMessage() {
+    let command = this.Flush();
+    if (command.length == 0) return;
+    this.MapUser.forEach(user => {
+      if (process.env.NODE_DEBUG == "true") {
+        console.log(`send msg size = ${command.length}`)
+      }
+      user.socket.write(command);
+    })
+  }
+
+  public Update() {
+    if (this.Running == false) return;
+    this.SendWarMessage();
+    this.PushSequence(true);
   }
 }
