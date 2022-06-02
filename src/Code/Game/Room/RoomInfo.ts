@@ -5,6 +5,7 @@ import { Writer, BufferWriter } from "protobufjs";
 import { NetUtil } from "./../../../../src/Code/Util/NetUtil";
 import { PROTOCOL_WAR } from "./../../../../src/protobuff/command_protocol_war";
 import { Cmd } from "./../../../../src/protobuff/command_id";
+import { BufferWriterExt } from "./../../../ProtoBuffExt/BufferWriterExt";
 
 export class RoomInfo {
 
@@ -14,7 +15,7 @@ export class RoomInfo {
 
   private mapUser: Map<number, UserInfo> = new Map<number, UserInfo>();
 
-  public warWrater: BufferWriter = Writer.create();
+  public warWrater: BufferWriterExt = new BufferWriterExt();
 
   public Running: boolean = false;
 
@@ -78,8 +79,8 @@ export class RoomInfo {
   }
 
   public Flush(): Uint8Array {
-    let ret = this.warWrater.finish();
-    this.warWrater.reset();
+    let ret = this.warWrater.buffer.finish();
+    this.warWrater.buffer.reset();
     return ret;
   }
 

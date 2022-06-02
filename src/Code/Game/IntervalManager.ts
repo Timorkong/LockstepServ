@@ -7,6 +7,6 @@ export class IntervalManager extends Singleton<IntervalManager> {
   public Register() {
     this.timer = setInterval(() => {
       RoomManager.Instance(RoomManager).Update();
-    }, 1000)
+    }, 100)
   }
 }
