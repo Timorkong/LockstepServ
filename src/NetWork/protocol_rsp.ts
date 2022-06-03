@@ -92,7 +92,7 @@ export class protocol_rsp {
     rsp.roomInfo = roomInfo.ToProto();
     rsp.playerSeat = userInfo.seat;
     NetUtil.Send(PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP, rsp, userInfo.socket, Cmd.ID.CMD.CMD_JOIN_ROOM_RSP);
-    this.CMD_UPDATE_ROOM_INFO_NOTICE(roomInfo, userInfo.uniqueId);
+    this.CMD_UPDATE_ROOM_INFO_NOTICE(roomInfo);
   }
 
   public CMD_WAR_MOVE(userInfo: UserInfo, req: PROTOCOL_WAR.CMD_WAR_MOVE) {
