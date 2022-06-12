@@ -18,25 +18,25 @@ $root.PROTOCOL = (function() {
      */
     var PROTOCOL = {};
 
-    PROTOCOL.CMD_HEART_BEAT_REQ = (function() {
+    PROTOCOL.HeartBeatReq = (function() {
 
         /**
-         * Properties of a CMD_HEART_BEAT_REQ.
+         * Properties of a HeartBeatReq.
          * @memberof PROTOCOL
-         * @interface ICMD_HEART_BEAT_REQ
-         * @property {number|null} [id] CMD_HEART_BEAT_REQ id
-         * @property {string|null} [name] CMD_HEART_BEAT_REQ name
+         * @interface IHeartBeatReq
+         * @property {number|null} [Id] HeartBeatReq Id
+         * @property {string|null} [Name] HeartBeatReq Name
          */
 
         /**
-         * Constructs a new CMD_HEART_BEAT_REQ.
+         * Constructs a new HeartBeatReq.
          * @memberof PROTOCOL
-         * @classdesc Represents a CMD_HEART_BEAT_REQ.
-         * @implements ICMD_HEART_BEAT_REQ
+         * @classdesc Represents a HeartBeatReq.
+         * @implements IHeartBeatReq
          * @constructor
-         * @param {PROTOCOL.ICMD_HEART_BEAT_REQ=} [properties] Properties to set
+         * @param {PROTOCOL.IHeartBeatReq=} [properties] Properties to set
          */
-        function CMD_HEART_BEAT_REQ(properties) {
+        function HeartBeatReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -44,113 +44,88 @@ $root.PROTOCOL = (function() {
         }
 
         /**
-         * CMD_HEART_BEAT_REQ id.
-         * @member {number|null|undefined} id
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * HeartBeatReq Id.
+         * @member {number} Id
+         * @memberof PROTOCOL.HeartBeatReq
          * @instance
          */
-        CMD_HEART_BEAT_REQ.prototype.id = null;
+        HeartBeatReq.prototype.Id = 0;
 
         /**
-         * CMD_HEART_BEAT_REQ name.
-         * @member {string|null|undefined} name
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * HeartBeatReq Name.
+         * @member {string} Name
+         * @memberof PROTOCOL.HeartBeatReq
          * @instance
          */
-        CMD_HEART_BEAT_REQ.prototype.name = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        HeartBeatReq.prototype.Name = "";
 
         /**
-         * CMD_HEART_BEAT_REQ _id.
-         * @member {"id"|undefined} _id
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
-         * @instance
-         */
-        Object.defineProperty(CMD_HEART_BEAT_REQ.prototype, "_id", {
-            get: $util.oneOfGetter($oneOfFields = ["id"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CMD_HEART_BEAT_REQ _name.
-         * @member {"name"|undefined} _name
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
-         * @instance
-         */
-        Object.defineProperty(CMD_HEART_BEAT_REQ.prototype, "_name", {
-            get: $util.oneOfGetter($oneOfFields = ["name"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_HEART_BEAT_REQ instance using the specified properties.
+         * Creates a new HeartBeatReq instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
-         * @param {PROTOCOL.ICMD_HEART_BEAT_REQ=} [properties] Properties to set
-         * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ instance
+         * @param {PROTOCOL.IHeartBeatReq=} [properties] Properties to set
+         * @returns {PROTOCOL.HeartBeatReq} HeartBeatReq instance
          */
-        CMD_HEART_BEAT_REQ.create = function create(properties) {
-            return new CMD_HEART_BEAT_REQ(properties);
+        HeartBeatReq.create = function create(properties) {
+            return new HeartBeatReq(properties);
         };
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_REQ message. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_REQ.verify|verify} messages.
+         * Encodes the specified HeartBeatReq message. Does not implicitly {@link PROTOCOL.HeartBeatReq.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
-         * @param {PROTOCOL.ICMD_HEART_BEAT_REQ} message CMD_HEART_BEAT_REQ message or plain object to encode
+         * @param {PROTOCOL.IHeartBeatReq} message HeartBeatReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_REQ.encode = function encode(message, writer) {
+        HeartBeatReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+            if (message.Id != null && message.hasOwnProperty("Id"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.Id);
+            if (message.Name != null && message.hasOwnProperty("Name"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.Name);
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_REQ message, length delimited. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_REQ.verify|verify} messages.
+         * Encodes the specified HeartBeatReq message, length delimited. Does not implicitly {@link PROTOCOL.HeartBeatReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
-         * @param {PROTOCOL.ICMD_HEART_BEAT_REQ} message CMD_HEART_BEAT_REQ message or plain object to encode
+         * @param {PROTOCOL.IHeartBeatReq} message HeartBeatReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        HeartBeatReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_HEART_BEAT_REQ message from the specified reader or buffer.
+         * Decodes a HeartBeatReq message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ
+         * @returns {PROTOCOL.HeartBeatReq} HeartBeatReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_REQ.decode = function decode(reader, length) {
+        HeartBeatReq.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.HeartBeatReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.id = reader.int32();
+                    message.Id = reader.int32();
                     break;
                 case 2:
-                    message.name = reader.string();
+                    message.Name = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -161,124 +136,117 @@ $root.PROTOCOL = (function() {
         };
 
         /**
-         * Decodes a CMD_HEART_BEAT_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a HeartBeatReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ
+         * @returns {PROTOCOL.HeartBeatReq} HeartBeatReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_REQ.decodeDelimited = function decodeDelimited(reader) {
+        HeartBeatReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_HEART_BEAT_REQ message.
+         * Verifies a HeartBeatReq message.
          * @function verify
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_HEART_BEAT_REQ.verify = function verify(message) {
+        HeartBeatReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.id != null && message.hasOwnProperty("id")) {
-                properties._id = 1;
-                if (!$util.isInteger(message.id))
-                    return "id: integer expected";
-            }
-            if (message.name != null && message.hasOwnProperty("name")) {
-                properties._name = 1;
-                if (!$util.isString(message.name))
-                    return "name: string expected";
-            }
+            if (message.Id != null && message.hasOwnProperty("Id"))
+                if (!$util.isInteger(message.Id))
+                    return "Id: integer expected";
+            if (message.Name != null && message.hasOwnProperty("Name"))
+                if (!$util.isString(message.Name))
+                    return "Name: string expected";
             return null;
         };
 
         /**
-         * Creates a CMD_HEART_BEAT_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a HeartBeatReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL.CMD_HEART_BEAT_REQ} CMD_HEART_BEAT_REQ
+         * @returns {PROTOCOL.HeartBeatReq} HeartBeatReq
          */
-        CMD_HEART_BEAT_REQ.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL.CMD_HEART_BEAT_REQ)
+        HeartBeatReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOL.HeartBeatReq)
                 return object;
-            var message = new $root.PROTOCOL.CMD_HEART_BEAT_REQ();
-            if (object.id != null)
-                message.id = object.id | 0;
-            if (object.name != null)
-                message.name = String(object.name);
+            var message = new $root.PROTOCOL.HeartBeatReq();
+            if (object.Id != null)
+                message.Id = object.Id | 0;
+            if (object.Name != null)
+                message.Name = String(object.Name);
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_HEART_BEAT_REQ message. Also converts values to other types if specified.
+         * Creates a plain object from a HeartBeatReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @static
-         * @param {PROTOCOL.CMD_HEART_BEAT_REQ} message CMD_HEART_BEAT_REQ
+         * @param {PROTOCOL.HeartBeatReq} message HeartBeatReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_HEART_BEAT_REQ.toObject = function toObject(message, options) {
+        HeartBeatReq.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.id != null && message.hasOwnProperty("id")) {
-                object.id = message.id;
-                if (options.oneofs)
-                    object._id = "id";
+            if (options.defaults) {
+                object.Id = 0;
+                object.Name = "";
             }
-            if (message.name != null && message.hasOwnProperty("name")) {
-                object.name = message.name;
-                if (options.oneofs)
-                    object._name = "name";
-            }
+            if (message.Id != null && message.hasOwnProperty("Id"))
+                object.Id = message.Id;
+            if (message.Name != null && message.hasOwnProperty("Name"))
+                object.Name = message.Name;
             return object;
         };
 
         /**
-         * Converts this CMD_HEART_BEAT_REQ to JSON.
+         * Converts this HeartBeatReq to JSON.
          * @function toJSON
-         * @memberof PROTOCOL.CMD_HEART_BEAT_REQ
+         * @memberof PROTOCOL.HeartBeatReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_HEART_BEAT_REQ.prototype.toJSON = function toJSON() {
+        HeartBeatReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_HEART_BEAT_REQ;
+        return HeartBeatReq;
     })();
 
-    PROTOCOL.CMD_HEART_BEAT_RSP = (function() {
+    PROTOCOL.HeartBeatRsp = (function() {
 
         /**
-         * Properties of a CMD_HEART_BEAT_RSP.
+         * Properties of a HeartBeatRsp.
          * @memberof PROTOCOL
-         * @interface ICMD_HEART_BEAT_RSP
-         * @property {number|null} [id] CMD_HEART_BEAT_RSP id
-         * @property {string|null} [name] CMD_HEART_BEAT_RSP name
+         * @interface IHeartBeatRsp
+         * @property {number|null} [Id] HeartBeatRsp Id
+         * @property {string|null} [Name] HeartBeatRsp Name
          */
 
         /**
-         * Constructs a new CMD_HEART_BEAT_RSP.
+         * Constructs a new HeartBeatRsp.
          * @memberof PROTOCOL
-         * @classdesc Represents a CMD_HEART_BEAT_RSP.
-         * @implements ICMD_HEART_BEAT_RSP
+         * @classdesc Represents a HeartBeatRsp.
+         * @implements IHeartBeatRsp
          * @constructor
-         * @param {PROTOCOL.ICMD_HEART_BEAT_RSP=} [properties] Properties to set
+         * @param {PROTOCOL.IHeartBeatRsp=} [properties] Properties to set
          */
-        function CMD_HEART_BEAT_RSP(properties) {
+        function HeartBeatRsp(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -286,113 +254,88 @@ $root.PROTOCOL = (function() {
         }
 
         /**
-         * CMD_HEART_BEAT_RSP id.
-         * @member {number|null|undefined} id
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * HeartBeatRsp Id.
+         * @member {number} Id
+         * @memberof PROTOCOL.HeartBeatRsp
          * @instance
          */
-        CMD_HEART_BEAT_RSP.prototype.id = null;
+        HeartBeatRsp.prototype.Id = 0;
 
         /**
-         * CMD_HEART_BEAT_RSP name.
-         * @member {string|null|undefined} name
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * HeartBeatRsp Name.
+         * @member {string} Name
+         * @memberof PROTOCOL.HeartBeatRsp
          * @instance
          */
-        CMD_HEART_BEAT_RSP.prototype.name = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        HeartBeatRsp.prototype.Name = "";
 
         /**
-         * CMD_HEART_BEAT_RSP _id.
-         * @member {"id"|undefined} _id
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_HEART_BEAT_RSP.prototype, "_id", {
-            get: $util.oneOfGetter($oneOfFields = ["id"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CMD_HEART_BEAT_RSP _name.
-         * @member {"name"|undefined} _name
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_HEART_BEAT_RSP.prototype, "_name", {
-            get: $util.oneOfGetter($oneOfFields = ["name"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_HEART_BEAT_RSP instance using the specified properties.
+         * Creates a new HeartBeatRsp instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
-         * @param {PROTOCOL.ICMD_HEART_BEAT_RSP=} [properties] Properties to set
-         * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP instance
+         * @param {PROTOCOL.IHeartBeatRsp=} [properties] Properties to set
+         * @returns {PROTOCOL.HeartBeatRsp} HeartBeatRsp instance
          */
-        CMD_HEART_BEAT_RSP.create = function create(properties) {
-            return new CMD_HEART_BEAT_RSP(properties);
+        HeartBeatRsp.create = function create(properties) {
+            return new HeartBeatRsp(properties);
         };
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_RSP message. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_RSP.verify|verify} messages.
+         * Encodes the specified HeartBeatRsp message. Does not implicitly {@link PROTOCOL.HeartBeatRsp.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
-         * @param {PROTOCOL.ICMD_HEART_BEAT_RSP} message CMD_HEART_BEAT_RSP message or plain object to encode
+         * @param {PROTOCOL.IHeartBeatRsp} message HeartBeatRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_RSP.encode = function encode(message, writer) {
+        HeartBeatRsp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+            if (message.Id != null && message.hasOwnProperty("Id"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.Id);
+            if (message.Name != null && message.hasOwnProperty("Name"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.Name);
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_RSP message, length delimited. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_RSP.verify|verify} messages.
+         * Encodes the specified HeartBeatRsp message, length delimited. Does not implicitly {@link PROTOCOL.HeartBeatRsp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
-         * @param {PROTOCOL.ICMD_HEART_BEAT_RSP} message CMD_HEART_BEAT_RSP message or plain object to encode
+         * @param {PROTOCOL.IHeartBeatRsp} message HeartBeatRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_HEART_BEAT_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        HeartBeatRsp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_HEART_BEAT_RSP message from the specified reader or buffer.
+         * Decodes a HeartBeatRsp message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP
+         * @returns {PROTOCOL.HeartBeatRsp} HeartBeatRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_RSP.decode = function decode(reader, length) {
+        HeartBeatRsp.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.CMD_HEART_BEAT_RSP();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL.HeartBeatRsp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.id = reader.int32();
+                    message.Id = reader.int32();
                     break;
                 case 2:
-                    message.name = reader.string();
+                    message.Name = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -403,103 +346,96 @@ $root.PROTOCOL = (function() {
         };
 
         /**
-         * Decodes a CMD_HEART_BEAT_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a HeartBeatRsp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP
+         * @returns {PROTOCOL.HeartBeatRsp} HeartBeatRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_HEART_BEAT_RSP.decodeDelimited = function decodeDelimited(reader) {
+        HeartBeatRsp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_HEART_BEAT_RSP message.
+         * Verifies a HeartBeatRsp message.
          * @function verify
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_HEART_BEAT_RSP.verify = function verify(message) {
+        HeartBeatRsp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.id != null && message.hasOwnProperty("id")) {
-                properties._id = 1;
-                if (!$util.isInteger(message.id))
-                    return "id: integer expected";
-            }
-            if (message.name != null && message.hasOwnProperty("name")) {
-                properties._name = 1;
-                if (!$util.isString(message.name))
-                    return "name: string expected";
-            }
+            if (message.Id != null && message.hasOwnProperty("Id"))
+                if (!$util.isInteger(message.Id))
+                    return "Id: integer expected";
+            if (message.Name != null && message.hasOwnProperty("Name"))
+                if (!$util.isString(message.Name))
+                    return "Name: string expected";
             return null;
         };
 
         /**
-         * Creates a CMD_HEART_BEAT_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a HeartBeatRsp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL.CMD_HEART_BEAT_RSP} CMD_HEART_BEAT_RSP
+         * @returns {PROTOCOL.HeartBeatRsp} HeartBeatRsp
          */
-        CMD_HEART_BEAT_RSP.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL.CMD_HEART_BEAT_RSP)
+        HeartBeatRsp.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOL.HeartBeatRsp)
                 return object;
-            var message = new $root.PROTOCOL.CMD_HEART_BEAT_RSP();
-            if (object.id != null)
-                message.id = object.id | 0;
-            if (object.name != null)
-                message.name = String(object.name);
+            var message = new $root.PROTOCOL.HeartBeatRsp();
+            if (object.Id != null)
+                message.Id = object.Id | 0;
+            if (object.Name != null)
+                message.Name = String(object.Name);
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_HEART_BEAT_RSP message. Also converts values to other types if specified.
+         * Creates a plain object from a HeartBeatRsp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @static
-         * @param {PROTOCOL.CMD_HEART_BEAT_RSP} message CMD_HEART_BEAT_RSP
+         * @param {PROTOCOL.HeartBeatRsp} message HeartBeatRsp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_HEART_BEAT_RSP.toObject = function toObject(message, options) {
+        HeartBeatRsp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.id != null && message.hasOwnProperty("id")) {
-                object.id = message.id;
-                if (options.oneofs)
-                    object._id = "id";
+            if (options.defaults) {
+                object.Id = 0;
+                object.Name = "";
             }
-            if (message.name != null && message.hasOwnProperty("name")) {
-                object.name = message.name;
-                if (options.oneofs)
-                    object._name = "name";
-            }
+            if (message.Id != null && message.hasOwnProperty("Id"))
+                object.Id = message.Id;
+            if (message.Name != null && message.hasOwnProperty("Name"))
+                object.Name = message.Name;
             return object;
         };
 
         /**
-         * Converts this CMD_HEART_BEAT_RSP to JSON.
+         * Converts this HeartBeatRsp to JSON.
          * @function toJSON
-         * @memberof PROTOCOL.CMD_HEART_BEAT_RSP
+         * @memberof PROTOCOL.HeartBeatRsp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_HEART_BEAT_RSP.prototype.toJSON = function toJSON() {
+        HeartBeatRsp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_HEART_BEAT_RSP;
+        return HeartBeatRsp;
     })();
 
     return PROTOCOL;

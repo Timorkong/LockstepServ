@@ -1,15 +1,15 @@
 import * as $protobuf from "protobufjs";
-/** Namespace PROTOCOL_COMMON. */
-export namespace PROTOCOL_COMMON {
+/** Namespace PROTOCOLCOMMON. */
+export namespace PROTOCOLCOMMON {
 
     /** Properties of a UserInfo. */
     interface IUserInfo {
 
-        /** UserInfo userName */
-        userName?: (string|null);
+        /** UserInfo UserName */
+        UserName?: (string|null);
 
-        /** UserInfo userSeat */
-        userSeat?: (number|null);
+        /** UserInfo UserSeat */
+        UserSeat?: (number|null);
     }
 
     /** Represents a UserInfo. */
@@ -19,42 +19,36 @@ export namespace PROTOCOL_COMMON {
          * Constructs a new UserInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.IUserInfo);
+        constructor(properties?: PROTOCOLCOMMON.IUserInfo);
 
-        /** UserInfo userName. */
-        public userName?: (string|null);
+        /** UserInfo UserName. */
+        public UserName: string;
 
-        /** UserInfo userSeat. */
-        public userSeat?: (number|null);
-
-        /** UserInfo _userName. */
-        public _userName?: "userName";
-
-        /** UserInfo _userSeat. */
-        public _userSeat?: "userSeat";
+        /** UserInfo UserSeat. */
+        public UserSeat: number;
 
         /**
          * Creates a new UserInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns UserInfo instance
          */
-        public static create(properties?: PROTOCOL_COMMON.IUserInfo): PROTOCOL_COMMON.UserInfo;
+        public static create(properties?: PROTOCOLCOMMON.IUserInfo): PROTOCOLCOMMON.UserInfo;
 
         /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @param message UserInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @param message UserInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a UserInfo message from the specified reader or buffer.
@@ -64,7 +58,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.UserInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Decodes a UserInfo message from the specified reader or buffer, length delimited.
@@ -73,7 +67,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.UserInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Verifies a UserInfo message.
@@ -87,7 +81,7 @@ export namespace PROTOCOL_COMMON {
          * @param object Plain object
          * @returns UserInfo
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.UserInfo;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
@@ -95,7 +89,7 @@ export namespace PROTOCOL_COMMON {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this UserInfo to JSON.
@@ -107,14 +101,14 @@ export namespace PROTOCOL_COMMON {
     /** Properties of a RoomInfo. */
     interface IRoomInfo {
 
-        /** RoomInfo roomName */
-        roomName?: (string|null);
+        /** RoomInfo RoomName */
+        RoomName?: (string|null);
 
-        /** RoomInfo userList */
-        userList?: (PROTOCOL_COMMON.IUserInfo[]|null);
+        /** RoomInfo UserList */
+        UserList?: (PROTOCOLCOMMON.IUserInfo[]|null);
 
-        /** RoomInfo roomUniqueId */
-        roomUniqueId?: (number|null);
+        /** RoomInfo RoomUniqueId */
+        RoomUniqueId?: (number|null);
     }
 
     /** Represents a RoomInfo. */
@@ -124,45 +118,39 @@ export namespace PROTOCOL_COMMON {
          * Constructs a new RoomInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.IRoomInfo);
+        constructor(properties?: PROTOCOLCOMMON.IRoomInfo);
 
-        /** RoomInfo roomName. */
-        public roomName?: (string|null);
+        /** RoomInfo RoomName. */
+        public RoomName: string;
 
-        /** RoomInfo userList. */
-        public userList: PROTOCOL_COMMON.IUserInfo[];
+        /** RoomInfo UserList. */
+        public UserList: PROTOCOLCOMMON.IUserInfo[];
 
-        /** RoomInfo roomUniqueId. */
-        public roomUniqueId?: (number|null);
-
-        /** RoomInfo _roomName. */
-        public _roomName?: "roomName";
-
-        /** RoomInfo _roomUniqueId. */
-        public _roomUniqueId?: "roomUniqueId";
+        /** RoomInfo RoomUniqueId. */
+        public RoomUniqueId: number;
 
         /**
          * Creates a new RoomInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns RoomInfo instance
          */
-        public static create(properties?: PROTOCOL_COMMON.IRoomInfo): PROTOCOL_COMMON.RoomInfo;
+        public static create(properties?: PROTOCOLCOMMON.IRoomInfo): PROTOCOLCOMMON.RoomInfo;
 
         /**
-         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @param message RoomInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @param message RoomInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RoomInfo message from the specified reader or buffer.
@@ -172,7 +160,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.RoomInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Decodes a RoomInfo message from the specified reader or buffer, length delimited.
@@ -181,7 +169,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.RoomInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Verifies a RoomInfo message.
@@ -195,7 +183,7 @@ export namespace PROTOCOL_COMMON {
          * @param object Plain object
          * @returns RoomInfo
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.RoomInfo;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Creates a plain object from a RoomInfo message. Also converts values to other types if specified.
@@ -203,7 +191,7 @@ export namespace PROTOCOL_COMMON {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.RoomInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.RoomInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this RoomInfo to JSON.
@@ -212,94 +200,91 @@ export namespace PROTOCOL_COMMON {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a pre_battle_data. */
-    interface Ipre_battle_data {
+    /** Properties of a PreBattleData. */
+    interface IPreBattleData {
 
-        /** pre_battle_data levelName */
-        levelName?: (string|null);
+        /** PreBattleData LevelName */
+        LevelName?: (string|null);
     }
 
-    /** Represents a pre_battle_data. */
-    class pre_battle_data implements Ipre_battle_data {
+    /** Represents a PreBattleData. */
+    class PreBattleData implements IPreBattleData {
 
         /**
-         * Constructs a new pre_battle_data.
+         * Constructs a new PreBattleData.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.Ipre_battle_data);
+        constructor(properties?: PROTOCOLCOMMON.IPreBattleData);
 
-        /** pre_battle_data levelName. */
-        public levelName?: (string|null);
-
-        /** pre_battle_data _levelName. */
-        public _levelName?: "levelName";
+        /** PreBattleData LevelName. */
+        public LevelName: string;
 
         /**
-         * Creates a new pre_battle_data instance using the specified properties.
+         * Creates a new PreBattleData instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns pre_battle_data instance
+         * @returns PreBattleData instance
          */
-        public static create(properties?: PROTOCOL_COMMON.Ipre_battle_data): PROTOCOL_COMMON.pre_battle_data;
+        public static create(properties?: PROTOCOLCOMMON.IPreBattleData): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Encodes the specified pre_battle_data message. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
-         * @param message pre_battle_data message or plain object to encode
+         * Encodes the specified PreBattleData message. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
+         * @param message PreBattleData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.Ipre_battle_data, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IPreBattleData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified pre_battle_data message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
-         * @param message pre_battle_data message or plain object to encode
+         * Encodes the specified PreBattleData message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
+         * @param message PreBattleData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.Ipre_battle_data, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IPreBattleData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer.
+         * Decodes a PreBattleData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns pre_battle_data
+         * @returns PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.pre_battle_data;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer, length delimited.
+         * Decodes a PreBattleData message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns pre_battle_data
+         * @returns PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.pre_battle_data;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Verifies a pre_battle_data message.
+         * Verifies a PreBattleData message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a pre_battle_data message from a plain object. Also converts values to their respective internal types.
+         * Creates a PreBattleData message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns pre_battle_data
+         * @returns PreBattleData
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.pre_battle_data;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Creates a plain object from a pre_battle_data message. Also converts values to other types if specified.
-         * @param message pre_battle_data
+         * Creates a plain object from a PreBattleData message. Also converts values to other types if specified.
+         * @param message PreBattleData
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.pre_battle_data, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.PreBattleData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this pre_battle_data to JSON.
+         * Converts this PreBattleData to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

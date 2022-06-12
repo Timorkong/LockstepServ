@@ -3,7 +3,7 @@ import { NetManager } from "../../../../NetWork/NetManager";
 import { NET_DEFINE } from "../../../../NetWork/msgData";
 import { UniqueIdManager } from "../../UniqueIdManager";
 import { Util } from "./../../../Util/Util";
-import { PROTOCOL_COMMON } from "./../../../../../src/protobuff/command_protocol_common";
+import { PROTOCOLCOMMON } from "./../../../../../src/protobuff/command_protocol_common";
 import { RoomManager } from "../RoomManager";
 import { Cmd } from "./../../../../../src/protobuff/command_id";
 import { Writer } from "protobufjs";
@@ -29,10 +29,10 @@ export class UserInfo {
     this.seat = -1;
   }
 
-  public ToProto(): PROTOCOL_COMMON.IUserInfo {
-    let ret = new PROTOCOL_COMMON.UserInfo();
-    ret.userName = this.userName;
-    ret.userSeat = this.seat;
+  public ToProto(): PROTOCOLCOMMON.IUserInfo {
+    let ret = new PROTOCOLCOMMON.UserInfo();
+    ret.UserName = this.userName;
+    ret.UserSeat = this.seat;
     return ret;
   }
 
@@ -58,11 +58,11 @@ export class UserInfo {
           startIndex = endIndex + NET_DEFINE.HEAD_SIZE;
           endIndex = startIndex + size;
           let packBuffer = data.subarray(startIndex, endIndex);;
-          if (msgId > Cmd.ID.CMD.CMD_FRAME_SYNC_MIN && msgId < Cmd.ID.CMD.CMD_FRAME_SYNC_MAX) {
+          if (msgId > Cmd.ID.CMD.FrameSyncMin && msgId < Cmd.ID.CMD.FrameSyncMax) {
             packBuffer = data.subarray(startIndex - NET_DEFINE.HEAD_SIZE, endIndex)
             packBuffer.writeInt32LE(size);
             packBuffer.writeInt32LE(msgId, NET_DEFINE.HEAD_MSG_ID_SIZE);
-            msgId = Cmd.ID.CMD.CMD_FRAME_TRANSPOND;
+            msgId = Cmd.ID.CMD.FrameTranspond;
           }
 
           if (process.env.NODE_DEBUG == "true") {

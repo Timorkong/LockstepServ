@@ -9,32 +9,32 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.PROTOCOL_ROOM = (function() {
+$root.PROTOCOLROOM = (function() {
 
     /**
-     * Namespace PROTOCOL_ROOM.
-     * @exports PROTOCOL_ROOM
+     * Namespace PROTOCOLROOM.
+     * @exports PROTOCOLROOM
      * @namespace
      */
-    var PROTOCOL_ROOM = {};
+    var PROTOCOLROOM = {};
 
-    PROTOCOL_ROOM.CMD_ROOM_LIST_REQ = (function() {
+    PROTOCOLROOM.RoomListReq = (function() {
 
         /**
-         * Properties of a CMD_ROOM_LIST_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_ROOM_LIST_REQ
+         * Properties of a RoomListReq.
+         * @memberof PROTOCOLROOM
+         * @interface IRoomListReq
          */
 
         /**
-         * Constructs a new CMD_ROOM_LIST_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_ROOM_LIST_REQ.
-         * @implements ICMD_ROOM_LIST_REQ
+         * Constructs a new RoomListReq.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a RoomListReq.
+         * @implements IRoomListReq
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ=} [properties] Properties to set
+         * @param {PROTOCOLROOM.IRoomListReq=} [properties] Properties to set
          */
-        function CMD_ROOM_LIST_REQ(properties) {
+        function RoomListReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -42,60 +42,60 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * Creates a new CMD_ROOM_LIST_REQ instance using the specified properties.
+         * Creates a new RoomListReq instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_REQ} CMD_ROOM_LIST_REQ instance
+         * @param {PROTOCOLROOM.IRoomListReq=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.RoomListReq} RoomListReq instance
          */
-        CMD_ROOM_LIST_REQ.create = function create(properties) {
-            return new CMD_ROOM_LIST_REQ(properties);
+        RoomListReq.create = function create(properties) {
+            return new RoomListReq(properties);
         };
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_REQ.verify|verify} messages.
+         * Encodes the specified RoomListReq message. Does not implicitly {@link PROTOCOLROOM.RoomListReq.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ} message CMD_ROOM_LIST_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.IRoomListReq} message RoomListReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ROOM_LIST_REQ.encode = function encode(message, writer) {
+        RoomListReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_REQ.verify|verify} messages.
+         * Encodes the specified RoomListReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.RoomListReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ} message CMD_ROOM_LIST_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.IRoomListReq} message RoomListReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ROOM_LIST_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        RoomListReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_ROOM_LIST_REQ message from the specified reader or buffer.
+         * Decodes a RoomListReq message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_REQ} CMD_ROOM_LIST_REQ
+         * @returns {PROTOCOLROOM.RoomListReq} RoomListReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ROOM_LIST_REQ.decode = function decode(reader, length) {
+        RoomListReq.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_ROOM_LIST_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.RoomListReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -108,95 +108,95 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_ROOM_LIST_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a RoomListReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_REQ} CMD_ROOM_LIST_REQ
+         * @returns {PROTOCOLROOM.RoomListReq} RoomListReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ROOM_LIST_REQ.decodeDelimited = function decodeDelimited(reader) {
+        RoomListReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_ROOM_LIST_REQ message.
+         * Verifies a RoomListReq message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_ROOM_LIST_REQ.verify = function verify(message) {
+        RoomListReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             return null;
         };
 
         /**
-         * Creates a CMD_ROOM_LIST_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a RoomListReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_REQ} CMD_ROOM_LIST_REQ
+         * @returns {PROTOCOLROOM.RoomListReq} RoomListReq
          */
-        CMD_ROOM_LIST_REQ.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_ROOM_LIST_REQ)
+        RoomListReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.RoomListReq)
                 return object;
-            return new $root.PROTOCOL_ROOM.CMD_ROOM_LIST_REQ();
+            return new $root.PROTOCOLROOM.RoomListReq();
         };
 
         /**
-         * Creates a plain object from a CMD_ROOM_LIST_REQ message. Also converts values to other types if specified.
+         * Creates a plain object from a RoomListReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @static
-         * @param {PROTOCOL_ROOM.CMD_ROOM_LIST_REQ} message CMD_ROOM_LIST_REQ
+         * @param {PROTOCOLROOM.RoomListReq} message RoomListReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_ROOM_LIST_REQ.toObject = function toObject() {
+        RoomListReq.toObject = function toObject() {
             return {};
         };
 
         /**
-         * Converts this CMD_ROOM_LIST_REQ to JSON.
+         * Converts this RoomListReq to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_REQ
+         * @memberof PROTOCOLROOM.RoomListReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_ROOM_LIST_REQ.prototype.toJSON = function toJSON() {
+        RoomListReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_ROOM_LIST_REQ;
+        return RoomListReq;
     })();
 
-    PROTOCOL_ROOM.CMD_ROOM_LIST_RSP = (function() {
+    PROTOCOLROOM.RoomListRsp = (function() {
 
         /**
-         * Properties of a CMD_ROOM_LIST_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_ROOM_LIST_RSP
-         * @property {Array.<PROTOCOL_COMMON.IRoomInfo>|null} [roomList] CMD_ROOM_LIST_RSP roomList
+         * Properties of a RoomListRsp.
+         * @memberof PROTOCOLROOM
+         * @interface IRoomListRsp
+         * @property {Array.<PROTOCOLCOMMON.IRoomInfo>|null} [RoomList] RoomListRsp RoomList
          */
 
         /**
-         * Constructs a new CMD_ROOM_LIST_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_ROOM_LIST_RSP.
-         * @implements ICMD_ROOM_LIST_RSP
+         * Constructs a new RoomListRsp.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a RoomListRsp.
+         * @implements IRoomListRsp
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP=} [properties] Properties to set
+         * @param {PROTOCOLROOM.IRoomListRsp=} [properties] Properties to set
          */
-        function CMD_ROOM_LIST_RSP(properties) {
-            this.roomList = [];
+        function RoomListRsp(properties) {
+            this.RoomList = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -204,78 +204,78 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * CMD_ROOM_LIST_RSP roomList.
-         * @member {Array.<PROTOCOL_COMMON.IRoomInfo>} roomList
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * RoomListRsp RoomList.
+         * @member {Array.<PROTOCOLCOMMON.IRoomInfo>} RoomList
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @instance
          */
-        CMD_ROOM_LIST_RSP.prototype.roomList = $util.emptyArray;
+        RoomListRsp.prototype.RoomList = $util.emptyArray;
 
         /**
-         * Creates a new CMD_ROOM_LIST_RSP instance using the specified properties.
+         * Creates a new RoomListRsp instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_RSP} CMD_ROOM_LIST_RSP instance
+         * @param {PROTOCOLROOM.IRoomListRsp=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.RoomListRsp} RoomListRsp instance
          */
-        CMD_ROOM_LIST_RSP.create = function create(properties) {
-            return new CMD_ROOM_LIST_RSP(properties);
+        RoomListRsp.create = function create(properties) {
+            return new RoomListRsp(properties);
         };
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_RSP.verify|verify} messages.
+         * Encodes the specified RoomListRsp message. Does not implicitly {@link PROTOCOLROOM.RoomListRsp.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP} message CMD_ROOM_LIST_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.IRoomListRsp} message RoomListRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ROOM_LIST_RSP.encode = function encode(message, writer) {
+        RoomListRsp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomList != null && message.roomList.length)
-                for (var i = 0; i < message.roomList.length; ++i)
-                    $root.PROTOCOL_COMMON.RoomInfo.encode(message.roomList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.RoomList != null && message.RoomList.length)
+                for (var i = 0; i < message.RoomList.length; ++i)
+                    $root.PROTOCOLCOMMON.RoomInfo.encode(message.RoomList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_RSP.verify|verify} messages.
+         * Encodes the specified RoomListRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.RoomListRsp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP} message CMD_ROOM_LIST_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.IRoomListRsp} message RoomListRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ROOM_LIST_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        RoomListRsp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_ROOM_LIST_RSP message from the specified reader or buffer.
+         * Decodes a RoomListRsp message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_RSP} CMD_ROOM_LIST_RSP
+         * @returns {PROTOCOLROOM.RoomListRsp} RoomListRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ROOM_LIST_RSP.decode = function decode(reader, length) {
+        RoomListRsp.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_ROOM_LIST_RSP();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.RoomListRsp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    if (!(message.roomList && message.roomList.length))
-                        message.roomList = [];
-                    message.roomList.push($root.PROTOCOL_COMMON.RoomInfo.decode(reader, reader.uint32()));
+                    if (!(message.RoomList && message.RoomList.length))
+                        message.RoomList = [];
+                    message.RoomList.push($root.PROTOCOLCOMMON.RoomInfo.decode(reader, reader.uint32()));
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -286,124 +286,124 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_ROOM_LIST_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a RoomListRsp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_RSP} CMD_ROOM_LIST_RSP
+         * @returns {PROTOCOLROOM.RoomListRsp} RoomListRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ROOM_LIST_RSP.decodeDelimited = function decodeDelimited(reader) {
+        RoomListRsp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_ROOM_LIST_RSP message.
+         * Verifies a RoomListRsp message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_ROOM_LIST_RSP.verify = function verify(message) {
+        RoomListRsp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.roomList != null && message.hasOwnProperty("roomList")) {
-                if (!Array.isArray(message.roomList))
-                    return "roomList: array expected";
-                for (var i = 0; i < message.roomList.length; ++i) {
-                    var error = $root.PROTOCOL_COMMON.RoomInfo.verify(message.roomList[i]);
+            if (message.RoomList != null && message.hasOwnProperty("RoomList")) {
+                if (!Array.isArray(message.RoomList))
+                    return "RoomList: array expected";
+                for (var i = 0; i < message.RoomList.length; ++i) {
+                    var error = $root.PROTOCOLCOMMON.RoomInfo.verify(message.RoomList[i]);
                     if (error)
-                        return "roomList." + error;
+                        return "RoomList." + error;
                 }
             }
             return null;
         };
 
         /**
-         * Creates a CMD_ROOM_LIST_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a RoomListRsp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_ROOM_LIST_RSP} CMD_ROOM_LIST_RSP
+         * @returns {PROTOCOLROOM.RoomListRsp} RoomListRsp
          */
-        CMD_ROOM_LIST_RSP.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_ROOM_LIST_RSP)
+        RoomListRsp.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.RoomListRsp)
                 return object;
-            var message = new $root.PROTOCOL_ROOM.CMD_ROOM_LIST_RSP();
-            if (object.roomList) {
-                if (!Array.isArray(object.roomList))
-                    throw TypeError(".PROTOCOL_ROOM.CMD_ROOM_LIST_RSP.roomList: array expected");
-                message.roomList = [];
-                for (var i = 0; i < object.roomList.length; ++i) {
-                    if (typeof object.roomList[i] !== "object")
-                        throw TypeError(".PROTOCOL_ROOM.CMD_ROOM_LIST_RSP.roomList: object expected");
-                    message.roomList[i] = $root.PROTOCOL_COMMON.RoomInfo.fromObject(object.roomList[i]);
+            var message = new $root.PROTOCOLROOM.RoomListRsp();
+            if (object.RoomList) {
+                if (!Array.isArray(object.RoomList))
+                    throw TypeError(".PROTOCOLROOM.RoomListRsp.RoomList: array expected");
+                message.RoomList = [];
+                for (var i = 0; i < object.RoomList.length; ++i) {
+                    if (typeof object.RoomList[i] !== "object")
+                        throw TypeError(".PROTOCOLROOM.RoomListRsp.RoomList: object expected");
+                    message.RoomList[i] = $root.PROTOCOLCOMMON.RoomInfo.fromObject(object.RoomList[i]);
                 }
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_ROOM_LIST_RSP message. Also converts values to other types if specified.
+         * Creates a plain object from a RoomListRsp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @static
-         * @param {PROTOCOL_ROOM.CMD_ROOM_LIST_RSP} message CMD_ROOM_LIST_RSP
+         * @param {PROTOCOLROOM.RoomListRsp} message RoomListRsp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_ROOM_LIST_RSP.toObject = function toObject(message, options) {
+        RoomListRsp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.arrays || options.defaults)
-                object.roomList = [];
-            if (message.roomList && message.roomList.length) {
-                object.roomList = [];
-                for (var j = 0; j < message.roomList.length; ++j)
-                    object.roomList[j] = $root.PROTOCOL_COMMON.RoomInfo.toObject(message.roomList[j], options);
+                object.RoomList = [];
+            if (message.RoomList && message.RoomList.length) {
+                object.RoomList = [];
+                for (var j = 0; j < message.RoomList.length; ++j)
+                    object.RoomList[j] = $root.PROTOCOLCOMMON.RoomInfo.toObject(message.RoomList[j], options);
             }
             return object;
         };
 
         /**
-         * Converts this CMD_ROOM_LIST_RSP to JSON.
+         * Converts this RoomListRsp to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_ROOM_LIST_RSP
+         * @memberof PROTOCOLROOM.RoomListRsp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_ROOM_LIST_RSP.prototype.toJSON = function toJSON() {
+        RoomListRsp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_ROOM_LIST_RSP;
+        return RoomListRsp;
     })();
 
-    PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ = (function() {
+    PROTOCOLROOM.CreateRoomReq = (function() {
 
         /**
-         * Properties of a CMD_CREATE_ROOM_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_CREATE_ROOM_REQ
-         * @property {string|null} [roomName] CMD_CREATE_ROOM_REQ roomName
+         * Properties of a CreateRoomReq.
+         * @memberof PROTOCOLROOM
+         * @interface ICreateRoomReq
+         * @property {string|null} [RoomName] CreateRoomReq RoomName
          */
 
         /**
-         * Constructs a new CMD_CREATE_ROOM_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_CREATE_ROOM_REQ.
-         * @implements ICMD_CREATE_ROOM_REQ
+         * Constructs a new CreateRoomReq.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a CreateRoomReq.
+         * @implements ICreateRoomReq
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ=} [properties] Properties to set
+         * @param {PROTOCOLROOM.ICreateRoomReq=} [properties] Properties to set
          */
-        function CMD_CREATE_ROOM_REQ(properties) {
+        function CreateRoomReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -411,89 +411,75 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * CMD_CREATE_ROOM_REQ roomName.
-         * @member {string|null|undefined} roomName
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * CreateRoomReq RoomName.
+         * @member {string} RoomName
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @instance
          */
-        CMD_CREATE_ROOM_REQ.prototype.roomName = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        CreateRoomReq.prototype.RoomName = "";
 
         /**
-         * CMD_CREATE_ROOM_REQ _roomName.
-         * @member {"roomName"|undefined} _roomName
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
-         * @instance
-         */
-        Object.defineProperty(CMD_CREATE_ROOM_REQ.prototype, "_roomName", {
-            get: $util.oneOfGetter($oneOfFields = ["roomName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_CREATE_ROOM_REQ instance using the specified properties.
+         * Creates a new CreateRoomReq instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ} CMD_CREATE_ROOM_REQ instance
+         * @param {PROTOCOLROOM.ICreateRoomReq=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.CreateRoomReq} CreateRoomReq instance
          */
-        CMD_CREATE_ROOM_REQ.create = function create(properties) {
-            return new CMD_CREATE_ROOM_REQ(properties);
+        CreateRoomReq.create = function create(properties) {
+            return new CreateRoomReq(properties);
         };
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ.verify|verify} messages.
+         * Encodes the specified CreateRoomReq message. Does not implicitly {@link PROTOCOLROOM.CreateRoomReq.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ} message CMD_CREATE_ROOM_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.ICreateRoomReq} message CreateRoomReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_CREATE_ROOM_REQ.encode = function encode(message, writer) {
+        CreateRoomReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomName != null && Object.hasOwnProperty.call(message, "roomName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.roomName);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.RoomName);
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ.verify|verify} messages.
+         * Encodes the specified CreateRoomReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.CreateRoomReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ} message CMD_CREATE_ROOM_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.ICreateRoomReq} message CreateRoomReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_CREATE_ROOM_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        CreateRoomReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_CREATE_ROOM_REQ message from the specified reader or buffer.
+         * Decodes a CreateRoomReq message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ} CMD_CREATE_ROOM_REQ
+         * @returns {PROTOCOLROOM.CreateRoomReq} CreateRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_CREATE_ROOM_REQ.decode = function decode(reader, length) {
+        CreateRoomReq.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.CreateRoomReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.roomName = reader.string();
+                    message.RoomName = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -504,112 +490,108 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_CREATE_ROOM_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a CreateRoomReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ} CMD_CREATE_ROOM_REQ
+         * @returns {PROTOCOLROOM.CreateRoomReq} CreateRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_CREATE_ROOM_REQ.decodeDelimited = function decodeDelimited(reader) {
+        CreateRoomReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_CREATE_ROOM_REQ message.
+         * Verifies a CreateRoomReq message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_CREATE_ROOM_REQ.verify = function verify(message) {
+        CreateRoomReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                properties._roomName = 1;
-                if (!$util.isString(message.roomName))
-                    return "roomName: string expected";
-            }
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                if (!$util.isString(message.RoomName))
+                    return "RoomName: string expected";
             return null;
         };
 
         /**
-         * Creates a CMD_CREATE_ROOM_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a CreateRoomReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ} CMD_CREATE_ROOM_REQ
+         * @returns {PROTOCOLROOM.CreateRoomReq} CreateRoomReq
          */
-        CMD_CREATE_ROOM_REQ.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ)
+        CreateRoomReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.CreateRoomReq)
                 return object;
-            var message = new $root.PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ();
-            if (object.roomName != null)
-                message.roomName = String(object.roomName);
+            var message = new $root.PROTOCOLROOM.CreateRoomReq();
+            if (object.RoomName != null)
+                message.RoomName = String(object.RoomName);
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_CREATE_ROOM_REQ message. Also converts values to other types if specified.
+         * Creates a plain object from a CreateRoomReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ} message CMD_CREATE_ROOM_REQ
+         * @param {PROTOCOLROOM.CreateRoomReq} message CreateRoomReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_CREATE_ROOM_REQ.toObject = function toObject(message, options) {
+        CreateRoomReq.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                object.roomName = message.roomName;
-                if (options.oneofs)
-                    object._roomName = "roomName";
-            }
+            if (options.defaults)
+                object.RoomName = "";
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                object.RoomName = message.RoomName;
             return object;
         };
 
         /**
-         * Converts this CMD_CREATE_ROOM_REQ to JSON.
+         * Converts this CreateRoomReq to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ
+         * @memberof PROTOCOLROOM.CreateRoomReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_CREATE_ROOM_REQ.prototype.toJSON = function toJSON() {
+        CreateRoomReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_CREATE_ROOM_REQ;
+        return CreateRoomReq;
     })();
 
-    PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP = (function() {
+    PROTOCOLROOM.CreateRoomRsp = (function() {
 
         /**
-         * Properties of a CMD_CREATE_ROOM_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_CREATE_ROOM_RSP
-         * @property {number|null} [playerSeat] CMD_CREATE_ROOM_RSP playerSeat
-         * @property {PROTOCOL_COMMON.IRoomInfo|null} [roomInfo] CMD_CREATE_ROOM_RSP roomInfo
+         * Properties of a CreateRoomRsp.
+         * @memberof PROTOCOLROOM
+         * @interface ICreateRoomRsp
+         * @property {number|null} [PlayerSeat] CreateRoomRsp PlayerSeat
+         * @property {PROTOCOLCOMMON.IRoomInfo|null} [RoomInfo] CreateRoomRsp RoomInfo
          */
 
         /**
-         * Constructs a new CMD_CREATE_ROOM_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_CREATE_ROOM_RSP.
-         * @implements ICMD_CREATE_ROOM_RSP
+         * Constructs a new CreateRoomRsp.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a CreateRoomRsp.
+         * @implements ICreateRoomRsp
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP=} [properties] Properties to set
+         * @param {PROTOCOLROOM.ICreateRoomRsp=} [properties] Properties to set
          */
-        function CMD_CREATE_ROOM_RSP(properties) {
+        function CreateRoomRsp(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -617,113 +599,88 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * CMD_CREATE_ROOM_RSP playerSeat.
-         * @member {number|null|undefined} playerSeat
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * CreateRoomRsp PlayerSeat.
+         * @member {number} PlayerSeat
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @instance
          */
-        CMD_CREATE_ROOM_RSP.prototype.playerSeat = null;
+        CreateRoomRsp.prototype.PlayerSeat = 0;
 
         /**
-         * CMD_CREATE_ROOM_RSP roomInfo.
-         * @member {PROTOCOL_COMMON.IRoomInfo|null|undefined} roomInfo
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * CreateRoomRsp RoomInfo.
+         * @member {PROTOCOLCOMMON.IRoomInfo|null|undefined} RoomInfo
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @instance
          */
-        CMD_CREATE_ROOM_RSP.prototype.roomInfo = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        CreateRoomRsp.prototype.RoomInfo = null;
 
         /**
-         * CMD_CREATE_ROOM_RSP _playerSeat.
-         * @member {"playerSeat"|undefined} _playerSeat
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_CREATE_ROOM_RSP.prototype, "_playerSeat", {
-            get: $util.oneOfGetter($oneOfFields = ["playerSeat"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CMD_CREATE_ROOM_RSP _roomInfo.
-         * @member {"roomInfo"|undefined} _roomInfo
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_CREATE_ROOM_RSP.prototype, "_roomInfo", {
-            get: $util.oneOfGetter($oneOfFields = ["roomInfo"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_CREATE_ROOM_RSP instance using the specified properties.
+         * Creates a new CreateRoomRsp instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP} CMD_CREATE_ROOM_RSP instance
+         * @param {PROTOCOLROOM.ICreateRoomRsp=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.CreateRoomRsp} CreateRoomRsp instance
          */
-        CMD_CREATE_ROOM_RSP.create = function create(properties) {
-            return new CMD_CREATE_ROOM_RSP(properties);
+        CreateRoomRsp.create = function create(properties) {
+            return new CreateRoomRsp(properties);
         };
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP.verify|verify} messages.
+         * Encodes the specified CreateRoomRsp message. Does not implicitly {@link PROTOCOLROOM.CreateRoomRsp.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP} message CMD_CREATE_ROOM_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.ICreateRoomRsp} message CreateRoomRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_CREATE_ROOM_RSP.encode = function encode(message, writer) {
+        CreateRoomRsp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.playerSeat != null && Object.hasOwnProperty.call(message, "playerSeat"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.playerSeat);
-            if (message.roomInfo != null && Object.hasOwnProperty.call(message, "roomInfo"))
-                $root.PROTOCOL_COMMON.RoomInfo.encode(message.roomInfo, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.PlayerSeat != null && message.hasOwnProperty("PlayerSeat"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.PlayerSeat);
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                $root.PROTOCOLCOMMON.RoomInfo.encode(message.RoomInfo, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP.verify|verify} messages.
+         * Encodes the specified CreateRoomRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.CreateRoomRsp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP} message CMD_CREATE_ROOM_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.ICreateRoomRsp} message CreateRoomRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_CREATE_ROOM_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        CreateRoomRsp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_CREATE_ROOM_RSP message from the specified reader or buffer.
+         * Decodes a CreateRoomRsp message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP} CMD_CREATE_ROOM_RSP
+         * @returns {PROTOCOLROOM.CreateRoomRsp} CreateRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_CREATE_ROOM_RSP.decode = function decode(reader, length) {
+        CreateRoomRsp.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.CreateRoomRsp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.playerSeat = reader.int32();
+                    message.PlayerSeat = reader.int32();
                     break;
                 case 2:
-                    message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.decode(reader, reader.uint32());
+                    message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -734,128 +691,120 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_CREATE_ROOM_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a CreateRoomRsp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP} CMD_CREATE_ROOM_RSP
+         * @returns {PROTOCOLROOM.CreateRoomRsp} CreateRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_CREATE_ROOM_RSP.decodeDelimited = function decodeDelimited(reader) {
+        CreateRoomRsp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_CREATE_ROOM_RSP message.
+         * Verifies a CreateRoomRsp message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_CREATE_ROOM_RSP.verify = function verify(message) {
+        CreateRoomRsp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.playerSeat != null && message.hasOwnProperty("playerSeat")) {
-                properties._playerSeat = 1;
-                if (!$util.isInteger(message.playerSeat))
-                    return "playerSeat: integer expected";
-            }
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                properties._roomInfo = 1;
-                {
-                    var error = $root.PROTOCOL_COMMON.RoomInfo.verify(message.roomInfo);
-                    if (error)
-                        return "roomInfo." + error;
-                }
+            if (message.PlayerSeat != null && message.hasOwnProperty("PlayerSeat"))
+                if (!$util.isInteger(message.PlayerSeat))
+                    return "PlayerSeat: integer expected";
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo")) {
+                var error = $root.PROTOCOLCOMMON.RoomInfo.verify(message.RoomInfo);
+                if (error)
+                    return "RoomInfo." + error;
             }
             return null;
         };
 
         /**
-         * Creates a CMD_CREATE_ROOM_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a CreateRoomRsp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP} CMD_CREATE_ROOM_RSP
+         * @returns {PROTOCOLROOM.CreateRoomRsp} CreateRoomRsp
          */
-        CMD_CREATE_ROOM_RSP.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP)
+        CreateRoomRsp.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.CreateRoomRsp)
                 return object;
-            var message = new $root.PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP();
-            if (object.playerSeat != null)
-                message.playerSeat = object.playerSeat | 0;
-            if (object.roomInfo != null) {
-                if (typeof object.roomInfo !== "object")
-                    throw TypeError(".PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP.roomInfo: object expected");
-                message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.fromObject(object.roomInfo);
+            var message = new $root.PROTOCOLROOM.CreateRoomRsp();
+            if (object.PlayerSeat != null)
+                message.PlayerSeat = object.PlayerSeat | 0;
+            if (object.RoomInfo != null) {
+                if (typeof object.RoomInfo !== "object")
+                    throw TypeError(".PROTOCOLROOM.CreateRoomRsp.RoomInfo: object expected");
+                message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.fromObject(object.RoomInfo);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_CREATE_ROOM_RSP message. Also converts values to other types if specified.
+         * Creates a plain object from a CreateRoomRsp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP} message CMD_CREATE_ROOM_RSP
+         * @param {PROTOCOLROOM.CreateRoomRsp} message CreateRoomRsp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_CREATE_ROOM_RSP.toObject = function toObject(message, options) {
+        CreateRoomRsp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.playerSeat != null && message.hasOwnProperty("playerSeat")) {
-                object.playerSeat = message.playerSeat;
-                if (options.oneofs)
-                    object._playerSeat = "playerSeat";
+            if (options.defaults) {
+                object.PlayerSeat = 0;
+                object.RoomInfo = null;
             }
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                object.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.toObject(message.roomInfo, options);
-                if (options.oneofs)
-                    object._roomInfo = "roomInfo";
-            }
+            if (message.PlayerSeat != null && message.hasOwnProperty("PlayerSeat"))
+                object.PlayerSeat = message.PlayerSeat;
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                object.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.toObject(message.RoomInfo, options);
             return object;
         };
 
         /**
-         * Converts this CMD_CREATE_ROOM_RSP to JSON.
+         * Converts this CreateRoomRsp to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP
+         * @memberof PROTOCOLROOM.CreateRoomRsp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_CREATE_ROOM_RSP.prototype.toJSON = function toJSON() {
+        CreateRoomRsp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_CREATE_ROOM_RSP;
+        return CreateRoomRsp;
     })();
 
-    PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ = (function() {
+    PROTOCOLROOM.LeaveRoomReq = (function() {
 
         /**
-         * Properties of a CMD_LEAVE_ROOM_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_LEAVE_ROOM_REQ
+         * Properties of a LeaveRoomReq.
+         * @memberof PROTOCOLROOM
+         * @interface ILeaveRoomReq
          */
 
         /**
-         * Constructs a new CMD_LEAVE_ROOM_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_LEAVE_ROOM_REQ.
-         * @implements ICMD_LEAVE_ROOM_REQ
+         * Constructs a new LeaveRoomReq.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a LeaveRoomReq.
+         * @implements ILeaveRoomReq
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ=} [properties] Properties to set
+         * @param {PROTOCOLROOM.ILeaveRoomReq=} [properties] Properties to set
          */
-        function CMD_LEAVE_ROOM_REQ(properties) {
+        function LeaveRoomReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -863,60 +812,60 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * Creates a new CMD_LEAVE_ROOM_REQ instance using the specified properties.
+         * Creates a new LeaveRoomReq instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ} CMD_LEAVE_ROOM_REQ instance
+         * @param {PROTOCOLROOM.ILeaveRoomReq=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.LeaveRoomReq} LeaveRoomReq instance
          */
-        CMD_LEAVE_ROOM_REQ.create = function create(properties) {
-            return new CMD_LEAVE_ROOM_REQ(properties);
+        LeaveRoomReq.create = function create(properties) {
+            return new LeaveRoomReq(properties);
         };
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ.verify|verify} messages.
+         * Encodes the specified LeaveRoomReq message. Does not implicitly {@link PROTOCOLROOM.LeaveRoomReq.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ} message CMD_LEAVE_ROOM_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.ILeaveRoomReq} message LeaveRoomReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_LEAVE_ROOM_REQ.encode = function encode(message, writer) {
+        LeaveRoomReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ.verify|verify} messages.
+         * Encodes the specified LeaveRoomReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.LeaveRoomReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ} message CMD_LEAVE_ROOM_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.ILeaveRoomReq} message LeaveRoomReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_LEAVE_ROOM_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        LeaveRoomReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_REQ message from the specified reader or buffer.
+         * Decodes a LeaveRoomReq message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ} CMD_LEAVE_ROOM_REQ
+         * @returns {PROTOCOLROOM.LeaveRoomReq} LeaveRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_LEAVE_ROOM_REQ.decode = function decode(reader, length) {
+        LeaveRoomReq.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.LeaveRoomReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -929,95 +878,95 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a LeaveRoomReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ} CMD_LEAVE_ROOM_REQ
+         * @returns {PROTOCOLROOM.LeaveRoomReq} LeaveRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_LEAVE_ROOM_REQ.decodeDelimited = function decodeDelimited(reader) {
+        LeaveRoomReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_LEAVE_ROOM_REQ message.
+         * Verifies a LeaveRoomReq message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_LEAVE_ROOM_REQ.verify = function verify(message) {
+        LeaveRoomReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             return null;
         };
 
         /**
-         * Creates a CMD_LEAVE_ROOM_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a LeaveRoomReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ} CMD_LEAVE_ROOM_REQ
+         * @returns {PROTOCOLROOM.LeaveRoomReq} LeaveRoomReq
          */
-        CMD_LEAVE_ROOM_REQ.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ)
+        LeaveRoomReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.LeaveRoomReq)
                 return object;
-            return new $root.PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ();
+            return new $root.PROTOCOLROOM.LeaveRoomReq();
         };
 
         /**
-         * Creates a plain object from a CMD_LEAVE_ROOM_REQ message. Also converts values to other types if specified.
+         * Creates a plain object from a LeaveRoomReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ} message CMD_LEAVE_ROOM_REQ
+         * @param {PROTOCOLROOM.LeaveRoomReq} message LeaveRoomReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_LEAVE_ROOM_REQ.toObject = function toObject() {
+        LeaveRoomReq.toObject = function toObject() {
             return {};
         };
 
         /**
-         * Converts this CMD_LEAVE_ROOM_REQ to JSON.
+         * Converts this LeaveRoomReq to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ
+         * @memberof PROTOCOLROOM.LeaveRoomReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_LEAVE_ROOM_REQ.prototype.toJSON = function toJSON() {
+        LeaveRoomReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_LEAVE_ROOM_REQ;
+        return LeaveRoomReq;
     })();
 
-    PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP = (function() {
+    PROTOCOLROOM.LeaveRoomRsp = (function() {
 
         /**
-         * Properties of a CMD_LEAVE_ROOM_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_LEAVE_ROOM_RSP
-         * @property {Array.<PROTOCOL_COMMON.IRoomInfo>|null} [roomList] CMD_LEAVE_ROOM_RSP roomList
+         * Properties of a LeaveRoomRsp.
+         * @memberof PROTOCOLROOM
+         * @interface ILeaveRoomRsp
+         * @property {Array.<PROTOCOLCOMMON.IRoomInfo>|null} [RoomList] LeaveRoomRsp RoomList
          */
 
         /**
-         * Constructs a new CMD_LEAVE_ROOM_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_LEAVE_ROOM_RSP.
-         * @implements ICMD_LEAVE_ROOM_RSP
+         * Constructs a new LeaveRoomRsp.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a LeaveRoomRsp.
+         * @implements ILeaveRoomRsp
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP=} [properties] Properties to set
+         * @param {PROTOCOLROOM.ILeaveRoomRsp=} [properties] Properties to set
          */
-        function CMD_LEAVE_ROOM_RSP(properties) {
-            this.roomList = [];
+        function LeaveRoomRsp(properties) {
+            this.RoomList = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1025,78 +974,78 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * CMD_LEAVE_ROOM_RSP roomList.
-         * @member {Array.<PROTOCOL_COMMON.IRoomInfo>} roomList
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * LeaveRoomRsp RoomList.
+         * @member {Array.<PROTOCOLCOMMON.IRoomInfo>} RoomList
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @instance
          */
-        CMD_LEAVE_ROOM_RSP.prototype.roomList = $util.emptyArray;
+        LeaveRoomRsp.prototype.RoomList = $util.emptyArray;
 
         /**
-         * Creates a new CMD_LEAVE_ROOM_RSP instance using the specified properties.
+         * Creates a new LeaveRoomRsp instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP} CMD_LEAVE_ROOM_RSP instance
+         * @param {PROTOCOLROOM.ILeaveRoomRsp=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.LeaveRoomRsp} LeaveRoomRsp instance
          */
-        CMD_LEAVE_ROOM_RSP.create = function create(properties) {
-            return new CMD_LEAVE_ROOM_RSP(properties);
+        LeaveRoomRsp.create = function create(properties) {
+            return new LeaveRoomRsp(properties);
         };
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP.verify|verify} messages.
+         * Encodes the specified LeaveRoomRsp message. Does not implicitly {@link PROTOCOLROOM.LeaveRoomRsp.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP} message CMD_LEAVE_ROOM_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.ILeaveRoomRsp} message LeaveRoomRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_LEAVE_ROOM_RSP.encode = function encode(message, writer) {
+        LeaveRoomRsp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomList != null && message.roomList.length)
-                for (var i = 0; i < message.roomList.length; ++i)
-                    $root.PROTOCOL_COMMON.RoomInfo.encode(message.roomList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.RoomList != null && message.RoomList.length)
+                for (var i = 0; i < message.RoomList.length; ++i)
+                    $root.PROTOCOLCOMMON.RoomInfo.encode(message.RoomList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP.verify|verify} messages.
+         * Encodes the specified LeaveRoomRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.LeaveRoomRsp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP} message CMD_LEAVE_ROOM_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.ILeaveRoomRsp} message LeaveRoomRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_LEAVE_ROOM_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        LeaveRoomRsp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_RSP message from the specified reader or buffer.
+         * Decodes a LeaveRoomRsp message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP} CMD_LEAVE_ROOM_RSP
+         * @returns {PROTOCOLROOM.LeaveRoomRsp} LeaveRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_LEAVE_ROOM_RSP.decode = function decode(reader, length) {
+        LeaveRoomRsp.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.LeaveRoomRsp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    if (!(message.roomList && message.roomList.length))
-                        message.roomList = [];
-                    message.roomList.push($root.PROTOCOL_COMMON.RoomInfo.decode(reader, reader.uint32()));
+                    if (!(message.RoomList && message.RoomList.length))
+                        message.RoomList = [];
+                    message.RoomList.push($root.PROTOCOLCOMMON.RoomInfo.decode(reader, reader.uint32()));
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1107,124 +1056,124 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a LeaveRoomRsp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP} CMD_LEAVE_ROOM_RSP
+         * @returns {PROTOCOLROOM.LeaveRoomRsp} LeaveRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_LEAVE_ROOM_RSP.decodeDelimited = function decodeDelimited(reader) {
+        LeaveRoomRsp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_LEAVE_ROOM_RSP message.
+         * Verifies a LeaveRoomRsp message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_LEAVE_ROOM_RSP.verify = function verify(message) {
+        LeaveRoomRsp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.roomList != null && message.hasOwnProperty("roomList")) {
-                if (!Array.isArray(message.roomList))
-                    return "roomList: array expected";
-                for (var i = 0; i < message.roomList.length; ++i) {
-                    var error = $root.PROTOCOL_COMMON.RoomInfo.verify(message.roomList[i]);
+            if (message.RoomList != null && message.hasOwnProperty("RoomList")) {
+                if (!Array.isArray(message.RoomList))
+                    return "RoomList: array expected";
+                for (var i = 0; i < message.RoomList.length; ++i) {
+                    var error = $root.PROTOCOLCOMMON.RoomInfo.verify(message.RoomList[i]);
                     if (error)
-                        return "roomList." + error;
+                        return "RoomList." + error;
                 }
             }
             return null;
         };
 
         /**
-         * Creates a CMD_LEAVE_ROOM_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a LeaveRoomRsp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP} CMD_LEAVE_ROOM_RSP
+         * @returns {PROTOCOLROOM.LeaveRoomRsp} LeaveRoomRsp
          */
-        CMD_LEAVE_ROOM_RSP.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP)
+        LeaveRoomRsp.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.LeaveRoomRsp)
                 return object;
-            var message = new $root.PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP();
-            if (object.roomList) {
-                if (!Array.isArray(object.roomList))
-                    throw TypeError(".PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP.roomList: array expected");
-                message.roomList = [];
-                for (var i = 0; i < object.roomList.length; ++i) {
-                    if (typeof object.roomList[i] !== "object")
-                        throw TypeError(".PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP.roomList: object expected");
-                    message.roomList[i] = $root.PROTOCOL_COMMON.RoomInfo.fromObject(object.roomList[i]);
+            var message = new $root.PROTOCOLROOM.LeaveRoomRsp();
+            if (object.RoomList) {
+                if (!Array.isArray(object.RoomList))
+                    throw TypeError(".PROTOCOLROOM.LeaveRoomRsp.RoomList: array expected");
+                message.RoomList = [];
+                for (var i = 0; i < object.RoomList.length; ++i) {
+                    if (typeof object.RoomList[i] !== "object")
+                        throw TypeError(".PROTOCOLROOM.LeaveRoomRsp.RoomList: object expected");
+                    message.RoomList[i] = $root.PROTOCOLCOMMON.RoomInfo.fromObject(object.RoomList[i]);
                 }
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_LEAVE_ROOM_RSP message. Also converts values to other types if specified.
+         * Creates a plain object from a LeaveRoomRsp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP} message CMD_LEAVE_ROOM_RSP
+         * @param {PROTOCOLROOM.LeaveRoomRsp} message LeaveRoomRsp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_LEAVE_ROOM_RSP.toObject = function toObject(message, options) {
+        LeaveRoomRsp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.arrays || options.defaults)
-                object.roomList = [];
-            if (message.roomList && message.roomList.length) {
-                object.roomList = [];
-                for (var j = 0; j < message.roomList.length; ++j)
-                    object.roomList[j] = $root.PROTOCOL_COMMON.RoomInfo.toObject(message.roomList[j], options);
+                object.RoomList = [];
+            if (message.RoomList && message.RoomList.length) {
+                object.RoomList = [];
+                for (var j = 0; j < message.RoomList.length; ++j)
+                    object.RoomList[j] = $root.PROTOCOLCOMMON.RoomInfo.toObject(message.RoomList[j], options);
             }
             return object;
         };
 
         /**
-         * Converts this CMD_LEAVE_ROOM_RSP to JSON.
+         * Converts this LeaveRoomRsp to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP
+         * @memberof PROTOCOLROOM.LeaveRoomRsp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_LEAVE_ROOM_RSP.prototype.toJSON = function toJSON() {
+        LeaveRoomRsp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_LEAVE_ROOM_RSP;
+        return LeaveRoomRsp;
     })();
 
-    PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE = (function() {
+    PROTOCOLROOM.UpdateRoomInfoNotice = (function() {
 
         /**
-         * Properties of a CMD_UPDATE_ROOM_INFO_NOTICE.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_UPDATE_ROOM_INFO_NOTICE
-         * @property {PROTOCOL_COMMON.IRoomInfo|null} [roomInfo] CMD_UPDATE_ROOM_INFO_NOTICE roomInfo
+         * Properties of an UpdateRoomInfoNotice.
+         * @memberof PROTOCOLROOM
+         * @interface IUpdateRoomInfoNotice
+         * @property {PROTOCOLCOMMON.IRoomInfo|null} [RoomInfo] UpdateRoomInfoNotice RoomInfo
          */
 
         /**
-         * Constructs a new CMD_UPDATE_ROOM_INFO_NOTICE.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_UPDATE_ROOM_INFO_NOTICE.
-         * @implements ICMD_UPDATE_ROOM_INFO_NOTICE
+         * Constructs a new UpdateRoomInfoNotice.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents an UpdateRoomInfoNotice.
+         * @implements IUpdateRoomInfoNotice
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE=} [properties] Properties to set
+         * @param {PROTOCOLROOM.IUpdateRoomInfoNotice=} [properties] Properties to set
          */
-        function CMD_UPDATE_ROOM_INFO_NOTICE(properties) {
+        function UpdateRoomInfoNotice(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1232,89 +1181,75 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * CMD_UPDATE_ROOM_INFO_NOTICE roomInfo.
-         * @member {PROTOCOL_COMMON.IRoomInfo|null|undefined} roomInfo
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * UpdateRoomInfoNotice RoomInfo.
+         * @member {PROTOCOLCOMMON.IRoomInfo|null|undefined} RoomInfo
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @instance
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.prototype.roomInfo = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        UpdateRoomInfoNotice.prototype.RoomInfo = null;
 
         /**
-         * CMD_UPDATE_ROOM_INFO_NOTICE _roomInfo.
-         * @member {"roomInfo"|undefined} _roomInfo
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
-         * @instance
-         */
-        Object.defineProperty(CMD_UPDATE_ROOM_INFO_NOTICE.prototype, "_roomInfo", {
-            get: $util.oneOfGetter($oneOfFields = ["roomInfo"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_UPDATE_ROOM_INFO_NOTICE instance using the specified properties.
+         * Creates a new UpdateRoomInfoNotice instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE} CMD_UPDATE_ROOM_INFO_NOTICE instance
+         * @param {PROTOCOLROOM.IUpdateRoomInfoNotice=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.UpdateRoomInfoNotice} UpdateRoomInfoNotice instance
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.create = function create(properties) {
-            return new CMD_UPDATE_ROOM_INFO_NOTICE(properties);
+        UpdateRoomInfoNotice.create = function create(properties) {
+            return new UpdateRoomInfoNotice(properties);
         };
 
         /**
-         * Encodes the specified CMD_UPDATE_ROOM_INFO_NOTICE message. Does not implicitly {@link PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE.verify|verify} messages.
+         * Encodes the specified UpdateRoomInfoNotice message. Does not implicitly {@link PROTOCOLROOM.UpdateRoomInfoNotice.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE} message CMD_UPDATE_ROOM_INFO_NOTICE message or plain object to encode
+         * @param {PROTOCOLROOM.IUpdateRoomInfoNotice} message UpdateRoomInfoNotice message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.encode = function encode(message, writer) {
+        UpdateRoomInfoNotice.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomInfo != null && Object.hasOwnProperty.call(message, "roomInfo"))
-                $root.PROTOCOL_COMMON.RoomInfo.encode(message.roomInfo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                $root.PROTOCOLCOMMON.RoomInfo.encode(message.RoomInfo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_UPDATE_ROOM_INFO_NOTICE message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE.verify|verify} messages.
+         * Encodes the specified UpdateRoomInfoNotice message, length delimited. Does not implicitly {@link PROTOCOLROOM.UpdateRoomInfoNotice.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE} message CMD_UPDATE_ROOM_INFO_NOTICE message or plain object to encode
+         * @param {PROTOCOLROOM.IUpdateRoomInfoNotice} message UpdateRoomInfoNotice message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.encodeDelimited = function encodeDelimited(message, writer) {
+        UpdateRoomInfoNotice.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_UPDATE_ROOM_INFO_NOTICE message from the specified reader or buffer.
+         * Decodes an UpdateRoomInfoNotice message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE} CMD_UPDATE_ROOM_INFO_NOTICE
+         * @returns {PROTOCOLROOM.UpdateRoomInfoNotice} UpdateRoomInfoNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.decode = function decode(reader, length) {
+        UpdateRoomInfoNotice.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.UpdateRoomInfoNotice();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.decode(reader, reader.uint32());
+                    message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1325,117 +1260,112 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_UPDATE_ROOM_INFO_NOTICE message from the specified reader or buffer, length delimited.
+         * Decodes an UpdateRoomInfoNotice message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE} CMD_UPDATE_ROOM_INFO_NOTICE
+         * @returns {PROTOCOLROOM.UpdateRoomInfoNotice} UpdateRoomInfoNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.decodeDelimited = function decodeDelimited(reader) {
+        UpdateRoomInfoNotice.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_UPDATE_ROOM_INFO_NOTICE message.
+         * Verifies an UpdateRoomInfoNotice message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.verify = function verify(message) {
+        UpdateRoomInfoNotice.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                properties._roomInfo = 1;
-                {
-                    var error = $root.PROTOCOL_COMMON.RoomInfo.verify(message.roomInfo);
-                    if (error)
-                        return "roomInfo." + error;
-                }
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo")) {
+                var error = $root.PROTOCOLCOMMON.RoomInfo.verify(message.RoomInfo);
+                if (error)
+                    return "RoomInfo." + error;
             }
             return null;
         };
 
         /**
-         * Creates a CMD_UPDATE_ROOM_INFO_NOTICE message from a plain object. Also converts values to their respective internal types.
+         * Creates an UpdateRoomInfoNotice message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE} CMD_UPDATE_ROOM_INFO_NOTICE
+         * @returns {PROTOCOLROOM.UpdateRoomInfoNotice} UpdateRoomInfoNotice
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE)
+        UpdateRoomInfoNotice.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.UpdateRoomInfoNotice)
                 return object;
-            var message = new $root.PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE();
-            if (object.roomInfo != null) {
-                if (typeof object.roomInfo !== "object")
-                    throw TypeError(".PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE.roomInfo: object expected");
-                message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.fromObject(object.roomInfo);
+            var message = new $root.PROTOCOLROOM.UpdateRoomInfoNotice();
+            if (object.RoomInfo != null) {
+                if (typeof object.RoomInfo !== "object")
+                    throw TypeError(".PROTOCOLROOM.UpdateRoomInfoNotice.RoomInfo: object expected");
+                message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.fromObject(object.RoomInfo);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_UPDATE_ROOM_INFO_NOTICE message. Also converts values to other types if specified.
+         * Creates a plain object from an UpdateRoomInfoNotice message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @static
-         * @param {PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE} message CMD_UPDATE_ROOM_INFO_NOTICE
+         * @param {PROTOCOLROOM.UpdateRoomInfoNotice} message UpdateRoomInfoNotice
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.toObject = function toObject(message, options) {
+        UpdateRoomInfoNotice.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                object.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.toObject(message.roomInfo, options);
-                if (options.oneofs)
-                    object._roomInfo = "roomInfo";
-            }
+            if (options.defaults)
+                object.RoomInfo = null;
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                object.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.toObject(message.RoomInfo, options);
             return object;
         };
 
         /**
-         * Converts this CMD_UPDATE_ROOM_INFO_NOTICE to JSON.
+         * Converts this UpdateRoomInfoNotice to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE
+         * @memberof PROTOCOLROOM.UpdateRoomInfoNotice
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_UPDATE_ROOM_INFO_NOTICE.prototype.toJSON = function toJSON() {
+        UpdateRoomInfoNotice.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_UPDATE_ROOM_INFO_NOTICE;
+        return UpdateRoomInfoNotice;
     })();
 
-    PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ = (function() {
+    PROTOCOLROOM.JoinRoomReq = (function() {
 
         /**
-         * Properties of a CMD_JOIN_ROOM_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_JOIN_ROOM_REQ
-         * @property {number|null} [roomUnquieId] CMD_JOIN_ROOM_REQ roomUnquieId
+         * Properties of a JoinRoomReq.
+         * @memberof PROTOCOLROOM
+         * @interface IJoinRoomReq
+         * @property {number|null} [RoomUnquieId] JoinRoomReq RoomUnquieId
          */
 
         /**
-         * Constructs a new CMD_JOIN_ROOM_REQ.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_JOIN_ROOM_REQ.
-         * @implements ICMD_JOIN_ROOM_REQ
+         * Constructs a new JoinRoomReq.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a JoinRoomReq.
+         * @implements IJoinRoomReq
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ=} [properties] Properties to set
+         * @param {PROTOCOLROOM.IJoinRoomReq=} [properties] Properties to set
          */
-        function CMD_JOIN_ROOM_REQ(properties) {
+        function JoinRoomReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1443,89 +1373,75 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * CMD_JOIN_ROOM_REQ roomUnquieId.
-         * @member {number|null|undefined} roomUnquieId
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * JoinRoomReq RoomUnquieId.
+         * @member {number} RoomUnquieId
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @instance
          */
-        CMD_JOIN_ROOM_REQ.prototype.roomUnquieId = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        JoinRoomReq.prototype.RoomUnquieId = 0;
 
         /**
-         * CMD_JOIN_ROOM_REQ _roomUnquieId.
-         * @member {"roomUnquieId"|undefined} _roomUnquieId
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
-         * @instance
-         */
-        Object.defineProperty(CMD_JOIN_ROOM_REQ.prototype, "_roomUnquieId", {
-            get: $util.oneOfGetter($oneOfFields = ["roomUnquieId"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_JOIN_ROOM_REQ instance using the specified properties.
+         * Creates a new JoinRoomReq instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ} CMD_JOIN_ROOM_REQ instance
+         * @param {PROTOCOLROOM.IJoinRoomReq=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.JoinRoomReq} JoinRoomReq instance
          */
-        CMD_JOIN_ROOM_REQ.create = function create(properties) {
-            return new CMD_JOIN_ROOM_REQ(properties);
+        JoinRoomReq.create = function create(properties) {
+            return new JoinRoomReq(properties);
         };
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ.verify|verify} messages.
+         * Encodes the specified JoinRoomReq message. Does not implicitly {@link PROTOCOLROOM.JoinRoomReq.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ} message CMD_JOIN_ROOM_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.IJoinRoomReq} message JoinRoomReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_JOIN_ROOM_REQ.encode = function encode(message, writer) {
+        JoinRoomReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomUnquieId != null && Object.hasOwnProperty.call(message, "roomUnquieId"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.roomUnquieId);
+            if (message.RoomUnquieId != null && message.hasOwnProperty("RoomUnquieId"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.RoomUnquieId);
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ.verify|verify} messages.
+         * Encodes the specified JoinRoomReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.JoinRoomReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ} message CMD_JOIN_ROOM_REQ message or plain object to encode
+         * @param {PROTOCOLROOM.IJoinRoomReq} message JoinRoomReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_JOIN_ROOM_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        JoinRoomReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_JOIN_ROOM_REQ message from the specified reader or buffer.
+         * Decodes a JoinRoomReq message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ} CMD_JOIN_ROOM_REQ
+         * @returns {PROTOCOLROOM.JoinRoomReq} JoinRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_JOIN_ROOM_REQ.decode = function decode(reader, length) {
+        JoinRoomReq.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.JoinRoomReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.roomUnquieId = reader.int32();
+                    message.RoomUnquieId = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1536,112 +1452,108 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_JOIN_ROOM_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a JoinRoomReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ} CMD_JOIN_ROOM_REQ
+         * @returns {PROTOCOLROOM.JoinRoomReq} JoinRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_JOIN_ROOM_REQ.decodeDelimited = function decodeDelimited(reader) {
+        JoinRoomReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_JOIN_ROOM_REQ message.
+         * Verifies a JoinRoomReq message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_JOIN_ROOM_REQ.verify = function verify(message) {
+        JoinRoomReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.roomUnquieId != null && message.hasOwnProperty("roomUnquieId")) {
-                properties._roomUnquieId = 1;
-                if (!$util.isInteger(message.roomUnquieId))
-                    return "roomUnquieId: integer expected";
-            }
+            if (message.RoomUnquieId != null && message.hasOwnProperty("RoomUnquieId"))
+                if (!$util.isInteger(message.RoomUnquieId))
+                    return "RoomUnquieId: integer expected";
             return null;
         };
 
         /**
-         * Creates a CMD_JOIN_ROOM_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a JoinRoomReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ} CMD_JOIN_ROOM_REQ
+         * @returns {PROTOCOLROOM.JoinRoomReq} JoinRoomReq
          */
-        CMD_JOIN_ROOM_REQ.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ)
+        JoinRoomReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.JoinRoomReq)
                 return object;
-            var message = new $root.PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ();
-            if (object.roomUnquieId != null)
-                message.roomUnquieId = object.roomUnquieId | 0;
+            var message = new $root.PROTOCOLROOM.JoinRoomReq();
+            if (object.RoomUnquieId != null)
+                message.RoomUnquieId = object.RoomUnquieId | 0;
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_JOIN_ROOM_REQ message. Also converts values to other types if specified.
+         * Creates a plain object from a JoinRoomReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @static
-         * @param {PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ} message CMD_JOIN_ROOM_REQ
+         * @param {PROTOCOLROOM.JoinRoomReq} message JoinRoomReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_JOIN_ROOM_REQ.toObject = function toObject(message, options) {
+        JoinRoomReq.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.roomUnquieId != null && message.hasOwnProperty("roomUnquieId")) {
-                object.roomUnquieId = message.roomUnquieId;
-                if (options.oneofs)
-                    object._roomUnquieId = "roomUnquieId";
-            }
+            if (options.defaults)
+                object.RoomUnquieId = 0;
+            if (message.RoomUnquieId != null && message.hasOwnProperty("RoomUnquieId"))
+                object.RoomUnquieId = message.RoomUnquieId;
             return object;
         };
 
         /**
-         * Converts this CMD_JOIN_ROOM_REQ to JSON.
+         * Converts this JoinRoomReq to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ
+         * @memberof PROTOCOLROOM.JoinRoomReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_JOIN_ROOM_REQ.prototype.toJSON = function toJSON() {
+        JoinRoomReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_JOIN_ROOM_REQ;
+        return JoinRoomReq;
     })();
 
-    PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP = (function() {
+    PROTOCOLROOM.JoinRoomRsp = (function() {
 
         /**
-         * Properties of a CMD_JOIN_ROOM_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @interface ICMD_JOIN_ROOM_RSP
-         * @property {number|null} [playerSeat] CMD_JOIN_ROOM_RSP playerSeat
-         * @property {PROTOCOL_COMMON.IRoomInfo|null} [roomInfo] CMD_JOIN_ROOM_RSP roomInfo
+         * Properties of a JoinRoomRsp.
+         * @memberof PROTOCOLROOM
+         * @interface IJoinRoomRsp
+         * @property {number|null} [PlayerSeat] JoinRoomRsp PlayerSeat
+         * @property {PROTOCOLCOMMON.IRoomInfo|null} [RoomInfo] JoinRoomRsp RoomInfo
          */
 
         /**
-         * Constructs a new CMD_JOIN_ROOM_RSP.
-         * @memberof PROTOCOL_ROOM
-         * @classdesc Represents a CMD_JOIN_ROOM_RSP.
-         * @implements ICMD_JOIN_ROOM_RSP
+         * Constructs a new JoinRoomRsp.
+         * @memberof PROTOCOLROOM
+         * @classdesc Represents a JoinRoomRsp.
+         * @implements IJoinRoomRsp
          * @constructor
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP=} [properties] Properties to set
+         * @param {PROTOCOLROOM.IJoinRoomRsp=} [properties] Properties to set
          */
-        function CMD_JOIN_ROOM_RSP(properties) {
+        function JoinRoomRsp(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1649,113 +1561,88 @@ $root.PROTOCOL_ROOM = (function() {
         }
 
         /**
-         * CMD_JOIN_ROOM_RSP playerSeat.
-         * @member {number|null|undefined} playerSeat
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * JoinRoomRsp PlayerSeat.
+         * @member {number} PlayerSeat
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @instance
          */
-        CMD_JOIN_ROOM_RSP.prototype.playerSeat = null;
+        JoinRoomRsp.prototype.PlayerSeat = 0;
 
         /**
-         * CMD_JOIN_ROOM_RSP roomInfo.
-         * @member {PROTOCOL_COMMON.IRoomInfo|null|undefined} roomInfo
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * JoinRoomRsp RoomInfo.
+         * @member {PROTOCOLCOMMON.IRoomInfo|null|undefined} RoomInfo
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @instance
          */
-        CMD_JOIN_ROOM_RSP.prototype.roomInfo = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        JoinRoomRsp.prototype.RoomInfo = null;
 
         /**
-         * CMD_JOIN_ROOM_RSP _playerSeat.
-         * @member {"playerSeat"|undefined} _playerSeat
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_JOIN_ROOM_RSP.prototype, "_playerSeat", {
-            get: $util.oneOfGetter($oneOfFields = ["playerSeat"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CMD_JOIN_ROOM_RSP _roomInfo.
-         * @member {"roomInfo"|undefined} _roomInfo
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_JOIN_ROOM_RSP.prototype, "_roomInfo", {
-            get: $util.oneOfGetter($oneOfFields = ["roomInfo"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_JOIN_ROOM_RSP instance using the specified properties.
+         * Creates a new JoinRoomRsp instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP=} [properties] Properties to set
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP} CMD_JOIN_ROOM_RSP instance
+         * @param {PROTOCOLROOM.IJoinRoomRsp=} [properties] Properties to set
+         * @returns {PROTOCOLROOM.JoinRoomRsp} JoinRoomRsp instance
          */
-        CMD_JOIN_ROOM_RSP.create = function create(properties) {
-            return new CMD_JOIN_ROOM_RSP(properties);
+        JoinRoomRsp.create = function create(properties) {
+            return new JoinRoomRsp(properties);
         };
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP.verify|verify} messages.
+         * Encodes the specified JoinRoomRsp message. Does not implicitly {@link PROTOCOLROOM.JoinRoomRsp.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP} message CMD_JOIN_ROOM_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.IJoinRoomRsp} message JoinRoomRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_JOIN_ROOM_RSP.encode = function encode(message, writer) {
+        JoinRoomRsp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.playerSeat != null && Object.hasOwnProperty.call(message, "playerSeat"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.playerSeat);
-            if (message.roomInfo != null && Object.hasOwnProperty.call(message, "roomInfo"))
-                $root.PROTOCOL_COMMON.RoomInfo.encode(message.roomInfo, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.PlayerSeat != null && message.hasOwnProperty("PlayerSeat"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.PlayerSeat);
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                $root.PROTOCOLCOMMON.RoomInfo.encode(message.RoomInfo, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP.verify|verify} messages.
+         * Encodes the specified JoinRoomRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.JoinRoomRsp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP} message CMD_JOIN_ROOM_RSP message or plain object to encode
+         * @param {PROTOCOLROOM.IJoinRoomRsp} message JoinRoomRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_JOIN_ROOM_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        JoinRoomRsp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_JOIN_ROOM_RSP message from the specified reader or buffer.
+         * Decodes a JoinRoomRsp message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP} CMD_JOIN_ROOM_RSP
+         * @returns {PROTOCOLROOM.JoinRoomRsp} JoinRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_JOIN_ROOM_RSP.decode = function decode(reader, length) {
+        JoinRoomRsp.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLROOM.JoinRoomRsp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.playerSeat = reader.int32();
+                    message.PlayerSeat = reader.int32();
                     break;
                 case 2:
-                    message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.decode(reader, reader.uint32());
+                    message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1766,140 +1653,132 @@ $root.PROTOCOL_ROOM = (function() {
         };
 
         /**
-         * Decodes a CMD_JOIN_ROOM_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a JoinRoomRsp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP} CMD_JOIN_ROOM_RSP
+         * @returns {PROTOCOLROOM.JoinRoomRsp} JoinRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_JOIN_ROOM_RSP.decodeDelimited = function decodeDelimited(reader) {
+        JoinRoomRsp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_JOIN_ROOM_RSP message.
+         * Verifies a JoinRoomRsp message.
          * @function verify
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_JOIN_ROOM_RSP.verify = function verify(message) {
+        JoinRoomRsp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.playerSeat != null && message.hasOwnProperty("playerSeat")) {
-                properties._playerSeat = 1;
-                if (!$util.isInteger(message.playerSeat))
-                    return "playerSeat: integer expected";
-            }
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                properties._roomInfo = 1;
-                {
-                    var error = $root.PROTOCOL_COMMON.RoomInfo.verify(message.roomInfo);
-                    if (error)
-                        return "roomInfo." + error;
-                }
+            if (message.PlayerSeat != null && message.hasOwnProperty("PlayerSeat"))
+                if (!$util.isInteger(message.PlayerSeat))
+                    return "PlayerSeat: integer expected";
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo")) {
+                var error = $root.PROTOCOLCOMMON.RoomInfo.verify(message.RoomInfo);
+                if (error)
+                    return "RoomInfo." + error;
             }
             return null;
         };
 
         /**
-         * Creates a CMD_JOIN_ROOM_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a JoinRoomRsp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP} CMD_JOIN_ROOM_RSP
+         * @returns {PROTOCOLROOM.JoinRoomRsp} JoinRoomRsp
          */
-        CMD_JOIN_ROOM_RSP.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP)
+        JoinRoomRsp.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLROOM.JoinRoomRsp)
                 return object;
-            var message = new $root.PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP();
-            if (object.playerSeat != null)
-                message.playerSeat = object.playerSeat | 0;
-            if (object.roomInfo != null) {
-                if (typeof object.roomInfo !== "object")
-                    throw TypeError(".PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP.roomInfo: object expected");
-                message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.fromObject(object.roomInfo);
+            var message = new $root.PROTOCOLROOM.JoinRoomRsp();
+            if (object.PlayerSeat != null)
+                message.PlayerSeat = object.PlayerSeat | 0;
+            if (object.RoomInfo != null) {
+                if (typeof object.RoomInfo !== "object")
+                    throw TypeError(".PROTOCOLROOM.JoinRoomRsp.RoomInfo: object expected");
+                message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.fromObject(object.RoomInfo);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_JOIN_ROOM_RSP message. Also converts values to other types if specified.
+         * Creates a plain object from a JoinRoomRsp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @static
-         * @param {PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP} message CMD_JOIN_ROOM_RSP
+         * @param {PROTOCOLROOM.JoinRoomRsp} message JoinRoomRsp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_JOIN_ROOM_RSP.toObject = function toObject(message, options) {
+        JoinRoomRsp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.playerSeat != null && message.hasOwnProperty("playerSeat")) {
-                object.playerSeat = message.playerSeat;
-                if (options.oneofs)
-                    object._playerSeat = "playerSeat";
+            if (options.defaults) {
+                object.PlayerSeat = 0;
+                object.RoomInfo = null;
             }
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                object.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.toObject(message.roomInfo, options);
-                if (options.oneofs)
-                    object._roomInfo = "roomInfo";
-            }
+            if (message.PlayerSeat != null && message.hasOwnProperty("PlayerSeat"))
+                object.PlayerSeat = message.PlayerSeat;
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                object.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.toObject(message.RoomInfo, options);
             return object;
         };
 
         /**
-         * Converts this CMD_JOIN_ROOM_RSP to JSON.
+         * Converts this JoinRoomRsp to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP
+         * @memberof PROTOCOLROOM.JoinRoomRsp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_JOIN_ROOM_RSP.prototype.toJSON = function toJSON() {
+        JoinRoomRsp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_JOIN_ROOM_RSP;
+        return JoinRoomRsp;
     })();
 
-    return PROTOCOL_ROOM;
+    return PROTOCOLROOM;
 })();
 
-$root.PROTOCOL_COMMON = (function() {
+$root.PROTOCOLCOMMON = (function() {
 
     /**
-     * Namespace PROTOCOL_COMMON.
-     * @exports PROTOCOL_COMMON
+     * Namespace PROTOCOLCOMMON.
+     * @exports PROTOCOLCOMMON
      * @namespace
      */
-    var PROTOCOL_COMMON = {};
+    var PROTOCOLCOMMON = {};
 
-    PROTOCOL_COMMON.UserInfo = (function() {
+    PROTOCOLCOMMON.UserInfo = (function() {
 
         /**
          * Properties of a UserInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @interface IUserInfo
-         * @property {string|null} [userName] UserInfo userName
-         * @property {number|null} [userSeat] UserInfo userSeat
+         * @property {string|null} [UserName] UserInfo UserName
+         * @property {number|null} [UserSeat] UserInfo UserSeat
          */
 
         /**
          * Constructs a new UserInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @classdesc Represents a UserInfo.
          * @implements IUserInfo
          * @constructor
-         * @param {PROTOCOL_COMMON.IUserInfo=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IUserInfo=} [properties] Properties to set
          */
         function UserInfo(properties) {
             if (properties)
@@ -1909,83 +1788,58 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * UserInfo userName.
-         * @member {string|null|undefined} userName
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * UserInfo UserName.
+         * @member {string} UserName
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          */
-        UserInfo.prototype.userName = null;
+        UserInfo.prototype.UserName = "";
 
         /**
-         * UserInfo userSeat.
-         * @member {number|null|undefined} userSeat
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * UserInfo UserSeat.
+         * @member {number} UserSeat
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          */
-        UserInfo.prototype.userSeat = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * UserInfo _userName.
-         * @member {"userName"|undefined} _userName
-         * @memberof PROTOCOL_COMMON.UserInfo
-         * @instance
-         */
-        Object.defineProperty(UserInfo.prototype, "_userName", {
-            get: $util.oneOfGetter($oneOfFields = ["userName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * UserInfo _userSeat.
-         * @member {"userSeat"|undefined} _userSeat
-         * @memberof PROTOCOL_COMMON.UserInfo
-         * @instance
-         */
-        Object.defineProperty(UserInfo.prototype, "_userSeat", {
-            get: $util.oneOfGetter($oneOfFields = ["userSeat"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        UserInfo.prototype.UserSeat = 0;
 
         /**
          * Creates a new UserInfo instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo instance
+         * @param {PROTOCOLCOMMON.IUserInfo=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo instance
          */
         UserInfo.create = function create(properties) {
             return new UserInfo(properties);
         };
 
         /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo} message UserInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IUserInfo} message UserInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
         UserInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.userName != null && Object.hasOwnProperty.call(message, "userName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.userName);
-            if (message.userSeat != null && Object.hasOwnProperty.call(message, "userSeat"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.userSeat);
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.UserName);
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.UserSeat);
             return writer;
         };
 
         /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo} message UserInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IUserInfo} message UserInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -1996,26 +1850,26 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a UserInfo message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         UserInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.UserInfo();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.UserInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.userName = reader.string();
+                    message.UserName = reader.string();
                     break;
                 case 2:
-                    message.userSeat = reader.int32();
+                    message.UserSeat = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -2028,10 +1882,10 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a UserInfo message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -2044,7 +1898,7 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Verifies a UserInfo message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -2052,45 +1906,40 @@ $root.PROTOCOL_COMMON = (function() {
         UserInfo.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.userName != null && message.hasOwnProperty("userName")) {
-                properties._userName = 1;
-                if (!$util.isString(message.userName))
-                    return "userName: string expected";
-            }
-            if (message.userSeat != null && message.hasOwnProperty("userSeat")) {
-                properties._userSeat = 1;
-                if (!$util.isInteger(message.userSeat))
-                    return "userSeat: integer expected";
-            }
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                if (!$util.isString(message.UserName))
+                    return "UserName: string expected";
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                if (!$util.isInteger(message.UserSeat))
+                    return "UserSeat: integer expected";
             return null;
         };
 
         /**
          * Creates a UserInfo message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          */
         UserInfo.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.UserInfo)
+            if (object instanceof $root.PROTOCOLCOMMON.UserInfo)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.UserInfo();
-            if (object.userName != null)
-                message.userName = String(object.userName);
-            if (object.userSeat != null)
-                message.userSeat = object.userSeat | 0;
+            var message = new $root.PROTOCOLCOMMON.UserInfo();
+            if (object.UserName != null)
+                message.UserName = String(object.UserName);
+            if (object.UserSeat != null)
+                message.UserSeat = object.UserSeat | 0;
             return message;
         };
 
         /**
          * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.UserInfo} message UserInfo
+         * @param {PROTOCOLCOMMON.UserInfo} message UserInfo
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -2098,23 +1947,21 @@ $root.PROTOCOL_COMMON = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.userName != null && message.hasOwnProperty("userName")) {
-                object.userName = message.userName;
-                if (options.oneofs)
-                    object._userName = "userName";
+            if (options.defaults) {
+                object.UserName = "";
+                object.UserSeat = 0;
             }
-            if (message.userSeat != null && message.hasOwnProperty("userSeat")) {
-                object.userSeat = message.userSeat;
-                if (options.oneofs)
-                    object._userSeat = "userSeat";
-            }
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                object.UserName = message.UserName;
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                object.UserSeat = message.UserSeat;
             return object;
         };
 
         /**
          * Converts this UserInfo to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -2125,27 +1972,27 @@ $root.PROTOCOL_COMMON = (function() {
         return UserInfo;
     })();
 
-    PROTOCOL_COMMON.RoomInfo = (function() {
+    PROTOCOLCOMMON.RoomInfo = (function() {
 
         /**
          * Properties of a RoomInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @interface IRoomInfo
-         * @property {string|null} [roomName] RoomInfo roomName
-         * @property {Array.<PROTOCOL_COMMON.IUserInfo>|null} [userList] RoomInfo userList
-         * @property {number|null} [roomUniqueId] RoomInfo roomUniqueId
+         * @property {string|null} [RoomName] RoomInfo RoomName
+         * @property {Array.<PROTOCOLCOMMON.IUserInfo>|null} [UserList] RoomInfo UserList
+         * @property {number|null} [RoomUniqueId] RoomInfo RoomUniqueId
          */
 
         /**
          * Constructs a new RoomInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @classdesc Represents a RoomInfo.
          * @implements IRoomInfo
          * @constructor
-         * @param {PROTOCOL_COMMON.IRoomInfo=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IRoomInfo=} [properties] Properties to set
          */
         function RoomInfo(properties) {
-            this.userList = [];
+            this.UserList = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -2153,94 +2000,69 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * RoomInfo roomName.
-         * @member {string|null|undefined} roomName
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo RoomName.
+         * @member {string} RoomName
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.roomName = null;
+        RoomInfo.prototype.RoomName = "";
 
         /**
-         * RoomInfo userList.
-         * @member {Array.<PROTOCOL_COMMON.IUserInfo>} userList
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo UserList.
+         * @member {Array.<PROTOCOLCOMMON.IUserInfo>} UserList
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.userList = $util.emptyArray;
+        RoomInfo.prototype.UserList = $util.emptyArray;
 
         /**
-         * RoomInfo roomUniqueId.
-         * @member {number|null|undefined} roomUniqueId
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo RoomUniqueId.
+         * @member {number} RoomUniqueId
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.roomUniqueId = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * RoomInfo _roomName.
-         * @member {"roomName"|undefined} _roomName
-         * @memberof PROTOCOL_COMMON.RoomInfo
-         * @instance
-         */
-        Object.defineProperty(RoomInfo.prototype, "_roomName", {
-            get: $util.oneOfGetter($oneOfFields = ["roomName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * RoomInfo _roomUniqueId.
-         * @member {"roomUniqueId"|undefined} _roomUniqueId
-         * @memberof PROTOCOL_COMMON.RoomInfo
-         * @instance
-         */
-        Object.defineProperty(RoomInfo.prototype, "_roomUniqueId", {
-            get: $util.oneOfGetter($oneOfFields = ["roomUniqueId"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        RoomInfo.prototype.RoomUniqueId = 0;
 
         /**
          * Creates a new RoomInfo instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo instance
+         * @param {PROTOCOLCOMMON.IRoomInfo=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo instance
          */
         RoomInfo.create = function create(properties) {
             return new RoomInfo(properties);
         };
 
         /**
-         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo} message RoomInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IRoomInfo} message RoomInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
         RoomInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomName != null && Object.hasOwnProperty.call(message, "roomName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.roomName);
-            if (message.userList != null && message.userList.length)
-                for (var i = 0; i < message.userList.length; ++i)
-                    $root.PROTOCOL_COMMON.UserInfo.encode(message.userList[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.roomUniqueId != null && Object.hasOwnProperty.call(message, "roomUniqueId"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.roomUniqueId);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.RoomName);
+            if (message.UserList != null && message.UserList.length)
+                for (var i = 0; i < message.UserList.length; ++i)
+                    $root.PROTOCOLCOMMON.UserInfo.encode(message.UserList[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.RoomUniqueId);
             return writer;
         };
 
         /**
-         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo} message RoomInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IRoomInfo} message RoomInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -2251,31 +2073,31 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a RoomInfo message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         RoomInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.RoomInfo();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.RoomInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.roomName = reader.string();
+                    message.RoomName = reader.string();
                     break;
                 case 2:
-                    if (!(message.userList && message.userList.length))
-                        message.userList = [];
-                    message.userList.push($root.PROTOCOL_COMMON.UserInfo.decode(reader, reader.uint32()));
+                    if (!(message.UserList && message.UserList.length))
+                        message.UserList = [];
+                    message.UserList.push($root.PROTOCOLCOMMON.UserInfo.decode(reader, reader.uint32()));
                     break;
                 case 3:
-                    message.roomUniqueId = reader.int32();
+                    message.RoomUniqueId = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -2288,10 +2110,10 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a RoomInfo message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -2304,7 +2126,7 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Verifies a RoomInfo message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -2312,64 +2134,59 @@ $root.PROTOCOL_COMMON = (function() {
         RoomInfo.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                properties._roomName = 1;
-                if (!$util.isString(message.roomName))
-                    return "roomName: string expected";
-            }
-            if (message.userList != null && message.hasOwnProperty("userList")) {
-                if (!Array.isArray(message.userList))
-                    return "userList: array expected";
-                for (var i = 0; i < message.userList.length; ++i) {
-                    var error = $root.PROTOCOL_COMMON.UserInfo.verify(message.userList[i]);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                if (!$util.isString(message.RoomName))
+                    return "RoomName: string expected";
+            if (message.UserList != null && message.hasOwnProperty("UserList")) {
+                if (!Array.isArray(message.UserList))
+                    return "UserList: array expected";
+                for (var i = 0; i < message.UserList.length; ++i) {
+                    var error = $root.PROTOCOLCOMMON.UserInfo.verify(message.UserList[i]);
                     if (error)
-                        return "userList." + error;
+                        return "UserList." + error;
                 }
             }
-            if (message.roomUniqueId != null && message.hasOwnProperty("roomUniqueId")) {
-                properties._roomUniqueId = 1;
-                if (!$util.isInteger(message.roomUniqueId))
-                    return "roomUniqueId: integer expected";
-            }
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                if (!$util.isInteger(message.RoomUniqueId))
+                    return "RoomUniqueId: integer expected";
             return null;
         };
 
         /**
          * Creates a RoomInfo message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          */
         RoomInfo.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.RoomInfo)
+            if (object instanceof $root.PROTOCOLCOMMON.RoomInfo)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.RoomInfo();
-            if (object.roomName != null)
-                message.roomName = String(object.roomName);
-            if (object.userList) {
-                if (!Array.isArray(object.userList))
-                    throw TypeError(".PROTOCOL_COMMON.RoomInfo.userList: array expected");
-                message.userList = [];
-                for (var i = 0; i < object.userList.length; ++i) {
-                    if (typeof object.userList[i] !== "object")
-                        throw TypeError(".PROTOCOL_COMMON.RoomInfo.userList: object expected");
-                    message.userList[i] = $root.PROTOCOL_COMMON.UserInfo.fromObject(object.userList[i]);
+            var message = new $root.PROTOCOLCOMMON.RoomInfo();
+            if (object.RoomName != null)
+                message.RoomName = String(object.RoomName);
+            if (object.UserList) {
+                if (!Array.isArray(object.UserList))
+                    throw TypeError(".PROTOCOLCOMMON.RoomInfo.UserList: array expected");
+                message.UserList = [];
+                for (var i = 0; i < object.UserList.length; ++i) {
+                    if (typeof object.UserList[i] !== "object")
+                        throw TypeError(".PROTOCOLCOMMON.RoomInfo.UserList: object expected");
+                    message.UserList[i] = $root.PROTOCOLCOMMON.UserInfo.fromObject(object.UserList[i]);
                 }
             }
-            if (object.roomUniqueId != null)
-                message.roomUniqueId = object.roomUniqueId | 0;
+            if (object.RoomUniqueId != null)
+                message.RoomUniqueId = object.RoomUniqueId | 0;
             return message;
         };
 
         /**
          * Creates a plain object from a RoomInfo message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.RoomInfo} message RoomInfo
+         * @param {PROTOCOLCOMMON.RoomInfo} message RoomInfo
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -2378,29 +2195,27 @@ $root.PROTOCOL_COMMON = (function() {
                 options = {};
             var object = {};
             if (options.arrays || options.defaults)
-                object.userList = [];
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                object.roomName = message.roomName;
-                if (options.oneofs)
-                    object._roomName = "roomName";
+                object.UserList = [];
+            if (options.defaults) {
+                object.RoomName = "";
+                object.RoomUniqueId = 0;
             }
-            if (message.userList && message.userList.length) {
-                object.userList = [];
-                for (var j = 0; j < message.userList.length; ++j)
-                    object.userList[j] = $root.PROTOCOL_COMMON.UserInfo.toObject(message.userList[j], options);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                object.RoomName = message.RoomName;
+            if (message.UserList && message.UserList.length) {
+                object.UserList = [];
+                for (var j = 0; j < message.UserList.length; ++j)
+                    object.UserList[j] = $root.PROTOCOLCOMMON.UserInfo.toObject(message.UserList[j], options);
             }
-            if (message.roomUniqueId != null && message.hasOwnProperty("roomUniqueId")) {
-                object.roomUniqueId = message.roomUniqueId;
-                if (options.oneofs)
-                    object._roomUniqueId = "roomUniqueId";
-            }
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                object.RoomUniqueId = message.RoomUniqueId;
             return object;
         };
 
         /**
          * Converts this RoomInfo to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -2411,24 +2226,24 @@ $root.PROTOCOL_COMMON = (function() {
         return RoomInfo;
     })();
 
-    PROTOCOL_COMMON.pre_battle_data = (function() {
+    PROTOCOLCOMMON.PreBattleData = (function() {
 
         /**
-         * Properties of a pre_battle_data.
-         * @memberof PROTOCOL_COMMON
-         * @interface Ipre_battle_data
-         * @property {string|null} [levelName] pre_battle_data levelName
+         * Properties of a PreBattleData.
+         * @memberof PROTOCOLCOMMON
+         * @interface IPreBattleData
+         * @property {string|null} [LevelName] PreBattleData LevelName
          */
 
         /**
-         * Constructs a new pre_battle_data.
-         * @memberof PROTOCOL_COMMON
-         * @classdesc Represents a pre_battle_data.
-         * @implements Ipre_battle_data
+         * Constructs a new PreBattleData.
+         * @memberof PROTOCOLCOMMON
+         * @classdesc Represents a PreBattleData.
+         * @implements IPreBattleData
          * @constructor
-         * @param {PROTOCOL_COMMON.Ipre_battle_data=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IPreBattleData=} [properties] Properties to set
          */
-        function pre_battle_data(properties) {
+        function PreBattleData(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -2436,89 +2251,75 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * pre_battle_data levelName.
-         * @member {string|null|undefined} levelName
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * PreBattleData LevelName.
+         * @member {string} LevelName
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @instance
          */
-        pre_battle_data.prototype.levelName = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        PreBattleData.prototype.LevelName = "";
 
         /**
-         * pre_battle_data _levelName.
-         * @member {"levelName"|undefined} _levelName
-         * @memberof PROTOCOL_COMMON.pre_battle_data
-         * @instance
-         */
-        Object.defineProperty(pre_battle_data.prototype, "_levelName", {
-            get: $util.oneOfGetter($oneOfFields = ["levelName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new pre_battle_data instance using the specified properties.
+         * Creates a new PreBattleData instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data instance
+         * @param {PROTOCOLCOMMON.IPreBattleData=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData instance
          */
-        pre_battle_data.create = function create(properties) {
-            return new pre_battle_data(properties);
+        PreBattleData.create = function create(properties) {
+            return new PreBattleData(properties);
         };
 
         /**
-         * Encodes the specified pre_battle_data message. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
+         * Encodes the specified PreBattleData message. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data} message pre_battle_data message or plain object to encode
+         * @param {PROTOCOLCOMMON.IPreBattleData} message PreBattleData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        pre_battle_data.encode = function encode(message, writer) {
+        PreBattleData.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.levelName != null && Object.hasOwnProperty.call(message, "levelName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.levelName);
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.LevelName);
             return writer;
         };
 
         /**
-         * Encodes the specified pre_battle_data message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
+         * Encodes the specified PreBattleData message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data} message pre_battle_data message or plain object to encode
+         * @param {PROTOCOLCOMMON.IPreBattleData} message PreBattleData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        pre_battle_data.encodeDelimited = function encodeDelimited(message, writer) {
+        PreBattleData.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer.
+         * Decodes a PreBattleData message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        pre_battle_data.decode = function decode(reader, length) {
+        PreBattleData.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.pre_battle_data();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.PreBattleData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.levelName = reader.string();
+                    message.LevelName = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -2529,94 +2330,90 @@ $root.PROTOCOL_COMMON = (function() {
         };
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer, length delimited.
+         * Decodes a PreBattleData message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        pre_battle_data.decodeDelimited = function decodeDelimited(reader) {
+        PreBattleData.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a pre_battle_data message.
+         * Verifies a PreBattleData message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        pre_battle_data.verify = function verify(message) {
+        PreBattleData.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.levelName != null && message.hasOwnProperty("levelName")) {
-                properties._levelName = 1;
-                if (!$util.isString(message.levelName))
-                    return "levelName: string expected";
-            }
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                if (!$util.isString(message.LevelName))
+                    return "LevelName: string expected";
             return null;
         };
 
         /**
-         * Creates a pre_battle_data message from a plain object. Also converts values to their respective internal types.
+         * Creates a PreBattleData message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          */
-        pre_battle_data.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.pre_battle_data)
+        PreBattleData.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLCOMMON.PreBattleData)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.pre_battle_data();
-            if (object.levelName != null)
-                message.levelName = String(object.levelName);
+            var message = new $root.PROTOCOLCOMMON.PreBattleData();
+            if (object.LevelName != null)
+                message.LevelName = String(object.LevelName);
             return message;
         };
 
         /**
-         * Creates a plain object from a pre_battle_data message. Also converts values to other types if specified.
+         * Creates a plain object from a PreBattleData message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.pre_battle_data} message pre_battle_data
+         * @param {PROTOCOLCOMMON.PreBattleData} message PreBattleData
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        pre_battle_data.toObject = function toObject(message, options) {
+        PreBattleData.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.levelName != null && message.hasOwnProperty("levelName")) {
-                object.levelName = message.levelName;
-                if (options.oneofs)
-                    object._levelName = "levelName";
-            }
+            if (options.defaults)
+                object.LevelName = "";
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                object.LevelName = message.LevelName;
             return object;
         };
 
         /**
-         * Converts this pre_battle_data to JSON.
+         * Converts this PreBattleData to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        pre_battle_data.prototype.toJSON = function toJSON() {
+        PreBattleData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return pre_battle_data;
+        return PreBattleData;
     })();
 
-    return PROTOCOL_COMMON;
+    return PROTOCOLCOMMON;
 })();
 
 module.exports = $root;

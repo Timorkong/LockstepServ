@@ -84,7 +84,7 @@ export class RoomManager extends Singleton<RoomManager> {
     }
     this.mapRoom.set(roomInfo.uniqueId, roomInfo);
   }
-  public CreateRoom(roomName: string | null = null): RoomInfo {
+  public CreateRoom(roomName: string): RoomInfo {
     let ret = new RoomInfo(roomName);
     this.AddRoom2Map(ret);
     return ret;

@@ -1,15 +1,15 @@
 import { UserInfo } from "./User/UserInfo";
 import { UniqueIdManager } from "../UniqueIdManager";
-import { PROTOCOL_COMMON } from "./../../../../src/protobuff/command_protocol_common";
+import { PROTOCOLCOMMON } from "./../../../../src/protobuff/command_protocol_common";
 import { Writer, BufferWriter } from "protobufjs";
 import { NetUtil } from "./../../../../src/Code/Util/NetUtil";
-import { PROTOCOL_WAR } from "./../../../../src/protobuff/command_protocol_war";
+import { PROTOCOLWAR } from "./../../../../src/protobuff/command_protocol_war";
 import { Cmd } from "./../../../../src/protobuff/command_id";
 import { BufferWriterExt } from "./../../../ProtoBuffExt/BufferWriterExt";
 
 export class RoomInfo {
 
-  public roomName: string | null = "defalut room name";
+  public roomName: string = "defalut room name";
 
   public uniqueId: number = UniqueIdManager.Null;
 
@@ -27,19 +27,19 @@ export class RoomInfo {
     return this.mapUser;
   }
 
-  public ToProto(ignoreId: number = UniqueIdManager.Null): PROTOCOL_COMMON.IRoomInfo {
-    let ret = PROTOCOL_COMMON.RoomInfo.create();
-    ret.userList = [];
-    ret.roomName = this.roomName;
-    ret.roomUniqueId = this.uniqueId;
+  public ToProto(ignoreId: number = UniqueIdManager.Null): PROTOCOLCOMMON.IRoomInfo {
+    let ret = PROTOCOLCOMMON.RoomInfo.create();
+    ret.UserList = [];
+    ret.RoomName = this.roomName;
+    ret.RoomUniqueId = this.uniqueId;
     this.mapUser.forEach((userInfo, id) => {
       if (id == ignoreId) return;
-      ret.userList.push(userInfo.ToProto());
+      ret.UserList.push(userInfo.ToProto());
     })
     return ret;
   }
 
-  constructor(roomName: string | null) {
+  constructor(roomName: string) {
     this.roomName = roomName;
     this.sequence = 0;
     this.playerSeat = 1;
@@ -85,10 +85,10 @@ export class RoomInfo {
   }
 
   public PushSequence(isAddSequence: boolean) {
-    let rsp = PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE.create();
-    rsp.sequence = this.sequence;
+    let rsp = PROTOCOLWAR.WarSequenceNotice.create();
+    rsp.Sequence = this.sequence;
     if (isAddSequence) this.sequence++;
-    let writer = NetUtil.Encode(PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE, rsp, Cmd.ID.CMD.CMD_WAR_SEQUENCE_NOTICE);
+    let writer = NetUtil.Encode(PROTOCOLWAR.WarSequenceNotice, rsp, Cmd.ID.CMD.WarSequenceNotice);
     this.PushCommandByWriter(writer)
   }
 

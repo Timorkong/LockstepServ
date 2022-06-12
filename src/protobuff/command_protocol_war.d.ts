@@ -1,586 +1,565 @@
 import * as $protobuf from "protobufjs";
-/** Namespace PROTOCOL_WAR. */
-export namespace PROTOCOL_WAR {
+/** Namespace PROTOCOLWAR. */
+export namespace PROTOCOLWAR {
 
-    /** Properties of a CMD_ENTER_GAME_REQ. */
-    interface ICMD_ENTER_GAME_REQ {
+    /** Properties of an EnterGameReq. */
+    interface IEnterGameReq {
 
-        /** CMD_ENTER_GAME_REQ data */
-        data?: (PROTOCOL_COMMON.Ipre_battle_data|null);
+        /** EnterGameReq Data */
+        Data?: (PROTOCOLCOMMON.IPreBattleData|null);
     }
 
-    /** Represents a CMD_ENTER_GAME_REQ. */
-    class CMD_ENTER_GAME_REQ implements ICMD_ENTER_GAME_REQ {
+    /** Represents an EnterGameReq. */
+    class EnterGameReq implements IEnterGameReq {
 
         /**
-         * Constructs a new CMD_ENTER_GAME_REQ.
+         * Constructs a new EnterGameReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_WAR.ICMD_ENTER_GAME_REQ);
+        constructor(properties?: PROTOCOLWAR.IEnterGameReq);
 
-        /** CMD_ENTER_GAME_REQ data. */
-        public data?: (PROTOCOL_COMMON.Ipre_battle_data|null);
-
-        /** CMD_ENTER_GAME_REQ _data. */
-        public _data?: "data";
+        /** EnterGameReq Data. */
+        public Data?: (PROTOCOLCOMMON.IPreBattleData|null);
 
         /**
-         * Creates a new CMD_ENTER_GAME_REQ instance using the specified properties.
+         * Creates a new EnterGameReq instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_ENTER_GAME_REQ instance
+         * @returns EnterGameReq instance
          */
-        public static create(properties?: PROTOCOL_WAR.ICMD_ENTER_GAME_REQ): PROTOCOL_WAR.CMD_ENTER_GAME_REQ;
+        public static create(properties?: PROTOCOLWAR.IEnterGameReq): PROTOCOLWAR.EnterGameReq;
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_REQ message. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_REQ.verify|verify} messages.
-         * @param message CMD_ENTER_GAME_REQ message or plain object to encode
+         * Encodes the specified EnterGameReq message. Does not implicitly {@link PROTOCOLWAR.EnterGameReq.verify|verify} messages.
+         * @param message EnterGameReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_WAR.ICMD_ENTER_GAME_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLWAR.IEnterGameReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_REQ message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_REQ.verify|verify} messages.
-         * @param message CMD_ENTER_GAME_REQ message or plain object to encode
+         * Encodes the specified EnterGameReq message, length delimited. Does not implicitly {@link PROTOCOLWAR.EnterGameReq.verify|verify} messages.
+         * @param message EnterGameReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_WAR.ICMD_ENTER_GAME_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLWAR.IEnterGameReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_ENTER_GAME_REQ message from the specified reader or buffer.
+         * Decodes an EnterGameReq message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_ENTER_GAME_REQ
+         * @returns EnterGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_WAR.CMD_ENTER_GAME_REQ;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLWAR.EnterGameReq;
 
         /**
-         * Decodes a CMD_ENTER_GAME_REQ message from the specified reader or buffer, length delimited.
+         * Decodes an EnterGameReq message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_ENTER_GAME_REQ
+         * @returns EnterGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_WAR.CMD_ENTER_GAME_REQ;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLWAR.EnterGameReq;
 
         /**
-         * Verifies a CMD_ENTER_GAME_REQ message.
+         * Verifies an EnterGameReq message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_ENTER_GAME_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates an EnterGameReq message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_ENTER_GAME_REQ
+         * @returns EnterGameReq
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_WAR.CMD_ENTER_GAME_REQ;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLWAR.EnterGameReq;
 
         /**
-         * Creates a plain object from a CMD_ENTER_GAME_REQ message. Also converts values to other types if specified.
-         * @param message CMD_ENTER_GAME_REQ
+         * Creates a plain object from an EnterGameReq message. Also converts values to other types if specified.
+         * @param message EnterGameReq
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_WAR.CMD_ENTER_GAME_REQ, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLWAR.EnterGameReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_ENTER_GAME_REQ to JSON.
+         * Converts this EnterGameReq to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_ENTER_GAME_RSP. */
-    interface ICMD_ENTER_GAME_RSP {
+    /** Properties of an EnterGameRsp. */
+    interface IEnterGameRsp {
 
-        /** CMD_ENTER_GAME_RSP data */
-        data?: (PROTOCOL_COMMON.Ipre_battle_data|null);
+        /** EnterGameRsp Data */
+        Data?: (PROTOCOLCOMMON.IPreBattleData|null);
     }
 
-    /** Represents a CMD_ENTER_GAME_RSP. */
-    class CMD_ENTER_GAME_RSP implements ICMD_ENTER_GAME_RSP {
+    /** Represents an EnterGameRsp. */
+    class EnterGameRsp implements IEnterGameRsp {
 
         /**
-         * Constructs a new CMD_ENTER_GAME_RSP.
+         * Constructs a new EnterGameRsp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_WAR.ICMD_ENTER_GAME_RSP);
+        constructor(properties?: PROTOCOLWAR.IEnterGameRsp);
 
-        /** CMD_ENTER_GAME_RSP data. */
-        public data?: (PROTOCOL_COMMON.Ipre_battle_data|null);
-
-        /** CMD_ENTER_GAME_RSP _data. */
-        public _data?: "data";
+        /** EnterGameRsp Data. */
+        public Data?: (PROTOCOLCOMMON.IPreBattleData|null);
 
         /**
-         * Creates a new CMD_ENTER_GAME_RSP instance using the specified properties.
+         * Creates a new EnterGameRsp instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_ENTER_GAME_RSP instance
+         * @returns EnterGameRsp instance
          */
-        public static create(properties?: PROTOCOL_WAR.ICMD_ENTER_GAME_RSP): PROTOCOL_WAR.CMD_ENTER_GAME_RSP;
+        public static create(properties?: PROTOCOLWAR.IEnterGameRsp): PROTOCOLWAR.EnterGameRsp;
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_RSP message. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_RSP.verify|verify} messages.
-         * @param message CMD_ENTER_GAME_RSP message or plain object to encode
+         * Encodes the specified EnterGameRsp message. Does not implicitly {@link PROTOCOLWAR.EnterGameRsp.verify|verify} messages.
+         * @param message EnterGameRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_WAR.ICMD_ENTER_GAME_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLWAR.IEnterGameRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_RSP message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_RSP.verify|verify} messages.
-         * @param message CMD_ENTER_GAME_RSP message or plain object to encode
+         * Encodes the specified EnterGameRsp message, length delimited. Does not implicitly {@link PROTOCOLWAR.EnterGameRsp.verify|verify} messages.
+         * @param message EnterGameRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_WAR.ICMD_ENTER_GAME_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLWAR.IEnterGameRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_ENTER_GAME_RSP message from the specified reader or buffer.
+         * Decodes an EnterGameRsp message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_ENTER_GAME_RSP
+         * @returns EnterGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_WAR.CMD_ENTER_GAME_RSP;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLWAR.EnterGameRsp;
 
         /**
-         * Decodes a CMD_ENTER_GAME_RSP message from the specified reader or buffer, length delimited.
+         * Decodes an EnterGameRsp message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_ENTER_GAME_RSP
+         * @returns EnterGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_WAR.CMD_ENTER_GAME_RSP;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLWAR.EnterGameRsp;
 
         /**
-         * Verifies a CMD_ENTER_GAME_RSP message.
+         * Verifies an EnterGameRsp message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_ENTER_GAME_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates an EnterGameRsp message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_ENTER_GAME_RSP
+         * @returns EnterGameRsp
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_WAR.CMD_ENTER_GAME_RSP;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLWAR.EnterGameRsp;
 
         /**
-         * Creates a plain object from a CMD_ENTER_GAME_RSP message. Also converts values to other types if specified.
-         * @param message CMD_ENTER_GAME_RSP
+         * Creates a plain object from an EnterGameRsp message. Also converts values to other types if specified.
+         * @param message EnterGameRsp
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_WAR.CMD_ENTER_GAME_RSP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLWAR.EnterGameRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_ENTER_GAME_RSP to JSON.
+         * Converts this EnterGameRsp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_START_GAME_REQ. */
-    interface ICMD_START_GAME_REQ {
+    /** Properties of a StartGameReq. */
+    interface IStartGameReq {
     }
 
-    /** Represents a CMD_START_GAME_REQ. */
-    class CMD_START_GAME_REQ implements ICMD_START_GAME_REQ {
+    /** Represents a StartGameReq. */
+    class StartGameReq implements IStartGameReq {
 
         /**
-         * Constructs a new CMD_START_GAME_REQ.
+         * Constructs a new StartGameReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_WAR.ICMD_START_GAME_REQ);
+        constructor(properties?: PROTOCOLWAR.IStartGameReq);
 
         /**
-         * Creates a new CMD_START_GAME_REQ instance using the specified properties.
+         * Creates a new StartGameReq instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_START_GAME_REQ instance
+         * @returns StartGameReq instance
          */
-        public static create(properties?: PROTOCOL_WAR.ICMD_START_GAME_REQ): PROTOCOL_WAR.CMD_START_GAME_REQ;
+        public static create(properties?: PROTOCOLWAR.IStartGameReq): PROTOCOLWAR.StartGameReq;
 
         /**
-         * Encodes the specified CMD_START_GAME_REQ message. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_REQ.verify|verify} messages.
-         * @param message CMD_START_GAME_REQ message or plain object to encode
+         * Encodes the specified StartGameReq message. Does not implicitly {@link PROTOCOLWAR.StartGameReq.verify|verify} messages.
+         * @param message StartGameReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_WAR.ICMD_START_GAME_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLWAR.IStartGameReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_START_GAME_REQ message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_REQ.verify|verify} messages.
-         * @param message CMD_START_GAME_REQ message or plain object to encode
+         * Encodes the specified StartGameReq message, length delimited. Does not implicitly {@link PROTOCOLWAR.StartGameReq.verify|verify} messages.
+         * @param message StartGameReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_WAR.ICMD_START_GAME_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLWAR.IStartGameReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_START_GAME_REQ message from the specified reader or buffer.
+         * Decodes a StartGameReq message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_START_GAME_REQ
+         * @returns StartGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_WAR.CMD_START_GAME_REQ;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLWAR.StartGameReq;
 
         /**
-         * Decodes a CMD_START_GAME_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a StartGameReq message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_START_GAME_REQ
+         * @returns StartGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_WAR.CMD_START_GAME_REQ;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLWAR.StartGameReq;
 
         /**
-         * Verifies a CMD_START_GAME_REQ message.
+         * Verifies a StartGameReq message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_START_GAME_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a StartGameReq message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_START_GAME_REQ
+         * @returns StartGameReq
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_WAR.CMD_START_GAME_REQ;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLWAR.StartGameReq;
 
         /**
-         * Creates a plain object from a CMD_START_GAME_REQ message. Also converts values to other types if specified.
-         * @param message CMD_START_GAME_REQ
+         * Creates a plain object from a StartGameReq message. Also converts values to other types if specified.
+         * @param message StartGameReq
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_WAR.CMD_START_GAME_REQ, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLWAR.StartGameReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_START_GAME_REQ to JSON.
+         * Converts this StartGameReq to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_START_GAME_RSP. */
-    interface ICMD_START_GAME_RSP {
+    /** Properties of a StartGameRsp. */
+    interface IStartGameRsp {
 
-        /** CMD_START_GAME_RSP roomInfo */
-        roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
+        /** StartGameRsp RoomInfo */
+        RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
     }
 
-    /** Represents a CMD_START_GAME_RSP. */
-    class CMD_START_GAME_RSP implements ICMD_START_GAME_RSP {
+    /** Represents a StartGameRsp. */
+    class StartGameRsp implements IStartGameRsp {
 
         /**
-         * Constructs a new CMD_START_GAME_RSP.
+         * Constructs a new StartGameRsp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_WAR.ICMD_START_GAME_RSP);
+        constructor(properties?: PROTOCOLWAR.IStartGameRsp);
 
-        /** CMD_START_GAME_RSP roomInfo. */
-        public roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
-
-        /** CMD_START_GAME_RSP _roomInfo. */
-        public _roomInfo?: "roomInfo";
+        /** StartGameRsp RoomInfo. */
+        public RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
 
         /**
-         * Creates a new CMD_START_GAME_RSP instance using the specified properties.
+         * Creates a new StartGameRsp instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_START_GAME_RSP instance
+         * @returns StartGameRsp instance
          */
-        public static create(properties?: PROTOCOL_WAR.ICMD_START_GAME_RSP): PROTOCOL_WAR.CMD_START_GAME_RSP;
+        public static create(properties?: PROTOCOLWAR.IStartGameRsp): PROTOCOLWAR.StartGameRsp;
 
         /**
-         * Encodes the specified CMD_START_GAME_RSP message. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_RSP.verify|verify} messages.
-         * @param message CMD_START_GAME_RSP message or plain object to encode
+         * Encodes the specified StartGameRsp message. Does not implicitly {@link PROTOCOLWAR.StartGameRsp.verify|verify} messages.
+         * @param message StartGameRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_WAR.ICMD_START_GAME_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLWAR.IStartGameRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_START_GAME_RSP message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_RSP.verify|verify} messages.
-         * @param message CMD_START_GAME_RSP message or plain object to encode
+         * Encodes the specified StartGameRsp message, length delimited. Does not implicitly {@link PROTOCOLWAR.StartGameRsp.verify|verify} messages.
+         * @param message StartGameRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_WAR.ICMD_START_GAME_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLWAR.IStartGameRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_START_GAME_RSP message from the specified reader or buffer.
+         * Decodes a StartGameRsp message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_START_GAME_RSP
+         * @returns StartGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_WAR.CMD_START_GAME_RSP;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLWAR.StartGameRsp;
 
         /**
-         * Decodes a CMD_START_GAME_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a StartGameRsp message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_START_GAME_RSP
+         * @returns StartGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_WAR.CMD_START_GAME_RSP;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLWAR.StartGameRsp;
 
         /**
-         * Verifies a CMD_START_GAME_RSP message.
+         * Verifies a StartGameRsp message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_START_GAME_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a StartGameRsp message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_START_GAME_RSP
+         * @returns StartGameRsp
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_WAR.CMD_START_GAME_RSP;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLWAR.StartGameRsp;
 
         /**
-         * Creates a plain object from a CMD_START_GAME_RSP message. Also converts values to other types if specified.
-         * @param message CMD_START_GAME_RSP
+         * Creates a plain object from a StartGameRsp message. Also converts values to other types if specified.
+         * @param message StartGameRsp
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_WAR.CMD_START_GAME_RSP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLWAR.StartGameRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_START_GAME_RSP to JSON.
+         * Converts this StartGameRsp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_WAR_MOVE. */
-    interface ICMD_WAR_MOVE {
+    /** Properties of a WarMove. */
+    interface IWarMove {
 
-        /** CMD_WAR_MOVE seat */
-        seat?: (number|null);
+        /** WarMove Seat */
+        Seat?: (number|null);
 
-        /** CMD_WAR_MOVE moveX */
-        moveX?: (number|null);
+        /** WarMove MoveX */
+        MoveX?: (number|null);
 
-        /** CMD_WAR_MOVE moveY */
-        moveY?: (number|null);
+        /** WarMove MoveY */
+        MoveY?: (number|null);
     }
 
-    /** Represents a CMD_WAR_MOVE. */
-    class CMD_WAR_MOVE implements ICMD_WAR_MOVE {
+    /** Represents a WarMove. */
+    class WarMove implements IWarMove {
 
         /**
-         * Constructs a new CMD_WAR_MOVE.
+         * Constructs a new WarMove.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_WAR.ICMD_WAR_MOVE);
+        constructor(properties?: PROTOCOLWAR.IWarMove);
 
-        /** CMD_WAR_MOVE seat. */
-        public seat?: (number|null);
+        /** WarMove Seat. */
+        public Seat: number;
 
-        /** CMD_WAR_MOVE moveX. */
-        public moveX?: (number|null);
+        /** WarMove MoveX. */
+        public MoveX: number;
 
-        /** CMD_WAR_MOVE moveY. */
-        public moveY?: (number|null);
-
-        /** CMD_WAR_MOVE _seat. */
-        public _seat?: "seat";
-
-        /** CMD_WAR_MOVE _moveX. */
-        public _moveX?: "moveX";
-
-        /** CMD_WAR_MOVE _moveY. */
-        public _moveY?: "moveY";
+        /** WarMove MoveY. */
+        public MoveY: number;
 
         /**
-         * Creates a new CMD_WAR_MOVE instance using the specified properties.
+         * Creates a new WarMove instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_WAR_MOVE instance
+         * @returns WarMove instance
          */
-        public static create(properties?: PROTOCOL_WAR.ICMD_WAR_MOVE): PROTOCOL_WAR.CMD_WAR_MOVE;
+        public static create(properties?: PROTOCOLWAR.IWarMove): PROTOCOLWAR.WarMove;
 
         /**
-         * Encodes the specified CMD_WAR_MOVE message. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_MOVE.verify|verify} messages.
-         * @param message CMD_WAR_MOVE message or plain object to encode
+         * Encodes the specified WarMove message. Does not implicitly {@link PROTOCOLWAR.WarMove.verify|verify} messages.
+         * @param message WarMove message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_WAR.ICMD_WAR_MOVE, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLWAR.IWarMove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_WAR_MOVE message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_MOVE.verify|verify} messages.
-         * @param message CMD_WAR_MOVE message or plain object to encode
+         * Encodes the specified WarMove message, length delimited. Does not implicitly {@link PROTOCOLWAR.WarMove.verify|verify} messages.
+         * @param message WarMove message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_WAR.ICMD_WAR_MOVE, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLWAR.IWarMove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_WAR_MOVE message from the specified reader or buffer.
+         * Decodes a WarMove message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_WAR_MOVE
+         * @returns WarMove
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_WAR.CMD_WAR_MOVE;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLWAR.WarMove;
 
         /**
-         * Decodes a CMD_WAR_MOVE message from the specified reader or buffer, length delimited.
+         * Decodes a WarMove message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_WAR_MOVE
+         * @returns WarMove
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_WAR.CMD_WAR_MOVE;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLWAR.WarMove;
 
         /**
-         * Verifies a CMD_WAR_MOVE message.
+         * Verifies a WarMove message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_WAR_MOVE message from a plain object. Also converts values to their respective internal types.
+         * Creates a WarMove message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_WAR_MOVE
+         * @returns WarMove
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_WAR.CMD_WAR_MOVE;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLWAR.WarMove;
 
         /**
-         * Creates a plain object from a CMD_WAR_MOVE message. Also converts values to other types if specified.
-         * @param message CMD_WAR_MOVE
+         * Creates a plain object from a WarMove message. Also converts values to other types if specified.
+         * @param message WarMove
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_WAR.CMD_WAR_MOVE, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLWAR.WarMove, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_WAR_MOVE to JSON.
+         * Converts this WarMove to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_WAR_SEQUENCE_NOTICE. */
-    interface ICMD_WAR_SEQUENCE_NOTICE {
+    /** Properties of a WarSequenceNotice. */
+    interface IWarSequenceNotice {
 
-        /** CMD_WAR_SEQUENCE_NOTICE sequence */
-        sequence?: (number|null);
+        /** WarSequenceNotice Sequence */
+        Sequence?: (number|null);
     }
 
-    /** Represents a CMD_WAR_SEQUENCE_NOTICE. */
-    class CMD_WAR_SEQUENCE_NOTICE implements ICMD_WAR_SEQUENCE_NOTICE {
+    /** Represents a WarSequenceNotice. */
+    class WarSequenceNotice implements IWarSequenceNotice {
 
         /**
-         * Constructs a new CMD_WAR_SEQUENCE_NOTICE.
+         * Constructs a new WarSequenceNotice.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE);
+        constructor(properties?: PROTOCOLWAR.IWarSequenceNotice);
 
-        /** CMD_WAR_SEQUENCE_NOTICE sequence. */
-        public sequence?: (number|null);
-
-        /** CMD_WAR_SEQUENCE_NOTICE _sequence. */
-        public _sequence?: "sequence";
+        /** WarSequenceNotice Sequence. */
+        public Sequence: number;
 
         /**
-         * Creates a new CMD_WAR_SEQUENCE_NOTICE instance using the specified properties.
+         * Creates a new WarSequenceNotice instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_WAR_SEQUENCE_NOTICE instance
+         * @returns WarSequenceNotice instance
          */
-        public static create(properties?: PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE): PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE;
+        public static create(properties?: PROTOCOLWAR.IWarSequenceNotice): PROTOCOLWAR.WarSequenceNotice;
 
         /**
-         * Encodes the specified CMD_WAR_SEQUENCE_NOTICE message. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE.verify|verify} messages.
-         * @param message CMD_WAR_SEQUENCE_NOTICE message or plain object to encode
+         * Encodes the specified WarSequenceNotice message. Does not implicitly {@link PROTOCOLWAR.WarSequenceNotice.verify|verify} messages.
+         * @param message WarSequenceNotice message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLWAR.IWarSequenceNotice, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_WAR_SEQUENCE_NOTICE message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE.verify|verify} messages.
-         * @param message CMD_WAR_SEQUENCE_NOTICE message or plain object to encode
+         * Encodes the specified WarSequenceNotice message, length delimited. Does not implicitly {@link PROTOCOLWAR.WarSequenceNotice.verify|verify} messages.
+         * @param message WarSequenceNotice message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLWAR.IWarSequenceNotice, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_WAR_SEQUENCE_NOTICE message from the specified reader or buffer.
+         * Decodes a WarSequenceNotice message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_WAR_SEQUENCE_NOTICE
+         * @returns WarSequenceNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLWAR.WarSequenceNotice;
 
         /**
-         * Decodes a CMD_WAR_SEQUENCE_NOTICE message from the specified reader or buffer, length delimited.
+         * Decodes a WarSequenceNotice message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_WAR_SEQUENCE_NOTICE
+         * @returns WarSequenceNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLWAR.WarSequenceNotice;
 
         /**
-         * Verifies a CMD_WAR_SEQUENCE_NOTICE message.
+         * Verifies a WarSequenceNotice message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_WAR_SEQUENCE_NOTICE message from a plain object. Also converts values to their respective internal types.
+         * Creates a WarSequenceNotice message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_WAR_SEQUENCE_NOTICE
+         * @returns WarSequenceNotice
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLWAR.WarSequenceNotice;
 
         /**
-         * Creates a plain object from a CMD_WAR_SEQUENCE_NOTICE message. Also converts values to other types if specified.
-         * @param message CMD_WAR_SEQUENCE_NOTICE
+         * Creates a plain object from a WarSequenceNotice message. Also converts values to other types if specified.
+         * @param message WarSequenceNotice
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLWAR.WarSequenceNotice, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_WAR_SEQUENCE_NOTICE to JSON.
+         * Converts this WarSequenceNotice to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 }
 
-/** Namespace PROTOCOL_COMMON. */
-export namespace PROTOCOL_COMMON {
+/** Namespace PROTOCOLCOMMON. */
+export namespace PROTOCOLCOMMON {
 
     /** Properties of a UserInfo. */
     interface IUserInfo {
 
-        /** UserInfo userName */
-        userName?: (string|null);
+        /** UserInfo UserName */
+        UserName?: (string|null);
 
-        /** UserInfo userSeat */
-        userSeat?: (number|null);
+        /** UserInfo UserSeat */
+        UserSeat?: (number|null);
     }
 
     /** Represents a UserInfo. */
@@ -590,42 +569,36 @@ export namespace PROTOCOL_COMMON {
          * Constructs a new UserInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.IUserInfo);
+        constructor(properties?: PROTOCOLCOMMON.IUserInfo);
 
-        /** UserInfo userName. */
-        public userName?: (string|null);
+        /** UserInfo UserName. */
+        public UserName: string;
 
-        /** UserInfo userSeat. */
-        public userSeat?: (number|null);
-
-        /** UserInfo _userName. */
-        public _userName?: "userName";
-
-        /** UserInfo _userSeat. */
-        public _userSeat?: "userSeat";
+        /** UserInfo UserSeat. */
+        public UserSeat: number;
 
         /**
          * Creates a new UserInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns UserInfo instance
          */
-        public static create(properties?: PROTOCOL_COMMON.IUserInfo): PROTOCOL_COMMON.UserInfo;
+        public static create(properties?: PROTOCOLCOMMON.IUserInfo): PROTOCOLCOMMON.UserInfo;
 
         /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @param message UserInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @param message UserInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a UserInfo message from the specified reader or buffer.
@@ -635,7 +608,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.UserInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Decodes a UserInfo message from the specified reader or buffer, length delimited.
@@ -644,7 +617,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.UserInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Verifies a UserInfo message.
@@ -658,7 +631,7 @@ export namespace PROTOCOL_COMMON {
          * @param object Plain object
          * @returns UserInfo
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.UserInfo;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
@@ -666,7 +639,7 @@ export namespace PROTOCOL_COMMON {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this UserInfo to JSON.
@@ -678,14 +651,14 @@ export namespace PROTOCOL_COMMON {
     /** Properties of a RoomInfo. */
     interface IRoomInfo {
 
-        /** RoomInfo roomName */
-        roomName?: (string|null);
+        /** RoomInfo RoomName */
+        RoomName?: (string|null);
 
-        /** RoomInfo userList */
-        userList?: (PROTOCOL_COMMON.IUserInfo[]|null);
+        /** RoomInfo UserList */
+        UserList?: (PROTOCOLCOMMON.IUserInfo[]|null);
 
-        /** RoomInfo roomUniqueId */
-        roomUniqueId?: (number|null);
+        /** RoomInfo RoomUniqueId */
+        RoomUniqueId?: (number|null);
     }
 
     /** Represents a RoomInfo. */
@@ -695,45 +668,39 @@ export namespace PROTOCOL_COMMON {
          * Constructs a new RoomInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.IRoomInfo);
+        constructor(properties?: PROTOCOLCOMMON.IRoomInfo);
 
-        /** RoomInfo roomName. */
-        public roomName?: (string|null);
+        /** RoomInfo RoomName. */
+        public RoomName: string;
 
-        /** RoomInfo userList. */
-        public userList: PROTOCOL_COMMON.IUserInfo[];
+        /** RoomInfo UserList. */
+        public UserList: PROTOCOLCOMMON.IUserInfo[];
 
-        /** RoomInfo roomUniqueId. */
-        public roomUniqueId?: (number|null);
-
-        /** RoomInfo _roomName. */
-        public _roomName?: "roomName";
-
-        /** RoomInfo _roomUniqueId. */
-        public _roomUniqueId?: "roomUniqueId";
+        /** RoomInfo RoomUniqueId. */
+        public RoomUniqueId: number;
 
         /**
          * Creates a new RoomInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns RoomInfo instance
          */
-        public static create(properties?: PROTOCOL_COMMON.IRoomInfo): PROTOCOL_COMMON.RoomInfo;
+        public static create(properties?: PROTOCOLCOMMON.IRoomInfo): PROTOCOLCOMMON.RoomInfo;
 
         /**
-         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @param message RoomInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @param message RoomInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RoomInfo message from the specified reader or buffer.
@@ -743,7 +710,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.RoomInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Decodes a RoomInfo message from the specified reader or buffer, length delimited.
@@ -752,7 +719,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.RoomInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Verifies a RoomInfo message.
@@ -766,7 +733,7 @@ export namespace PROTOCOL_COMMON {
          * @param object Plain object
          * @returns RoomInfo
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.RoomInfo;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Creates a plain object from a RoomInfo message. Also converts values to other types if specified.
@@ -774,7 +741,7 @@ export namespace PROTOCOL_COMMON {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.RoomInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.RoomInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this RoomInfo to JSON.
@@ -783,94 +750,91 @@ export namespace PROTOCOL_COMMON {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a pre_battle_data. */
-    interface Ipre_battle_data {
+    /** Properties of a PreBattleData. */
+    interface IPreBattleData {
 
-        /** pre_battle_data levelName */
-        levelName?: (string|null);
+        /** PreBattleData LevelName */
+        LevelName?: (string|null);
     }
 
-    /** Represents a pre_battle_data. */
-    class pre_battle_data implements Ipre_battle_data {
+    /** Represents a PreBattleData. */
+    class PreBattleData implements IPreBattleData {
 
         /**
-         * Constructs a new pre_battle_data.
+         * Constructs a new PreBattleData.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.Ipre_battle_data);
+        constructor(properties?: PROTOCOLCOMMON.IPreBattleData);
 
-        /** pre_battle_data levelName. */
-        public levelName?: (string|null);
-
-        /** pre_battle_data _levelName. */
-        public _levelName?: "levelName";
+        /** PreBattleData LevelName. */
+        public LevelName: string;
 
         /**
-         * Creates a new pre_battle_data instance using the specified properties.
+         * Creates a new PreBattleData instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns pre_battle_data instance
+         * @returns PreBattleData instance
          */
-        public static create(properties?: PROTOCOL_COMMON.Ipre_battle_data): PROTOCOL_COMMON.pre_battle_data;
+        public static create(properties?: PROTOCOLCOMMON.IPreBattleData): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Encodes the specified pre_battle_data message. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
-         * @param message pre_battle_data message or plain object to encode
+         * Encodes the specified PreBattleData message. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
+         * @param message PreBattleData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.Ipre_battle_data, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IPreBattleData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified pre_battle_data message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
-         * @param message pre_battle_data message or plain object to encode
+         * Encodes the specified PreBattleData message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
+         * @param message PreBattleData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.Ipre_battle_data, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IPreBattleData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer.
+         * Decodes a PreBattleData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns pre_battle_data
+         * @returns PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.pre_battle_data;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer, length delimited.
+         * Decodes a PreBattleData message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns pre_battle_data
+         * @returns PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.pre_battle_data;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Verifies a pre_battle_data message.
+         * Verifies a PreBattleData message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a pre_battle_data message from a plain object. Also converts values to their respective internal types.
+         * Creates a PreBattleData message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns pre_battle_data
+         * @returns PreBattleData
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.pre_battle_data;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Creates a plain object from a pre_battle_data message. Also converts values to other types if specified.
-         * @param message pre_battle_data
+         * Creates a plain object from a PreBattleData message. Also converts values to other types if specified.
+         * @param message PreBattleData
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.pre_battle_data, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.PreBattleData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this pre_battle_data to JSON.
+         * Converts this PreBattleData to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

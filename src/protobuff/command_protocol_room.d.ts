@@ -1,850 +1,829 @@
 import * as $protobuf from "protobufjs";
-/** Namespace PROTOCOL_ROOM. */
-export namespace PROTOCOL_ROOM {
+/** Namespace PROTOCOLROOM. */
+export namespace PROTOCOLROOM {
 
-    /** Properties of a CMD_ROOM_LIST_REQ. */
-    interface ICMD_ROOM_LIST_REQ {
+    /** Properties of a RoomListReq. */
+    interface IRoomListReq {
     }
 
-    /** Represents a CMD_ROOM_LIST_REQ. */
-    class CMD_ROOM_LIST_REQ implements ICMD_ROOM_LIST_REQ {
+    /** Represents a RoomListReq. */
+    class RoomListReq implements IRoomListReq {
 
         /**
-         * Constructs a new CMD_ROOM_LIST_REQ.
+         * Constructs a new RoomListReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ);
+        constructor(properties?: PROTOCOLROOM.IRoomListReq);
 
         /**
-         * Creates a new CMD_ROOM_LIST_REQ instance using the specified properties.
+         * Creates a new RoomListReq instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_ROOM_LIST_REQ instance
+         * @returns RoomListReq instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ): PROTOCOL_ROOM.CMD_ROOM_LIST_REQ;
+        public static create(properties?: PROTOCOLROOM.IRoomListReq): PROTOCOLROOM.RoomListReq;
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_REQ.verify|verify} messages.
-         * @param message CMD_ROOM_LIST_REQ message or plain object to encode
+         * Encodes the specified RoomListReq message. Does not implicitly {@link PROTOCOLROOM.RoomListReq.verify|verify} messages.
+         * @param message RoomListReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.IRoomListReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_REQ.verify|verify} messages.
-         * @param message CMD_ROOM_LIST_REQ message or plain object to encode
+         * Encodes the specified RoomListReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.RoomListReq.verify|verify} messages.
+         * @param message RoomListReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_ROOM_LIST_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.IRoomListReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_ROOM_LIST_REQ message from the specified reader or buffer.
+         * Decodes a RoomListReq message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_ROOM_LIST_REQ
+         * @returns RoomListReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_ROOM_LIST_REQ;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.RoomListReq;
 
         /**
-         * Decodes a CMD_ROOM_LIST_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a RoomListReq message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_ROOM_LIST_REQ
+         * @returns RoomListReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_ROOM_LIST_REQ;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.RoomListReq;
 
         /**
-         * Verifies a CMD_ROOM_LIST_REQ message.
+         * Verifies a RoomListReq message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_ROOM_LIST_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a RoomListReq message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_ROOM_LIST_REQ
+         * @returns RoomListReq
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_ROOM_LIST_REQ;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.RoomListReq;
 
         /**
-         * Creates a plain object from a CMD_ROOM_LIST_REQ message. Also converts values to other types if specified.
-         * @param message CMD_ROOM_LIST_REQ
+         * Creates a plain object from a RoomListReq message. Also converts values to other types if specified.
+         * @param message RoomListReq
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_ROOM_LIST_REQ, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.RoomListReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_ROOM_LIST_REQ to JSON.
+         * Converts this RoomListReq to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_ROOM_LIST_RSP. */
-    interface ICMD_ROOM_LIST_RSP {
+    /** Properties of a RoomListRsp. */
+    interface IRoomListRsp {
 
-        /** CMD_ROOM_LIST_RSP roomList */
-        roomList?: (PROTOCOL_COMMON.IRoomInfo[]|null);
+        /** RoomListRsp RoomList */
+        RoomList?: (PROTOCOLCOMMON.IRoomInfo[]|null);
     }
 
-    /** Represents a CMD_ROOM_LIST_RSP. */
-    class CMD_ROOM_LIST_RSP implements ICMD_ROOM_LIST_RSP {
+    /** Represents a RoomListRsp. */
+    class RoomListRsp implements IRoomListRsp {
 
         /**
-         * Constructs a new CMD_ROOM_LIST_RSP.
+         * Constructs a new RoomListRsp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP);
+        constructor(properties?: PROTOCOLROOM.IRoomListRsp);
 
-        /** CMD_ROOM_LIST_RSP roomList. */
-        public roomList: PROTOCOL_COMMON.IRoomInfo[];
+        /** RoomListRsp RoomList. */
+        public RoomList: PROTOCOLCOMMON.IRoomInfo[];
 
         /**
-         * Creates a new CMD_ROOM_LIST_RSP instance using the specified properties.
+         * Creates a new RoomListRsp instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_ROOM_LIST_RSP instance
+         * @returns RoomListRsp instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP): PROTOCOL_ROOM.CMD_ROOM_LIST_RSP;
+        public static create(properties?: PROTOCOLROOM.IRoomListRsp): PROTOCOLROOM.RoomListRsp;
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_RSP.verify|verify} messages.
-         * @param message CMD_ROOM_LIST_RSP message or plain object to encode
+         * Encodes the specified RoomListRsp message. Does not implicitly {@link PROTOCOLROOM.RoomListRsp.verify|verify} messages.
+         * @param message RoomListRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.IRoomListRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_ROOM_LIST_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_ROOM_LIST_RSP.verify|verify} messages.
-         * @param message CMD_ROOM_LIST_RSP message or plain object to encode
+         * Encodes the specified RoomListRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.RoomListRsp.verify|verify} messages.
+         * @param message RoomListRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_ROOM_LIST_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.IRoomListRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_ROOM_LIST_RSP message from the specified reader or buffer.
+         * Decodes a RoomListRsp message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_ROOM_LIST_RSP
+         * @returns RoomListRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_ROOM_LIST_RSP;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.RoomListRsp;
 
         /**
-         * Decodes a CMD_ROOM_LIST_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a RoomListRsp message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_ROOM_LIST_RSP
+         * @returns RoomListRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_ROOM_LIST_RSP;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.RoomListRsp;
 
         /**
-         * Verifies a CMD_ROOM_LIST_RSP message.
+         * Verifies a RoomListRsp message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_ROOM_LIST_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a RoomListRsp message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_ROOM_LIST_RSP
+         * @returns RoomListRsp
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_ROOM_LIST_RSP;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.RoomListRsp;
 
         /**
-         * Creates a plain object from a CMD_ROOM_LIST_RSP message. Also converts values to other types if specified.
-         * @param message CMD_ROOM_LIST_RSP
+         * Creates a plain object from a RoomListRsp message. Also converts values to other types if specified.
+         * @param message RoomListRsp
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_ROOM_LIST_RSP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.RoomListRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_ROOM_LIST_RSP to JSON.
+         * Converts this RoomListRsp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_CREATE_ROOM_REQ. */
-    interface ICMD_CREATE_ROOM_REQ {
+    /** Properties of a CreateRoomReq. */
+    interface ICreateRoomReq {
 
-        /** CMD_CREATE_ROOM_REQ roomName */
-        roomName?: (string|null);
+        /** CreateRoomReq RoomName */
+        RoomName?: (string|null);
     }
 
-    /** Represents a CMD_CREATE_ROOM_REQ. */
-    class CMD_CREATE_ROOM_REQ implements ICMD_CREATE_ROOM_REQ {
+    /** Represents a CreateRoomReq. */
+    class CreateRoomReq implements ICreateRoomReq {
 
         /**
-         * Constructs a new CMD_CREATE_ROOM_REQ.
+         * Constructs a new CreateRoomReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ);
+        constructor(properties?: PROTOCOLROOM.ICreateRoomReq);
 
-        /** CMD_CREATE_ROOM_REQ roomName. */
-        public roomName?: (string|null);
-
-        /** CMD_CREATE_ROOM_REQ _roomName. */
-        public _roomName?: "roomName";
+        /** CreateRoomReq RoomName. */
+        public RoomName: string;
 
         /**
-         * Creates a new CMD_CREATE_ROOM_REQ instance using the specified properties.
+         * Creates a new CreateRoomReq instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_CREATE_ROOM_REQ instance
+         * @returns CreateRoomReq instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ): PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ;
+        public static create(properties?: PROTOCOLROOM.ICreateRoomReq): PROTOCOLROOM.CreateRoomReq;
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ.verify|verify} messages.
-         * @param message CMD_CREATE_ROOM_REQ message or plain object to encode
+         * Encodes the specified CreateRoomReq message. Does not implicitly {@link PROTOCOLROOM.CreateRoomReq.verify|verify} messages.
+         * @param message CreateRoomReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.ICreateRoomReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ.verify|verify} messages.
-         * @param message CMD_CREATE_ROOM_REQ message or plain object to encode
+         * Encodes the specified CreateRoomReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.CreateRoomReq.verify|verify} messages.
+         * @param message CreateRoomReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_CREATE_ROOM_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.ICreateRoomReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_CREATE_ROOM_REQ message from the specified reader or buffer.
+         * Decodes a CreateRoomReq message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_CREATE_ROOM_REQ
+         * @returns CreateRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.CreateRoomReq;
 
         /**
-         * Decodes a CMD_CREATE_ROOM_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a CreateRoomReq message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_CREATE_ROOM_REQ
+         * @returns CreateRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.CreateRoomReq;
 
         /**
-         * Verifies a CMD_CREATE_ROOM_REQ message.
+         * Verifies a CreateRoomReq message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_CREATE_ROOM_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a CreateRoomReq message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_CREATE_ROOM_REQ
+         * @returns CreateRoomReq
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.CreateRoomReq;
 
         /**
-         * Creates a plain object from a CMD_CREATE_ROOM_REQ message. Also converts values to other types if specified.
-         * @param message CMD_CREATE_ROOM_REQ
+         * Creates a plain object from a CreateRoomReq message. Also converts values to other types if specified.
+         * @param message CreateRoomReq
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.CreateRoomReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_CREATE_ROOM_REQ to JSON.
+         * Converts this CreateRoomReq to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_CREATE_ROOM_RSP. */
-    interface ICMD_CREATE_ROOM_RSP {
+    /** Properties of a CreateRoomRsp. */
+    interface ICreateRoomRsp {
 
-        /** CMD_CREATE_ROOM_RSP playerSeat */
-        playerSeat?: (number|null);
+        /** CreateRoomRsp PlayerSeat */
+        PlayerSeat?: (number|null);
 
-        /** CMD_CREATE_ROOM_RSP roomInfo */
-        roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
+        /** CreateRoomRsp RoomInfo */
+        RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
     }
 
-    /** Represents a CMD_CREATE_ROOM_RSP. */
-    class CMD_CREATE_ROOM_RSP implements ICMD_CREATE_ROOM_RSP {
+    /** Represents a CreateRoomRsp. */
+    class CreateRoomRsp implements ICreateRoomRsp {
 
         /**
-         * Constructs a new CMD_CREATE_ROOM_RSP.
+         * Constructs a new CreateRoomRsp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP);
+        constructor(properties?: PROTOCOLROOM.ICreateRoomRsp);
 
-        /** CMD_CREATE_ROOM_RSP playerSeat. */
-        public playerSeat?: (number|null);
+        /** CreateRoomRsp PlayerSeat. */
+        public PlayerSeat: number;
 
-        /** CMD_CREATE_ROOM_RSP roomInfo. */
-        public roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
-
-        /** CMD_CREATE_ROOM_RSP _playerSeat. */
-        public _playerSeat?: "playerSeat";
-
-        /** CMD_CREATE_ROOM_RSP _roomInfo. */
-        public _roomInfo?: "roomInfo";
+        /** CreateRoomRsp RoomInfo. */
+        public RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
 
         /**
-         * Creates a new CMD_CREATE_ROOM_RSP instance using the specified properties.
+         * Creates a new CreateRoomRsp instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_CREATE_ROOM_RSP instance
+         * @returns CreateRoomRsp instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP): PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP;
+        public static create(properties?: PROTOCOLROOM.ICreateRoomRsp): PROTOCOLROOM.CreateRoomRsp;
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP.verify|verify} messages.
-         * @param message CMD_CREATE_ROOM_RSP message or plain object to encode
+         * Encodes the specified CreateRoomRsp message. Does not implicitly {@link PROTOCOLROOM.CreateRoomRsp.verify|verify} messages.
+         * @param message CreateRoomRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.ICreateRoomRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_CREATE_ROOM_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP.verify|verify} messages.
-         * @param message CMD_CREATE_ROOM_RSP message or plain object to encode
+         * Encodes the specified CreateRoomRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.CreateRoomRsp.verify|verify} messages.
+         * @param message CreateRoomRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_CREATE_ROOM_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.ICreateRoomRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_CREATE_ROOM_RSP message from the specified reader or buffer.
+         * Decodes a CreateRoomRsp message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_CREATE_ROOM_RSP
+         * @returns CreateRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.CreateRoomRsp;
 
         /**
-         * Decodes a CMD_CREATE_ROOM_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a CreateRoomRsp message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_CREATE_ROOM_RSP
+         * @returns CreateRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.CreateRoomRsp;
 
         /**
-         * Verifies a CMD_CREATE_ROOM_RSP message.
+         * Verifies a CreateRoomRsp message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_CREATE_ROOM_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a CreateRoomRsp message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_CREATE_ROOM_RSP
+         * @returns CreateRoomRsp
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.CreateRoomRsp;
 
         /**
-         * Creates a plain object from a CMD_CREATE_ROOM_RSP message. Also converts values to other types if specified.
-         * @param message CMD_CREATE_ROOM_RSP
+         * Creates a plain object from a CreateRoomRsp message. Also converts values to other types if specified.
+         * @param message CreateRoomRsp
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_CREATE_ROOM_RSP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.CreateRoomRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_CREATE_ROOM_RSP to JSON.
+         * Converts this CreateRoomRsp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_LEAVE_ROOM_REQ. */
-    interface ICMD_LEAVE_ROOM_REQ {
+    /** Properties of a LeaveRoomReq. */
+    interface ILeaveRoomReq {
     }
 
-    /** Represents a CMD_LEAVE_ROOM_REQ. */
-    class CMD_LEAVE_ROOM_REQ implements ICMD_LEAVE_ROOM_REQ {
+    /** Represents a LeaveRoomReq. */
+    class LeaveRoomReq implements ILeaveRoomReq {
 
         /**
-         * Constructs a new CMD_LEAVE_ROOM_REQ.
+         * Constructs a new LeaveRoomReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ);
+        constructor(properties?: PROTOCOLROOM.ILeaveRoomReq);
 
         /**
-         * Creates a new CMD_LEAVE_ROOM_REQ instance using the specified properties.
+         * Creates a new LeaveRoomReq instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_LEAVE_ROOM_REQ instance
+         * @returns LeaveRoomReq instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ): PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ;
+        public static create(properties?: PROTOCOLROOM.ILeaveRoomReq): PROTOCOLROOM.LeaveRoomReq;
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ.verify|verify} messages.
-         * @param message CMD_LEAVE_ROOM_REQ message or plain object to encode
+         * Encodes the specified LeaveRoomReq message. Does not implicitly {@link PROTOCOLROOM.LeaveRoomReq.verify|verify} messages.
+         * @param message LeaveRoomReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.ILeaveRoomReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ.verify|verify} messages.
-         * @param message CMD_LEAVE_ROOM_REQ message or plain object to encode
+         * Encodes the specified LeaveRoomReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.LeaveRoomReq.verify|verify} messages.
+         * @param message LeaveRoomReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.ILeaveRoomReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_REQ message from the specified reader or buffer.
+         * Decodes a LeaveRoomReq message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_LEAVE_ROOM_REQ
+         * @returns LeaveRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.LeaveRoomReq;
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a LeaveRoomReq message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_LEAVE_ROOM_REQ
+         * @returns LeaveRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.LeaveRoomReq;
 
         /**
-         * Verifies a CMD_LEAVE_ROOM_REQ message.
+         * Verifies a LeaveRoomReq message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_LEAVE_ROOM_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a LeaveRoomReq message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_LEAVE_ROOM_REQ
+         * @returns LeaveRoomReq
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.LeaveRoomReq;
 
         /**
-         * Creates a plain object from a CMD_LEAVE_ROOM_REQ message. Also converts values to other types if specified.
-         * @param message CMD_LEAVE_ROOM_REQ
+         * Creates a plain object from a LeaveRoomReq message. Also converts values to other types if specified.
+         * @param message LeaveRoomReq
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_LEAVE_ROOM_REQ, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.LeaveRoomReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_LEAVE_ROOM_REQ to JSON.
+         * Converts this LeaveRoomReq to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_LEAVE_ROOM_RSP. */
-    interface ICMD_LEAVE_ROOM_RSP {
+    /** Properties of a LeaveRoomRsp. */
+    interface ILeaveRoomRsp {
 
-        /** CMD_LEAVE_ROOM_RSP roomList */
-        roomList?: (PROTOCOL_COMMON.IRoomInfo[]|null);
+        /** LeaveRoomRsp RoomList */
+        RoomList?: (PROTOCOLCOMMON.IRoomInfo[]|null);
     }
 
-    /** Represents a CMD_LEAVE_ROOM_RSP. */
-    class CMD_LEAVE_ROOM_RSP implements ICMD_LEAVE_ROOM_RSP {
+    /** Represents a LeaveRoomRsp. */
+    class LeaveRoomRsp implements ILeaveRoomRsp {
 
         /**
-         * Constructs a new CMD_LEAVE_ROOM_RSP.
+         * Constructs a new LeaveRoomRsp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP);
+        constructor(properties?: PROTOCOLROOM.ILeaveRoomRsp);
 
-        /** CMD_LEAVE_ROOM_RSP roomList. */
-        public roomList: PROTOCOL_COMMON.IRoomInfo[];
+        /** LeaveRoomRsp RoomList. */
+        public RoomList: PROTOCOLCOMMON.IRoomInfo[];
 
         /**
-         * Creates a new CMD_LEAVE_ROOM_RSP instance using the specified properties.
+         * Creates a new LeaveRoomRsp instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_LEAVE_ROOM_RSP instance
+         * @returns LeaveRoomRsp instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP): PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP;
+        public static create(properties?: PROTOCOLROOM.ILeaveRoomRsp): PROTOCOLROOM.LeaveRoomRsp;
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP.verify|verify} messages.
-         * @param message CMD_LEAVE_ROOM_RSP message or plain object to encode
+         * Encodes the specified LeaveRoomRsp message. Does not implicitly {@link PROTOCOLROOM.LeaveRoomRsp.verify|verify} messages.
+         * @param message LeaveRoomRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.ILeaveRoomRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_LEAVE_ROOM_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP.verify|verify} messages.
-         * @param message CMD_LEAVE_ROOM_RSP message or plain object to encode
+         * Encodes the specified LeaveRoomRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.LeaveRoomRsp.verify|verify} messages.
+         * @param message LeaveRoomRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_LEAVE_ROOM_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.ILeaveRoomRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_RSP message from the specified reader or buffer.
+         * Decodes a LeaveRoomRsp message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_LEAVE_ROOM_RSP
+         * @returns LeaveRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.LeaveRoomRsp;
 
         /**
-         * Decodes a CMD_LEAVE_ROOM_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a LeaveRoomRsp message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_LEAVE_ROOM_RSP
+         * @returns LeaveRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.LeaveRoomRsp;
 
         /**
-         * Verifies a CMD_LEAVE_ROOM_RSP message.
+         * Verifies a LeaveRoomRsp message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_LEAVE_ROOM_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a LeaveRoomRsp message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_LEAVE_ROOM_RSP
+         * @returns LeaveRoomRsp
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.LeaveRoomRsp;
 
         /**
-         * Creates a plain object from a CMD_LEAVE_ROOM_RSP message. Also converts values to other types if specified.
-         * @param message CMD_LEAVE_ROOM_RSP
+         * Creates a plain object from a LeaveRoomRsp message. Also converts values to other types if specified.
+         * @param message LeaveRoomRsp
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_LEAVE_ROOM_RSP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.LeaveRoomRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_LEAVE_ROOM_RSP to JSON.
+         * Converts this LeaveRoomRsp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_UPDATE_ROOM_INFO_NOTICE. */
-    interface ICMD_UPDATE_ROOM_INFO_NOTICE {
+    /** Properties of an UpdateRoomInfoNotice. */
+    interface IUpdateRoomInfoNotice {
 
-        /** CMD_UPDATE_ROOM_INFO_NOTICE roomInfo */
-        roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
+        /** UpdateRoomInfoNotice RoomInfo */
+        RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
     }
 
-    /** Represents a CMD_UPDATE_ROOM_INFO_NOTICE. */
-    class CMD_UPDATE_ROOM_INFO_NOTICE implements ICMD_UPDATE_ROOM_INFO_NOTICE {
+    /** Represents an UpdateRoomInfoNotice. */
+    class UpdateRoomInfoNotice implements IUpdateRoomInfoNotice {
 
         /**
-         * Constructs a new CMD_UPDATE_ROOM_INFO_NOTICE.
+         * Constructs a new UpdateRoomInfoNotice.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE);
+        constructor(properties?: PROTOCOLROOM.IUpdateRoomInfoNotice);
 
-        /** CMD_UPDATE_ROOM_INFO_NOTICE roomInfo. */
-        public roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
-
-        /** CMD_UPDATE_ROOM_INFO_NOTICE _roomInfo. */
-        public _roomInfo?: "roomInfo";
+        /** UpdateRoomInfoNotice RoomInfo. */
+        public RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
 
         /**
-         * Creates a new CMD_UPDATE_ROOM_INFO_NOTICE instance using the specified properties.
+         * Creates a new UpdateRoomInfoNotice instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_UPDATE_ROOM_INFO_NOTICE instance
+         * @returns UpdateRoomInfoNotice instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE): PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE;
+        public static create(properties?: PROTOCOLROOM.IUpdateRoomInfoNotice): PROTOCOLROOM.UpdateRoomInfoNotice;
 
         /**
-         * Encodes the specified CMD_UPDATE_ROOM_INFO_NOTICE message. Does not implicitly {@link PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE.verify|verify} messages.
-         * @param message CMD_UPDATE_ROOM_INFO_NOTICE message or plain object to encode
+         * Encodes the specified UpdateRoomInfoNotice message. Does not implicitly {@link PROTOCOLROOM.UpdateRoomInfoNotice.verify|verify} messages.
+         * @param message UpdateRoomInfoNotice message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.IUpdateRoomInfoNotice, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_UPDATE_ROOM_INFO_NOTICE message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE.verify|verify} messages.
-         * @param message CMD_UPDATE_ROOM_INFO_NOTICE message or plain object to encode
+         * Encodes the specified UpdateRoomInfoNotice message, length delimited. Does not implicitly {@link PROTOCOLROOM.UpdateRoomInfoNotice.verify|verify} messages.
+         * @param message UpdateRoomInfoNotice message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_UPDATE_ROOM_INFO_NOTICE, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.IUpdateRoomInfoNotice, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_UPDATE_ROOM_INFO_NOTICE message from the specified reader or buffer.
+         * Decodes an UpdateRoomInfoNotice message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_UPDATE_ROOM_INFO_NOTICE
+         * @returns UpdateRoomInfoNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.UpdateRoomInfoNotice;
 
         /**
-         * Decodes a CMD_UPDATE_ROOM_INFO_NOTICE message from the specified reader or buffer, length delimited.
+         * Decodes an UpdateRoomInfoNotice message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_UPDATE_ROOM_INFO_NOTICE
+         * @returns UpdateRoomInfoNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.UpdateRoomInfoNotice;
 
         /**
-         * Verifies a CMD_UPDATE_ROOM_INFO_NOTICE message.
+         * Verifies an UpdateRoomInfoNotice message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_UPDATE_ROOM_INFO_NOTICE message from a plain object. Also converts values to their respective internal types.
+         * Creates an UpdateRoomInfoNotice message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_UPDATE_ROOM_INFO_NOTICE
+         * @returns UpdateRoomInfoNotice
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.UpdateRoomInfoNotice;
 
         /**
-         * Creates a plain object from a CMD_UPDATE_ROOM_INFO_NOTICE message. Also converts values to other types if specified.
-         * @param message CMD_UPDATE_ROOM_INFO_NOTICE
+         * Creates a plain object from an UpdateRoomInfoNotice message. Also converts values to other types if specified.
+         * @param message UpdateRoomInfoNotice
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_UPDATE_ROOM_INFO_NOTICE, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.UpdateRoomInfoNotice, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_UPDATE_ROOM_INFO_NOTICE to JSON.
+         * Converts this UpdateRoomInfoNotice to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_JOIN_ROOM_REQ. */
-    interface ICMD_JOIN_ROOM_REQ {
+    /** Properties of a JoinRoomReq. */
+    interface IJoinRoomReq {
 
-        /** CMD_JOIN_ROOM_REQ roomUnquieId */
-        roomUnquieId?: (number|null);
+        /** JoinRoomReq RoomUnquieId */
+        RoomUnquieId?: (number|null);
     }
 
-    /** Represents a CMD_JOIN_ROOM_REQ. */
-    class CMD_JOIN_ROOM_REQ implements ICMD_JOIN_ROOM_REQ {
+    /** Represents a JoinRoomReq. */
+    class JoinRoomReq implements IJoinRoomReq {
 
         /**
-         * Constructs a new CMD_JOIN_ROOM_REQ.
+         * Constructs a new JoinRoomReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ);
+        constructor(properties?: PROTOCOLROOM.IJoinRoomReq);
 
-        /** CMD_JOIN_ROOM_REQ roomUnquieId. */
-        public roomUnquieId?: (number|null);
-
-        /** CMD_JOIN_ROOM_REQ _roomUnquieId. */
-        public _roomUnquieId?: "roomUnquieId";
+        /** JoinRoomReq RoomUnquieId. */
+        public RoomUnquieId: number;
 
         /**
-         * Creates a new CMD_JOIN_ROOM_REQ instance using the specified properties.
+         * Creates a new JoinRoomReq instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_JOIN_ROOM_REQ instance
+         * @returns JoinRoomReq instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ): PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ;
+        public static create(properties?: PROTOCOLROOM.IJoinRoomReq): PROTOCOLROOM.JoinRoomReq;
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_REQ message. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ.verify|verify} messages.
-         * @param message CMD_JOIN_ROOM_REQ message or plain object to encode
+         * Encodes the specified JoinRoomReq message. Does not implicitly {@link PROTOCOLROOM.JoinRoomReq.verify|verify} messages.
+         * @param message JoinRoomReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.IJoinRoomReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_REQ message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ.verify|verify} messages.
-         * @param message CMD_JOIN_ROOM_REQ message or plain object to encode
+         * Encodes the specified JoinRoomReq message, length delimited. Does not implicitly {@link PROTOCOLROOM.JoinRoomReq.verify|verify} messages.
+         * @param message JoinRoomReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_JOIN_ROOM_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.IJoinRoomReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_JOIN_ROOM_REQ message from the specified reader or buffer.
+         * Decodes a JoinRoomReq message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_JOIN_ROOM_REQ
+         * @returns JoinRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.JoinRoomReq;
 
         /**
-         * Decodes a CMD_JOIN_ROOM_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a JoinRoomReq message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_JOIN_ROOM_REQ
+         * @returns JoinRoomReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.JoinRoomReq;
 
         /**
-         * Verifies a CMD_JOIN_ROOM_REQ message.
+         * Verifies a JoinRoomReq message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_JOIN_ROOM_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a JoinRoomReq message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_JOIN_ROOM_REQ
+         * @returns JoinRoomReq
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.JoinRoomReq;
 
         /**
-         * Creates a plain object from a CMD_JOIN_ROOM_REQ message. Also converts values to other types if specified.
-         * @param message CMD_JOIN_ROOM_REQ
+         * Creates a plain object from a JoinRoomReq message. Also converts values to other types if specified.
+         * @param message JoinRoomReq
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.JoinRoomReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_JOIN_ROOM_REQ to JSON.
+         * Converts this JoinRoomReq to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_JOIN_ROOM_RSP. */
-    interface ICMD_JOIN_ROOM_RSP {
+    /** Properties of a JoinRoomRsp. */
+    interface IJoinRoomRsp {
 
-        /** CMD_JOIN_ROOM_RSP playerSeat */
-        playerSeat?: (number|null);
+        /** JoinRoomRsp PlayerSeat */
+        PlayerSeat?: (number|null);
 
-        /** CMD_JOIN_ROOM_RSP roomInfo */
-        roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
+        /** JoinRoomRsp RoomInfo */
+        RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
     }
 
-    /** Represents a CMD_JOIN_ROOM_RSP. */
-    class CMD_JOIN_ROOM_RSP implements ICMD_JOIN_ROOM_RSP {
+    /** Represents a JoinRoomRsp. */
+    class JoinRoomRsp implements IJoinRoomRsp {
 
         /**
-         * Constructs a new CMD_JOIN_ROOM_RSP.
+         * Constructs a new JoinRoomRsp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP);
+        constructor(properties?: PROTOCOLROOM.IJoinRoomRsp);
 
-        /** CMD_JOIN_ROOM_RSP playerSeat. */
-        public playerSeat?: (number|null);
+        /** JoinRoomRsp PlayerSeat. */
+        public PlayerSeat: number;
 
-        /** CMD_JOIN_ROOM_RSP roomInfo. */
-        public roomInfo?: (PROTOCOL_COMMON.IRoomInfo|null);
-
-        /** CMD_JOIN_ROOM_RSP _playerSeat. */
-        public _playerSeat?: "playerSeat";
-
-        /** CMD_JOIN_ROOM_RSP _roomInfo. */
-        public _roomInfo?: "roomInfo";
+        /** JoinRoomRsp RoomInfo. */
+        public RoomInfo?: (PROTOCOLCOMMON.IRoomInfo|null);
 
         /**
-         * Creates a new CMD_JOIN_ROOM_RSP instance using the specified properties.
+         * Creates a new JoinRoomRsp instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_JOIN_ROOM_RSP instance
+         * @returns JoinRoomRsp instance
          */
-        public static create(properties?: PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP): PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP;
+        public static create(properties?: PROTOCOLROOM.IJoinRoomRsp): PROTOCOLROOM.JoinRoomRsp;
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_RSP message. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP.verify|verify} messages.
-         * @param message CMD_JOIN_ROOM_RSP message or plain object to encode
+         * Encodes the specified JoinRoomRsp message. Does not implicitly {@link PROTOCOLROOM.JoinRoomRsp.verify|verify} messages.
+         * @param message JoinRoomRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLROOM.IJoinRoomRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_JOIN_ROOM_RSP message, length delimited. Does not implicitly {@link PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP.verify|verify} messages.
-         * @param message CMD_JOIN_ROOM_RSP message or plain object to encode
+         * Encodes the specified JoinRoomRsp message, length delimited. Does not implicitly {@link PROTOCOLROOM.JoinRoomRsp.verify|verify} messages.
+         * @param message JoinRoomRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_ROOM.ICMD_JOIN_ROOM_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLROOM.IJoinRoomRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_JOIN_ROOM_RSP message from the specified reader or buffer.
+         * Decodes a JoinRoomRsp message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_JOIN_ROOM_RSP
+         * @returns JoinRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLROOM.JoinRoomRsp;
 
         /**
-         * Decodes a CMD_JOIN_ROOM_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a JoinRoomRsp message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_JOIN_ROOM_RSP
+         * @returns JoinRoomRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLROOM.JoinRoomRsp;
 
         /**
-         * Verifies a CMD_JOIN_ROOM_RSP message.
+         * Verifies a JoinRoomRsp message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_JOIN_ROOM_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a JoinRoomRsp message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_JOIN_ROOM_RSP
+         * @returns JoinRoomRsp
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLROOM.JoinRoomRsp;
 
         /**
-         * Creates a plain object from a CMD_JOIN_ROOM_RSP message. Also converts values to other types if specified.
-         * @param message CMD_JOIN_ROOM_RSP
+         * Creates a plain object from a JoinRoomRsp message. Also converts values to other types if specified.
+         * @param message JoinRoomRsp
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_ROOM.CMD_JOIN_ROOM_RSP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLROOM.JoinRoomRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_JOIN_ROOM_RSP to JSON.
+         * Converts this JoinRoomRsp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 }
 
-/** Namespace PROTOCOL_COMMON. */
-export namespace PROTOCOL_COMMON {
+/** Namespace PROTOCOLCOMMON. */
+export namespace PROTOCOLCOMMON {
 
     /** Properties of a UserInfo. */
     interface IUserInfo {
 
-        /** UserInfo userName */
-        userName?: (string|null);
+        /** UserInfo UserName */
+        UserName?: (string|null);
 
-        /** UserInfo userSeat */
-        userSeat?: (number|null);
+        /** UserInfo UserSeat */
+        UserSeat?: (number|null);
     }
 
     /** Represents a UserInfo. */
@@ -854,42 +833,36 @@ export namespace PROTOCOL_COMMON {
          * Constructs a new UserInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.IUserInfo);
+        constructor(properties?: PROTOCOLCOMMON.IUserInfo);
 
-        /** UserInfo userName. */
-        public userName?: (string|null);
+        /** UserInfo UserName. */
+        public UserName: string;
 
-        /** UserInfo userSeat. */
-        public userSeat?: (number|null);
-
-        /** UserInfo _userName. */
-        public _userName?: "userName";
-
-        /** UserInfo _userSeat. */
-        public _userSeat?: "userSeat";
+        /** UserInfo UserSeat. */
+        public UserSeat: number;
 
         /**
          * Creates a new UserInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns UserInfo instance
          */
-        public static create(properties?: PROTOCOL_COMMON.IUserInfo): PROTOCOL_COMMON.UserInfo;
+        public static create(properties?: PROTOCOLCOMMON.IUserInfo): PROTOCOLCOMMON.UserInfo;
 
         /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @param message UserInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @param message UserInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IUserInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a UserInfo message from the specified reader or buffer.
@@ -899,7 +872,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.UserInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Decodes a UserInfo message from the specified reader or buffer, length delimited.
@@ -908,7 +881,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.UserInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Verifies a UserInfo message.
@@ -922,7 +895,7 @@ export namespace PROTOCOL_COMMON {
          * @param object Plain object
          * @returns UserInfo
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.UserInfo;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.UserInfo;
 
         /**
          * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
@@ -930,7 +903,7 @@ export namespace PROTOCOL_COMMON {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.UserInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this UserInfo to JSON.
@@ -942,14 +915,14 @@ export namespace PROTOCOL_COMMON {
     /** Properties of a RoomInfo. */
     interface IRoomInfo {
 
-        /** RoomInfo roomName */
-        roomName?: (string|null);
+        /** RoomInfo RoomName */
+        RoomName?: (string|null);
 
-        /** RoomInfo userList */
-        userList?: (PROTOCOL_COMMON.IUserInfo[]|null);
+        /** RoomInfo UserList */
+        UserList?: (PROTOCOLCOMMON.IUserInfo[]|null);
 
-        /** RoomInfo roomUniqueId */
-        roomUniqueId?: (number|null);
+        /** RoomInfo RoomUniqueId */
+        RoomUniqueId?: (number|null);
     }
 
     /** Represents a RoomInfo. */
@@ -959,45 +932,39 @@ export namespace PROTOCOL_COMMON {
          * Constructs a new RoomInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.IRoomInfo);
+        constructor(properties?: PROTOCOLCOMMON.IRoomInfo);
 
-        /** RoomInfo roomName. */
-        public roomName?: (string|null);
+        /** RoomInfo RoomName. */
+        public RoomName: string;
 
-        /** RoomInfo userList. */
-        public userList: PROTOCOL_COMMON.IUserInfo[];
+        /** RoomInfo UserList. */
+        public UserList: PROTOCOLCOMMON.IUserInfo[];
 
-        /** RoomInfo roomUniqueId. */
-        public roomUniqueId?: (number|null);
-
-        /** RoomInfo _roomName. */
-        public _roomName?: "roomName";
-
-        /** RoomInfo _roomUniqueId. */
-        public _roomUniqueId?: "roomUniqueId";
+        /** RoomInfo RoomUniqueId. */
+        public RoomUniqueId: number;
 
         /**
          * Creates a new RoomInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns RoomInfo instance
          */
-        public static create(properties?: PROTOCOL_COMMON.IRoomInfo): PROTOCOL_COMMON.RoomInfo;
+        public static create(properties?: PROTOCOLCOMMON.IRoomInfo): PROTOCOLCOMMON.RoomInfo;
 
         /**
-         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @param message RoomInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @param message RoomInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IRoomInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RoomInfo message from the specified reader or buffer.
@@ -1007,7 +974,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.RoomInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Decodes a RoomInfo message from the specified reader or buffer, length delimited.
@@ -1016,7 +983,7 @@ export namespace PROTOCOL_COMMON {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.RoomInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Verifies a RoomInfo message.
@@ -1030,7 +997,7 @@ export namespace PROTOCOL_COMMON {
          * @param object Plain object
          * @returns RoomInfo
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.RoomInfo;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.RoomInfo;
 
         /**
          * Creates a plain object from a RoomInfo message. Also converts values to other types if specified.
@@ -1038,7 +1005,7 @@ export namespace PROTOCOL_COMMON {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.RoomInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.RoomInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this RoomInfo to JSON.
@@ -1047,94 +1014,91 @@ export namespace PROTOCOL_COMMON {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a pre_battle_data. */
-    interface Ipre_battle_data {
+    /** Properties of a PreBattleData. */
+    interface IPreBattleData {
 
-        /** pre_battle_data levelName */
-        levelName?: (string|null);
+        /** PreBattleData LevelName */
+        LevelName?: (string|null);
     }
 
-    /** Represents a pre_battle_data. */
-    class pre_battle_data implements Ipre_battle_data {
+    /** Represents a PreBattleData. */
+    class PreBattleData implements IPreBattleData {
 
         /**
-         * Constructs a new pre_battle_data.
+         * Constructs a new PreBattleData.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL_COMMON.Ipre_battle_data);
+        constructor(properties?: PROTOCOLCOMMON.IPreBattleData);
 
-        /** pre_battle_data levelName. */
-        public levelName?: (string|null);
-
-        /** pre_battle_data _levelName. */
-        public _levelName?: "levelName";
+        /** PreBattleData LevelName. */
+        public LevelName: string;
 
         /**
-         * Creates a new pre_battle_data instance using the specified properties.
+         * Creates a new PreBattleData instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns pre_battle_data instance
+         * @returns PreBattleData instance
          */
-        public static create(properties?: PROTOCOL_COMMON.Ipre_battle_data): PROTOCOL_COMMON.pre_battle_data;
+        public static create(properties?: PROTOCOLCOMMON.IPreBattleData): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Encodes the specified pre_battle_data message. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
-         * @param message pre_battle_data message or plain object to encode
+         * Encodes the specified PreBattleData message. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
+         * @param message PreBattleData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL_COMMON.Ipre_battle_data, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOLCOMMON.IPreBattleData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified pre_battle_data message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
-         * @param message pre_battle_data message or plain object to encode
+         * Encodes the specified PreBattleData message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
+         * @param message PreBattleData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL_COMMON.Ipre_battle_data, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOLCOMMON.IPreBattleData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer.
+         * Decodes a PreBattleData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns pre_battle_data
+         * @returns PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL_COMMON.pre_battle_data;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer, length delimited.
+         * Decodes a PreBattleData message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns pre_battle_data
+         * @returns PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL_COMMON.pre_battle_data;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Verifies a pre_battle_data message.
+         * Verifies a PreBattleData message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a pre_battle_data message from a plain object. Also converts values to their respective internal types.
+         * Creates a PreBattleData message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns pre_battle_data
+         * @returns PreBattleData
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL_COMMON.pre_battle_data;
+        public static fromObject(object: { [k: string]: any }): PROTOCOLCOMMON.PreBattleData;
 
         /**
-         * Creates a plain object from a pre_battle_data message. Also converts values to other types if specified.
-         * @param message pre_battle_data
+         * Creates a plain object from a PreBattleData message. Also converts values to other types if specified.
+         * @param message PreBattleData
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL_COMMON.pre_battle_data, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOLCOMMON.PreBattleData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this pre_battle_data to JSON.
+         * Converts this PreBattleData to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

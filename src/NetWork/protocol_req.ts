@@ -1,47 +1,47 @@
 import { Reader } from "protobufjs"
 import { NetManager } from "./NetManager";
 import { UserInfo } from "./../../src/Code/Game/Room/User/UserInfo";
-import { PROTOCOL_ROOM } from "./../../src/protobuff/command_protocol_room";
-import { PROTOCOL_WAR } from "./../../src/protobuff/command_protocol_war";
+import { PROTOCOLROOM } from "./../../src/protobuff/command_protocol_room";
+import { PROTOCOLWAR } from "./../../src/protobuff/command_protocol_war";
 import { NetUtil } from "./../../src/Code/Util/NetUtil";
 import { Cmd } from "./../../src/protobuff/command_id";
 import { RoomManager } from "./../../src/Code/Game/Room/RoomManager";
 
 export class protocol_req {
-  public CMD_HEART_BEAT_REQ(...args: any[]) {
+  public HeartBeatReq(...args: any[]) { 
     let userInfo: UserInfo = args[0][1]
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_HEART_BEAT_RSP(userInfo.socket);
+    NetManager.Instance(NetManager).protocol_rsp?.HeartBeatRsp(userInfo.socket);
   }
 
-  public CMD_ROOM_LIST_REQ(...args: any[]) {
+  public RoomListReq(...args: any[]) {
     let userInfo: UserInfo = args[0][1]
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_ROOM_LIST_RSP(userInfo);
+    NetManager.Instance(NetManager).protocol_rsp?.RoomListRsp(userInfo);
   }
-  public CMD_CREATE_ROOM_REQ(...args: any[]) {
+  public CreateRoomReq(...args: any[]) {
     let buffers: Buffer = args[0][0];
     let userInfo: UserInfo = args[0][1];
     let buffReader = new Reader(buffers);
-    let req = PROTOCOL_ROOM.CMD_CREATE_ROOM_REQ.decode(buffReader);
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_CREATE_ROOM_RSP(userInfo, req);
+    let req = PROTOCOLROOM.CreateRoomReq.decode(buffReader);
+    NetManager.Instance(NetManager).protocol_rsp?.CreateRoomRsp(userInfo, req);
   }
-  public CMD_LEAVE_ROOM_REQ(...args: any[]) {
+  public LeaveRoomReq(...args: any[]) {
     let userInfo: UserInfo = args[0][1]
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_LEAVE_ROOM_RSP(userInfo);
+    NetManager.Instance(NetManager).protocol_rsp?.LeaveRoomRsp(userInfo);
   }
 
-  public CMD_ENTER_GAME_REQ(...args: any[]) {
+  public EnterGameReq(...args: any[]) {
     let userInfo: UserInfo = args[0][1]
     let buffers: Buffer = args[0][0];
     let buffReader = new Reader(buffers);
-    let req = PROTOCOL_WAR.CMD_ENTER_GAME_REQ.decode(buffReader);
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_ENTER_GAME_RSP(userInfo, req);
+    let req = PROTOCOLWAR.EnterGameReq.decode(buffReader);
+    NetManager.Instance(NetManager).protocol_rsp?.EnterGameRsp(userInfo, req);
   }
-  public CMD_START_GAME_REQ(...args: any[]) {
+  public StartGameReq(...args: any[]) {
     let userInfo: UserInfo = args[0][1]
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_START_GAME_RSP(userInfo);
+    NetManager.Instance(NetManager).protocol_rsp?.StartGameRsp(userInfo);
   }
   //战斗帧转发数据
-  public CMD_FRAME_TRANSPOND(...args: any[]) {
+  public FrameTranspond(...args: any[]) {
     let buffers: Buffer = args[0][0];
     let userInfo: UserInfo = args[0][1];
     let roomInfo = RoomManager.Instance(RoomManager).MapRoom.get(userInfo.roomId);
@@ -49,23 +49,23 @@ export class protocol_req {
     roomInfo.PushCommandByBuffer(buffers);
   }
 
-  public CMD_WAR_MOVE(...args: any[]) {
+  public WarMove(...args: any[]) {
     let buffers: Buffer = args[0][0];
     let userInfo: UserInfo = args[0][1];
     let buffReader = new Reader(buffers);
-    let req = PROTOCOL_WAR.CMD_WAR_MOVE.decode(buffReader);
-    NetManager.Instance(NetManager).protocol_rsp?.CMD_WAR_MOVE(userInfo, req);
+    let req = PROTOCOLWAR.WarMove.decode(buffReader);
+    NetManager.Instance(NetManager).protocol_rsp?.WarMove(userInfo, req);
   }
 
-  public CMD_JOIN_ROOM_REQ(...args: any[]) {
+  public JoinRoomReq(...args: any[]) {
     let buffers: Buffer = args[0][0];
     let userInfo: UserInfo = args[0][1];
     let buffReader = new Reader(buffers);
-    let req = PROTOCOL_ROOM.CMD_JOIN_ROOM_REQ.decode(buffReader);
-    if (RoomManager.Instance(RoomManager).MapRoom.has(<number>req.roomUnquieId)) {
-      let roomInfo = RoomManager.Instance(RoomManager).MapRoom.get(<number>req.roomUnquieId);
+    let req = PROTOCOLROOM.JoinRoomReq.decode(buffReader);
+    if (RoomManager.Instance(RoomManager).MapRoom.has(<number>req.RoomUnquieId)) {
+      let roomInfo = RoomManager.Instance(RoomManager).MapRoom.get(<number>req.RoomUnquieId);
       roomInfo?.UserEnterRoom(userInfo);
-      NetManager.Instance(NetManager).protocol_rsp?.CMD_JOIN_ROOM_RSP(userInfo);
+      NetManager.Instance(NetManager).protocol_rsp?.JoinRoomRsp(userInfo);
     }
   }
 }

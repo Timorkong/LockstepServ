@@ -9,33 +9,33 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.PROTOCOL_WAR = (function() {
+$root.PROTOCOLWAR = (function() {
 
     /**
-     * Namespace PROTOCOL_WAR.
-     * @exports PROTOCOL_WAR
+     * Namespace PROTOCOLWAR.
+     * @exports PROTOCOLWAR
      * @namespace
      */
-    var PROTOCOL_WAR = {};
+    var PROTOCOLWAR = {};
 
-    PROTOCOL_WAR.CMD_ENTER_GAME_REQ = (function() {
+    PROTOCOLWAR.EnterGameReq = (function() {
 
         /**
-         * Properties of a CMD_ENTER_GAME_REQ.
-         * @memberof PROTOCOL_WAR
-         * @interface ICMD_ENTER_GAME_REQ
-         * @property {PROTOCOL_COMMON.Ipre_battle_data|null} [data] CMD_ENTER_GAME_REQ data
+         * Properties of an EnterGameReq.
+         * @memberof PROTOCOLWAR
+         * @interface IEnterGameReq
+         * @property {PROTOCOLCOMMON.IPreBattleData|null} [Data] EnterGameReq Data
          */
 
         /**
-         * Constructs a new CMD_ENTER_GAME_REQ.
-         * @memberof PROTOCOL_WAR
-         * @classdesc Represents a CMD_ENTER_GAME_REQ.
-         * @implements ICMD_ENTER_GAME_REQ
+         * Constructs a new EnterGameReq.
+         * @memberof PROTOCOLWAR
+         * @classdesc Represents an EnterGameReq.
+         * @implements IEnterGameReq
          * @constructor
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_REQ=} [properties] Properties to set
+         * @param {PROTOCOLWAR.IEnterGameReq=} [properties] Properties to set
          */
-        function CMD_ENTER_GAME_REQ(properties) {
+        function EnterGameReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -43,89 +43,75 @@ $root.PROTOCOL_WAR = (function() {
         }
 
         /**
-         * CMD_ENTER_GAME_REQ data.
-         * @member {PROTOCOL_COMMON.Ipre_battle_data|null|undefined} data
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * EnterGameReq Data.
+         * @member {PROTOCOLCOMMON.IPreBattleData|null|undefined} Data
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @instance
          */
-        CMD_ENTER_GAME_REQ.prototype.data = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        EnterGameReq.prototype.Data = null;
 
         /**
-         * CMD_ENTER_GAME_REQ _data.
-         * @member {"data"|undefined} _data
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
-         * @instance
-         */
-        Object.defineProperty(CMD_ENTER_GAME_REQ.prototype, "_data", {
-            get: $util.oneOfGetter($oneOfFields = ["data"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_ENTER_GAME_REQ instance using the specified properties.
+         * Creates a new EnterGameReq instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_REQ=} [properties] Properties to set
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_REQ} CMD_ENTER_GAME_REQ instance
+         * @param {PROTOCOLWAR.IEnterGameReq=} [properties] Properties to set
+         * @returns {PROTOCOLWAR.EnterGameReq} EnterGameReq instance
          */
-        CMD_ENTER_GAME_REQ.create = function create(properties) {
-            return new CMD_ENTER_GAME_REQ(properties);
+        EnterGameReq.create = function create(properties) {
+            return new EnterGameReq(properties);
         };
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_REQ message. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_REQ.verify|verify} messages.
+         * Encodes the specified EnterGameReq message. Does not implicitly {@link PROTOCOLWAR.EnterGameReq.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_REQ} message CMD_ENTER_GAME_REQ message or plain object to encode
+         * @param {PROTOCOLWAR.IEnterGameReq} message EnterGameReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ENTER_GAME_REQ.encode = function encode(message, writer) {
+        EnterGameReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.data != null && Object.hasOwnProperty.call(message, "data"))
-                $root.PROTOCOL_COMMON.pre_battle_data.encode(message.data, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.Data != null && message.hasOwnProperty("Data"))
+                $root.PROTOCOLCOMMON.PreBattleData.encode(message.Data, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_REQ message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_REQ.verify|verify} messages.
+         * Encodes the specified EnterGameReq message, length delimited. Does not implicitly {@link PROTOCOLWAR.EnterGameReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_REQ} message CMD_ENTER_GAME_REQ message or plain object to encode
+         * @param {PROTOCOLWAR.IEnterGameReq} message EnterGameReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ENTER_GAME_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        EnterGameReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_ENTER_GAME_REQ message from the specified reader or buffer.
+         * Decodes an EnterGameReq message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_REQ} CMD_ENTER_GAME_REQ
+         * @returns {PROTOCOLWAR.EnterGameReq} EnterGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ENTER_GAME_REQ.decode = function decode(reader, length) {
+        EnterGameReq.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_WAR.CMD_ENTER_GAME_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLWAR.EnterGameReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.data = $root.PROTOCOL_COMMON.pre_battle_data.decode(reader, reader.uint32());
+                    message.Data = $root.PROTOCOLCOMMON.PreBattleData.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -136,117 +122,112 @@ $root.PROTOCOL_WAR = (function() {
         };
 
         /**
-         * Decodes a CMD_ENTER_GAME_REQ message from the specified reader or buffer, length delimited.
+         * Decodes an EnterGameReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_REQ} CMD_ENTER_GAME_REQ
+         * @returns {PROTOCOLWAR.EnterGameReq} EnterGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ENTER_GAME_REQ.decodeDelimited = function decodeDelimited(reader) {
+        EnterGameReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_ENTER_GAME_REQ message.
+         * Verifies an EnterGameReq message.
          * @function verify
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_ENTER_GAME_REQ.verify = function verify(message) {
+        EnterGameReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.data != null && message.hasOwnProperty("data")) {
-                properties._data = 1;
-                {
-                    var error = $root.PROTOCOL_COMMON.pre_battle_data.verify(message.data);
-                    if (error)
-                        return "data." + error;
-                }
+            if (message.Data != null && message.hasOwnProperty("Data")) {
+                var error = $root.PROTOCOLCOMMON.PreBattleData.verify(message.Data);
+                if (error)
+                    return "Data." + error;
             }
             return null;
         };
 
         /**
-         * Creates a CMD_ENTER_GAME_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates an EnterGameReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_REQ} CMD_ENTER_GAME_REQ
+         * @returns {PROTOCOLWAR.EnterGameReq} EnterGameReq
          */
-        CMD_ENTER_GAME_REQ.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_WAR.CMD_ENTER_GAME_REQ)
+        EnterGameReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLWAR.EnterGameReq)
                 return object;
-            var message = new $root.PROTOCOL_WAR.CMD_ENTER_GAME_REQ();
-            if (object.data != null) {
-                if (typeof object.data !== "object")
-                    throw TypeError(".PROTOCOL_WAR.CMD_ENTER_GAME_REQ.data: object expected");
-                message.data = $root.PROTOCOL_COMMON.pre_battle_data.fromObject(object.data);
+            var message = new $root.PROTOCOLWAR.EnterGameReq();
+            if (object.Data != null) {
+                if (typeof object.Data !== "object")
+                    throw TypeError(".PROTOCOLWAR.EnterGameReq.Data: object expected");
+                message.Data = $root.PROTOCOLCOMMON.PreBattleData.fromObject(object.Data);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_ENTER_GAME_REQ message. Also converts values to other types if specified.
+         * Creates a plain object from an EnterGameReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @static
-         * @param {PROTOCOL_WAR.CMD_ENTER_GAME_REQ} message CMD_ENTER_GAME_REQ
+         * @param {PROTOCOLWAR.EnterGameReq} message EnterGameReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_ENTER_GAME_REQ.toObject = function toObject(message, options) {
+        EnterGameReq.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.data != null && message.hasOwnProperty("data")) {
-                object.data = $root.PROTOCOL_COMMON.pre_battle_data.toObject(message.data, options);
-                if (options.oneofs)
-                    object._data = "data";
-            }
+            if (options.defaults)
+                object.Data = null;
+            if (message.Data != null && message.hasOwnProperty("Data"))
+                object.Data = $root.PROTOCOLCOMMON.PreBattleData.toObject(message.Data, options);
             return object;
         };
 
         /**
-         * Converts this CMD_ENTER_GAME_REQ to JSON.
+         * Converts this EnterGameReq to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_REQ
+         * @memberof PROTOCOLWAR.EnterGameReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_ENTER_GAME_REQ.prototype.toJSON = function toJSON() {
+        EnterGameReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_ENTER_GAME_REQ;
+        return EnterGameReq;
     })();
 
-    PROTOCOL_WAR.CMD_ENTER_GAME_RSP = (function() {
+    PROTOCOLWAR.EnterGameRsp = (function() {
 
         /**
-         * Properties of a CMD_ENTER_GAME_RSP.
-         * @memberof PROTOCOL_WAR
-         * @interface ICMD_ENTER_GAME_RSP
-         * @property {PROTOCOL_COMMON.Ipre_battle_data|null} [data] CMD_ENTER_GAME_RSP data
+         * Properties of an EnterGameRsp.
+         * @memberof PROTOCOLWAR
+         * @interface IEnterGameRsp
+         * @property {PROTOCOLCOMMON.IPreBattleData|null} [Data] EnterGameRsp Data
          */
 
         /**
-         * Constructs a new CMD_ENTER_GAME_RSP.
-         * @memberof PROTOCOL_WAR
-         * @classdesc Represents a CMD_ENTER_GAME_RSP.
-         * @implements ICMD_ENTER_GAME_RSP
+         * Constructs a new EnterGameRsp.
+         * @memberof PROTOCOLWAR
+         * @classdesc Represents an EnterGameRsp.
+         * @implements IEnterGameRsp
          * @constructor
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_RSP=} [properties] Properties to set
+         * @param {PROTOCOLWAR.IEnterGameRsp=} [properties] Properties to set
          */
-        function CMD_ENTER_GAME_RSP(properties) {
+        function EnterGameRsp(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -254,89 +235,75 @@ $root.PROTOCOL_WAR = (function() {
         }
 
         /**
-         * CMD_ENTER_GAME_RSP data.
-         * @member {PROTOCOL_COMMON.Ipre_battle_data|null|undefined} data
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * EnterGameRsp Data.
+         * @member {PROTOCOLCOMMON.IPreBattleData|null|undefined} Data
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @instance
          */
-        CMD_ENTER_GAME_RSP.prototype.data = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        EnterGameRsp.prototype.Data = null;
 
         /**
-         * CMD_ENTER_GAME_RSP _data.
-         * @member {"data"|undefined} _data
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_ENTER_GAME_RSP.prototype, "_data", {
-            get: $util.oneOfGetter($oneOfFields = ["data"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_ENTER_GAME_RSP instance using the specified properties.
+         * Creates a new EnterGameRsp instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_RSP=} [properties] Properties to set
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_RSP} CMD_ENTER_GAME_RSP instance
+         * @param {PROTOCOLWAR.IEnterGameRsp=} [properties] Properties to set
+         * @returns {PROTOCOLWAR.EnterGameRsp} EnterGameRsp instance
          */
-        CMD_ENTER_GAME_RSP.create = function create(properties) {
-            return new CMD_ENTER_GAME_RSP(properties);
+        EnterGameRsp.create = function create(properties) {
+            return new EnterGameRsp(properties);
         };
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_RSP message. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_RSP.verify|verify} messages.
+         * Encodes the specified EnterGameRsp message. Does not implicitly {@link PROTOCOLWAR.EnterGameRsp.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_RSP} message CMD_ENTER_GAME_RSP message or plain object to encode
+         * @param {PROTOCOLWAR.IEnterGameRsp} message EnterGameRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ENTER_GAME_RSP.encode = function encode(message, writer) {
+        EnterGameRsp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.data != null && Object.hasOwnProperty.call(message, "data"))
-                $root.PROTOCOL_COMMON.pre_battle_data.encode(message.data, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.Data != null && message.hasOwnProperty("Data"))
+                $root.PROTOCOLCOMMON.PreBattleData.encode(message.Data, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_ENTER_GAME_RSP message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_ENTER_GAME_RSP.verify|verify} messages.
+         * Encodes the specified EnterGameRsp message, length delimited. Does not implicitly {@link PROTOCOLWAR.EnterGameRsp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
-         * @param {PROTOCOL_WAR.ICMD_ENTER_GAME_RSP} message CMD_ENTER_GAME_RSP message or plain object to encode
+         * @param {PROTOCOLWAR.IEnterGameRsp} message EnterGameRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_ENTER_GAME_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        EnterGameRsp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_ENTER_GAME_RSP message from the specified reader or buffer.
+         * Decodes an EnterGameRsp message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_RSP} CMD_ENTER_GAME_RSP
+         * @returns {PROTOCOLWAR.EnterGameRsp} EnterGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ENTER_GAME_RSP.decode = function decode(reader, length) {
+        EnterGameRsp.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_WAR.CMD_ENTER_GAME_RSP();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLWAR.EnterGameRsp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.data = $root.PROTOCOL_COMMON.pre_battle_data.decode(reader, reader.uint32());
+                    message.Data = $root.PROTOCOLCOMMON.PreBattleData.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -347,116 +314,111 @@ $root.PROTOCOL_WAR = (function() {
         };
 
         /**
-         * Decodes a CMD_ENTER_GAME_RSP message from the specified reader or buffer, length delimited.
+         * Decodes an EnterGameRsp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_RSP} CMD_ENTER_GAME_RSP
+         * @returns {PROTOCOLWAR.EnterGameRsp} EnterGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_ENTER_GAME_RSP.decodeDelimited = function decodeDelimited(reader) {
+        EnterGameRsp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_ENTER_GAME_RSP message.
+         * Verifies an EnterGameRsp message.
          * @function verify
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_ENTER_GAME_RSP.verify = function verify(message) {
+        EnterGameRsp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.data != null && message.hasOwnProperty("data")) {
-                properties._data = 1;
-                {
-                    var error = $root.PROTOCOL_COMMON.pre_battle_data.verify(message.data);
-                    if (error)
-                        return "data." + error;
-                }
+            if (message.Data != null && message.hasOwnProperty("Data")) {
+                var error = $root.PROTOCOLCOMMON.PreBattleData.verify(message.Data);
+                if (error)
+                    return "Data." + error;
             }
             return null;
         };
 
         /**
-         * Creates a CMD_ENTER_GAME_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates an EnterGameRsp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_WAR.CMD_ENTER_GAME_RSP} CMD_ENTER_GAME_RSP
+         * @returns {PROTOCOLWAR.EnterGameRsp} EnterGameRsp
          */
-        CMD_ENTER_GAME_RSP.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_WAR.CMD_ENTER_GAME_RSP)
+        EnterGameRsp.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLWAR.EnterGameRsp)
                 return object;
-            var message = new $root.PROTOCOL_WAR.CMD_ENTER_GAME_RSP();
-            if (object.data != null) {
-                if (typeof object.data !== "object")
-                    throw TypeError(".PROTOCOL_WAR.CMD_ENTER_GAME_RSP.data: object expected");
-                message.data = $root.PROTOCOL_COMMON.pre_battle_data.fromObject(object.data);
+            var message = new $root.PROTOCOLWAR.EnterGameRsp();
+            if (object.Data != null) {
+                if (typeof object.Data !== "object")
+                    throw TypeError(".PROTOCOLWAR.EnterGameRsp.Data: object expected");
+                message.Data = $root.PROTOCOLCOMMON.PreBattleData.fromObject(object.Data);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_ENTER_GAME_RSP message. Also converts values to other types if specified.
+         * Creates a plain object from an EnterGameRsp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @static
-         * @param {PROTOCOL_WAR.CMD_ENTER_GAME_RSP} message CMD_ENTER_GAME_RSP
+         * @param {PROTOCOLWAR.EnterGameRsp} message EnterGameRsp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_ENTER_GAME_RSP.toObject = function toObject(message, options) {
+        EnterGameRsp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.data != null && message.hasOwnProperty("data")) {
-                object.data = $root.PROTOCOL_COMMON.pre_battle_data.toObject(message.data, options);
-                if (options.oneofs)
-                    object._data = "data";
-            }
+            if (options.defaults)
+                object.Data = null;
+            if (message.Data != null && message.hasOwnProperty("Data"))
+                object.Data = $root.PROTOCOLCOMMON.PreBattleData.toObject(message.Data, options);
             return object;
         };
 
         /**
-         * Converts this CMD_ENTER_GAME_RSP to JSON.
+         * Converts this EnterGameRsp to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_WAR.CMD_ENTER_GAME_RSP
+         * @memberof PROTOCOLWAR.EnterGameRsp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_ENTER_GAME_RSP.prototype.toJSON = function toJSON() {
+        EnterGameRsp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_ENTER_GAME_RSP;
+        return EnterGameRsp;
     })();
 
-    PROTOCOL_WAR.CMD_START_GAME_REQ = (function() {
+    PROTOCOLWAR.StartGameReq = (function() {
 
         /**
-         * Properties of a CMD_START_GAME_REQ.
-         * @memberof PROTOCOL_WAR
-         * @interface ICMD_START_GAME_REQ
+         * Properties of a StartGameReq.
+         * @memberof PROTOCOLWAR
+         * @interface IStartGameReq
          */
 
         /**
-         * Constructs a new CMD_START_GAME_REQ.
-         * @memberof PROTOCOL_WAR
-         * @classdesc Represents a CMD_START_GAME_REQ.
-         * @implements ICMD_START_GAME_REQ
+         * Constructs a new StartGameReq.
+         * @memberof PROTOCOLWAR
+         * @classdesc Represents a StartGameReq.
+         * @implements IStartGameReq
          * @constructor
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_REQ=} [properties] Properties to set
+         * @param {PROTOCOLWAR.IStartGameReq=} [properties] Properties to set
          */
-        function CMD_START_GAME_REQ(properties) {
+        function StartGameReq(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -464,60 +426,60 @@ $root.PROTOCOL_WAR = (function() {
         }
 
         /**
-         * Creates a new CMD_START_GAME_REQ instance using the specified properties.
+         * Creates a new StartGameReq instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_REQ=} [properties] Properties to set
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_REQ} CMD_START_GAME_REQ instance
+         * @param {PROTOCOLWAR.IStartGameReq=} [properties] Properties to set
+         * @returns {PROTOCOLWAR.StartGameReq} StartGameReq instance
          */
-        CMD_START_GAME_REQ.create = function create(properties) {
-            return new CMD_START_GAME_REQ(properties);
+        StartGameReq.create = function create(properties) {
+            return new StartGameReq(properties);
         };
 
         /**
-         * Encodes the specified CMD_START_GAME_REQ message. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_REQ.verify|verify} messages.
+         * Encodes the specified StartGameReq message. Does not implicitly {@link PROTOCOLWAR.StartGameReq.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_REQ} message CMD_START_GAME_REQ message or plain object to encode
+         * @param {PROTOCOLWAR.IStartGameReq} message StartGameReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_START_GAME_REQ.encode = function encode(message, writer) {
+        StartGameReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_START_GAME_REQ message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_REQ.verify|verify} messages.
+         * Encodes the specified StartGameReq message, length delimited. Does not implicitly {@link PROTOCOLWAR.StartGameReq.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_REQ} message CMD_START_GAME_REQ message or plain object to encode
+         * @param {PROTOCOLWAR.IStartGameReq} message StartGameReq message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_START_GAME_REQ.encodeDelimited = function encodeDelimited(message, writer) {
+        StartGameReq.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_START_GAME_REQ message from the specified reader or buffer.
+         * Decodes a StartGameReq message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_REQ} CMD_START_GAME_REQ
+         * @returns {PROTOCOLWAR.StartGameReq} StartGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_START_GAME_REQ.decode = function decode(reader, length) {
+        StartGameReq.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_WAR.CMD_START_GAME_REQ();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLWAR.StartGameReq();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -530,94 +492,94 @@ $root.PROTOCOL_WAR = (function() {
         };
 
         /**
-         * Decodes a CMD_START_GAME_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a StartGameReq message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_REQ} CMD_START_GAME_REQ
+         * @returns {PROTOCOLWAR.StartGameReq} StartGameReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_START_GAME_REQ.decodeDelimited = function decodeDelimited(reader) {
+        StartGameReq.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_START_GAME_REQ message.
+         * Verifies a StartGameReq message.
          * @function verify
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_START_GAME_REQ.verify = function verify(message) {
+        StartGameReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             return null;
         };
 
         /**
-         * Creates a CMD_START_GAME_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a StartGameReq message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_REQ} CMD_START_GAME_REQ
+         * @returns {PROTOCOLWAR.StartGameReq} StartGameReq
          */
-        CMD_START_GAME_REQ.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_WAR.CMD_START_GAME_REQ)
+        StartGameReq.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLWAR.StartGameReq)
                 return object;
-            return new $root.PROTOCOL_WAR.CMD_START_GAME_REQ();
+            return new $root.PROTOCOLWAR.StartGameReq();
         };
 
         /**
-         * Creates a plain object from a CMD_START_GAME_REQ message. Also converts values to other types if specified.
+         * Creates a plain object from a StartGameReq message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @static
-         * @param {PROTOCOL_WAR.CMD_START_GAME_REQ} message CMD_START_GAME_REQ
+         * @param {PROTOCOLWAR.StartGameReq} message StartGameReq
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_START_GAME_REQ.toObject = function toObject() {
+        StartGameReq.toObject = function toObject() {
             return {};
         };
 
         /**
-         * Converts this CMD_START_GAME_REQ to JSON.
+         * Converts this StartGameReq to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_REQ
+         * @memberof PROTOCOLWAR.StartGameReq
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_START_GAME_REQ.prototype.toJSON = function toJSON() {
+        StartGameReq.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_START_GAME_REQ;
+        return StartGameReq;
     })();
 
-    PROTOCOL_WAR.CMD_START_GAME_RSP = (function() {
+    PROTOCOLWAR.StartGameRsp = (function() {
 
         /**
-         * Properties of a CMD_START_GAME_RSP.
-         * @memberof PROTOCOL_WAR
-         * @interface ICMD_START_GAME_RSP
-         * @property {PROTOCOL_COMMON.IRoomInfo|null} [roomInfo] CMD_START_GAME_RSP roomInfo
+         * Properties of a StartGameRsp.
+         * @memberof PROTOCOLWAR
+         * @interface IStartGameRsp
+         * @property {PROTOCOLCOMMON.IRoomInfo|null} [RoomInfo] StartGameRsp RoomInfo
          */
 
         /**
-         * Constructs a new CMD_START_GAME_RSP.
-         * @memberof PROTOCOL_WAR
-         * @classdesc Represents a CMD_START_GAME_RSP.
-         * @implements ICMD_START_GAME_RSP
+         * Constructs a new StartGameRsp.
+         * @memberof PROTOCOLWAR
+         * @classdesc Represents a StartGameRsp.
+         * @implements IStartGameRsp
          * @constructor
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_RSP=} [properties] Properties to set
+         * @param {PROTOCOLWAR.IStartGameRsp=} [properties] Properties to set
          */
-        function CMD_START_GAME_RSP(properties) {
+        function StartGameRsp(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -625,89 +587,75 @@ $root.PROTOCOL_WAR = (function() {
         }
 
         /**
-         * CMD_START_GAME_RSP roomInfo.
-         * @member {PROTOCOL_COMMON.IRoomInfo|null|undefined} roomInfo
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * StartGameRsp RoomInfo.
+         * @member {PROTOCOLCOMMON.IRoomInfo|null|undefined} RoomInfo
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @instance
          */
-        CMD_START_GAME_RSP.prototype.roomInfo = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        StartGameRsp.prototype.RoomInfo = null;
 
         /**
-         * CMD_START_GAME_RSP _roomInfo.
-         * @member {"roomInfo"|undefined} _roomInfo
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
-         * @instance
-         */
-        Object.defineProperty(CMD_START_GAME_RSP.prototype, "_roomInfo", {
-            get: $util.oneOfGetter($oneOfFields = ["roomInfo"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_START_GAME_RSP instance using the specified properties.
+         * Creates a new StartGameRsp instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_RSP=} [properties] Properties to set
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_RSP} CMD_START_GAME_RSP instance
+         * @param {PROTOCOLWAR.IStartGameRsp=} [properties] Properties to set
+         * @returns {PROTOCOLWAR.StartGameRsp} StartGameRsp instance
          */
-        CMD_START_GAME_RSP.create = function create(properties) {
-            return new CMD_START_GAME_RSP(properties);
+        StartGameRsp.create = function create(properties) {
+            return new StartGameRsp(properties);
         };
 
         /**
-         * Encodes the specified CMD_START_GAME_RSP message. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_RSP.verify|verify} messages.
+         * Encodes the specified StartGameRsp message. Does not implicitly {@link PROTOCOLWAR.StartGameRsp.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_RSP} message CMD_START_GAME_RSP message or plain object to encode
+         * @param {PROTOCOLWAR.IStartGameRsp} message StartGameRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_START_GAME_RSP.encode = function encode(message, writer) {
+        StartGameRsp.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomInfo != null && Object.hasOwnProperty.call(message, "roomInfo"))
-                $root.PROTOCOL_COMMON.RoomInfo.encode(message.roomInfo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                $root.PROTOCOLCOMMON.RoomInfo.encode(message.RoomInfo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_START_GAME_RSP message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_START_GAME_RSP.verify|verify} messages.
+         * Encodes the specified StartGameRsp message, length delimited. Does not implicitly {@link PROTOCOLWAR.StartGameRsp.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
-         * @param {PROTOCOL_WAR.ICMD_START_GAME_RSP} message CMD_START_GAME_RSP message or plain object to encode
+         * @param {PROTOCOLWAR.IStartGameRsp} message StartGameRsp message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_START_GAME_RSP.encodeDelimited = function encodeDelimited(message, writer) {
+        StartGameRsp.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_START_GAME_RSP message from the specified reader or buffer.
+         * Decodes a StartGameRsp message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_RSP} CMD_START_GAME_RSP
+         * @returns {PROTOCOLWAR.StartGameRsp} StartGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_START_GAME_RSP.decode = function decode(reader, length) {
+        StartGameRsp.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_WAR.CMD_START_GAME_RSP();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLWAR.StartGameRsp();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.decode(reader, reader.uint32());
+                    message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -718,119 +666,114 @@ $root.PROTOCOL_WAR = (function() {
         };
 
         /**
-         * Decodes a CMD_START_GAME_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a StartGameRsp message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_RSP} CMD_START_GAME_RSP
+         * @returns {PROTOCOLWAR.StartGameRsp} StartGameRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_START_GAME_RSP.decodeDelimited = function decodeDelimited(reader) {
+        StartGameRsp.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_START_GAME_RSP message.
+         * Verifies a StartGameRsp message.
          * @function verify
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_START_GAME_RSP.verify = function verify(message) {
+        StartGameRsp.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                properties._roomInfo = 1;
-                {
-                    var error = $root.PROTOCOL_COMMON.RoomInfo.verify(message.roomInfo);
-                    if (error)
-                        return "roomInfo." + error;
-                }
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo")) {
+                var error = $root.PROTOCOLCOMMON.RoomInfo.verify(message.RoomInfo);
+                if (error)
+                    return "RoomInfo." + error;
             }
             return null;
         };
 
         /**
-         * Creates a CMD_START_GAME_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a StartGameRsp message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_WAR.CMD_START_GAME_RSP} CMD_START_GAME_RSP
+         * @returns {PROTOCOLWAR.StartGameRsp} StartGameRsp
          */
-        CMD_START_GAME_RSP.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_WAR.CMD_START_GAME_RSP)
+        StartGameRsp.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLWAR.StartGameRsp)
                 return object;
-            var message = new $root.PROTOCOL_WAR.CMD_START_GAME_RSP();
-            if (object.roomInfo != null) {
-                if (typeof object.roomInfo !== "object")
-                    throw TypeError(".PROTOCOL_WAR.CMD_START_GAME_RSP.roomInfo: object expected");
-                message.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.fromObject(object.roomInfo);
+            var message = new $root.PROTOCOLWAR.StartGameRsp();
+            if (object.RoomInfo != null) {
+                if (typeof object.RoomInfo !== "object")
+                    throw TypeError(".PROTOCOLWAR.StartGameRsp.RoomInfo: object expected");
+                message.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.fromObject(object.RoomInfo);
             }
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_START_GAME_RSP message. Also converts values to other types if specified.
+         * Creates a plain object from a StartGameRsp message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @static
-         * @param {PROTOCOL_WAR.CMD_START_GAME_RSP} message CMD_START_GAME_RSP
+         * @param {PROTOCOLWAR.StartGameRsp} message StartGameRsp
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_START_GAME_RSP.toObject = function toObject(message, options) {
+        StartGameRsp.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.roomInfo != null && message.hasOwnProperty("roomInfo")) {
-                object.roomInfo = $root.PROTOCOL_COMMON.RoomInfo.toObject(message.roomInfo, options);
-                if (options.oneofs)
-                    object._roomInfo = "roomInfo";
-            }
+            if (options.defaults)
+                object.RoomInfo = null;
+            if (message.RoomInfo != null && message.hasOwnProperty("RoomInfo"))
+                object.RoomInfo = $root.PROTOCOLCOMMON.RoomInfo.toObject(message.RoomInfo, options);
             return object;
         };
 
         /**
-         * Converts this CMD_START_GAME_RSP to JSON.
+         * Converts this StartGameRsp to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_WAR.CMD_START_GAME_RSP
+         * @memberof PROTOCOLWAR.StartGameRsp
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_START_GAME_RSP.prototype.toJSON = function toJSON() {
+        StartGameRsp.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_START_GAME_RSP;
+        return StartGameRsp;
     })();
 
-    PROTOCOL_WAR.CMD_WAR_MOVE = (function() {
+    PROTOCOLWAR.WarMove = (function() {
 
         /**
-         * Properties of a CMD_WAR_MOVE.
-         * @memberof PROTOCOL_WAR
-         * @interface ICMD_WAR_MOVE
-         * @property {number|null} [seat] CMD_WAR_MOVE seat
-         * @property {number|null} [moveX] CMD_WAR_MOVE moveX
-         * @property {number|null} [moveY] CMD_WAR_MOVE moveY
+         * Properties of a WarMove.
+         * @memberof PROTOCOLWAR
+         * @interface IWarMove
+         * @property {number|null} [Seat] WarMove Seat
+         * @property {number|null} [MoveX] WarMove MoveX
+         * @property {number|null} [MoveY] WarMove MoveY
          */
 
         /**
-         * Constructs a new CMD_WAR_MOVE.
-         * @memberof PROTOCOL_WAR
-         * @classdesc Represents a CMD_WAR_MOVE.
-         * @implements ICMD_WAR_MOVE
+         * Constructs a new WarMove.
+         * @memberof PROTOCOLWAR
+         * @classdesc Represents a WarMove.
+         * @implements IWarMove
          * @constructor
-         * @param {PROTOCOL_WAR.ICMD_WAR_MOVE=} [properties] Properties to set
+         * @param {PROTOCOLWAR.IWarMove=} [properties] Properties to set
          */
-        function CMD_WAR_MOVE(properties) {
+        function WarMove(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -838,137 +781,101 @@ $root.PROTOCOL_WAR = (function() {
         }
 
         /**
-         * CMD_WAR_MOVE seat.
-         * @member {number|null|undefined} seat
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * WarMove Seat.
+         * @member {number} Seat
+         * @memberof PROTOCOLWAR.WarMove
          * @instance
          */
-        CMD_WAR_MOVE.prototype.seat = null;
+        WarMove.prototype.Seat = 0;
 
         /**
-         * CMD_WAR_MOVE moveX.
-         * @member {number|null|undefined} moveX
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * WarMove MoveX.
+         * @member {number} MoveX
+         * @memberof PROTOCOLWAR.WarMove
          * @instance
          */
-        CMD_WAR_MOVE.prototype.moveX = null;
+        WarMove.prototype.MoveX = 0;
 
         /**
-         * CMD_WAR_MOVE moveY.
-         * @member {number|null|undefined} moveY
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * WarMove MoveY.
+         * @member {number} MoveY
+         * @memberof PROTOCOLWAR.WarMove
          * @instance
          */
-        CMD_WAR_MOVE.prototype.moveY = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        WarMove.prototype.MoveY = 0;
 
         /**
-         * CMD_WAR_MOVE _seat.
-         * @member {"seat"|undefined} _seat
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
-         * @instance
-         */
-        Object.defineProperty(CMD_WAR_MOVE.prototype, "_seat", {
-            get: $util.oneOfGetter($oneOfFields = ["seat"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CMD_WAR_MOVE _moveX.
-         * @member {"moveX"|undefined} _moveX
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
-         * @instance
-         */
-        Object.defineProperty(CMD_WAR_MOVE.prototype, "_moveX", {
-            get: $util.oneOfGetter($oneOfFields = ["moveX"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CMD_WAR_MOVE _moveY.
-         * @member {"moveY"|undefined} _moveY
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
-         * @instance
-         */
-        Object.defineProperty(CMD_WAR_MOVE.prototype, "_moveY", {
-            get: $util.oneOfGetter($oneOfFields = ["moveY"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_WAR_MOVE instance using the specified properties.
+         * Creates a new WarMove instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
-         * @param {PROTOCOL_WAR.ICMD_WAR_MOVE=} [properties] Properties to set
-         * @returns {PROTOCOL_WAR.CMD_WAR_MOVE} CMD_WAR_MOVE instance
+         * @param {PROTOCOLWAR.IWarMove=} [properties] Properties to set
+         * @returns {PROTOCOLWAR.WarMove} WarMove instance
          */
-        CMD_WAR_MOVE.create = function create(properties) {
-            return new CMD_WAR_MOVE(properties);
+        WarMove.create = function create(properties) {
+            return new WarMove(properties);
         };
 
         /**
-         * Encodes the specified CMD_WAR_MOVE message. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_MOVE.verify|verify} messages.
+         * Encodes the specified WarMove message. Does not implicitly {@link PROTOCOLWAR.WarMove.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
-         * @param {PROTOCOL_WAR.ICMD_WAR_MOVE} message CMD_WAR_MOVE message or plain object to encode
+         * @param {PROTOCOLWAR.IWarMove} message WarMove message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_WAR_MOVE.encode = function encode(message, writer) {
+        WarMove.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.seat != null && Object.hasOwnProperty.call(message, "seat"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.seat);
-            if (message.moveX != null && Object.hasOwnProperty.call(message, "moveX"))
-                writer.uint32(/* id 2, wireType 5 =*/21).float(message.moveX);
-            if (message.moveY != null && Object.hasOwnProperty.call(message, "moveY"))
-                writer.uint32(/* id 3, wireType 5 =*/29).float(message.moveY);
+            if (message.Seat != null && message.hasOwnProperty("Seat"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.Seat);
+            if (message.MoveX != null && message.hasOwnProperty("MoveX"))
+                writer.uint32(/* id 2, wireType 5 =*/21).float(message.MoveX);
+            if (message.MoveY != null && message.hasOwnProperty("MoveY"))
+                writer.uint32(/* id 3, wireType 5 =*/29).float(message.MoveY);
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_WAR_MOVE message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_MOVE.verify|verify} messages.
+         * Encodes the specified WarMove message, length delimited. Does not implicitly {@link PROTOCOLWAR.WarMove.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
-         * @param {PROTOCOL_WAR.ICMD_WAR_MOVE} message CMD_WAR_MOVE message or plain object to encode
+         * @param {PROTOCOLWAR.IWarMove} message WarMove message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_WAR_MOVE.encodeDelimited = function encodeDelimited(message, writer) {
+        WarMove.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_WAR_MOVE message from the specified reader or buffer.
+         * Decodes a WarMove message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_WAR.CMD_WAR_MOVE} CMD_WAR_MOVE
+         * @returns {PROTOCOLWAR.WarMove} WarMove
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_WAR_MOVE.decode = function decode(reader, length) {
+        WarMove.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_WAR.CMD_WAR_MOVE();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLWAR.WarMove();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.seat = reader.int32();
+                    message.Seat = reader.int32();
                     break;
                 case 2:
-                    message.moveX = reader.float();
+                    message.MoveX = reader.float();
                     break;
                 case 3:
-                    message.moveY = reader.float();
+                    message.MoveY = reader.float();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -979,135 +886,124 @@ $root.PROTOCOL_WAR = (function() {
         };
 
         /**
-         * Decodes a CMD_WAR_MOVE message from the specified reader or buffer, length delimited.
+         * Decodes a WarMove message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_WAR.CMD_WAR_MOVE} CMD_WAR_MOVE
+         * @returns {PROTOCOLWAR.WarMove} WarMove
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_WAR_MOVE.decodeDelimited = function decodeDelimited(reader) {
+        WarMove.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_WAR_MOVE message.
+         * Verifies a WarMove message.
          * @function verify
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_WAR_MOVE.verify = function verify(message) {
+        WarMove.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.seat != null && message.hasOwnProperty("seat")) {
-                properties._seat = 1;
-                if (!$util.isInteger(message.seat))
-                    return "seat: integer expected";
-            }
-            if (message.moveX != null && message.hasOwnProperty("moveX")) {
-                properties._moveX = 1;
-                if (typeof message.moveX !== "number")
-                    return "moveX: number expected";
-            }
-            if (message.moveY != null && message.hasOwnProperty("moveY")) {
-                properties._moveY = 1;
-                if (typeof message.moveY !== "number")
-                    return "moveY: number expected";
-            }
+            if (message.Seat != null && message.hasOwnProperty("Seat"))
+                if (!$util.isInteger(message.Seat))
+                    return "Seat: integer expected";
+            if (message.MoveX != null && message.hasOwnProperty("MoveX"))
+                if (typeof message.MoveX !== "number")
+                    return "MoveX: number expected";
+            if (message.MoveY != null && message.hasOwnProperty("MoveY"))
+                if (typeof message.MoveY !== "number")
+                    return "MoveY: number expected";
             return null;
         };
 
         /**
-         * Creates a CMD_WAR_MOVE message from a plain object. Also converts values to their respective internal types.
+         * Creates a WarMove message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_WAR.CMD_WAR_MOVE} CMD_WAR_MOVE
+         * @returns {PROTOCOLWAR.WarMove} WarMove
          */
-        CMD_WAR_MOVE.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_WAR.CMD_WAR_MOVE)
+        WarMove.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLWAR.WarMove)
                 return object;
-            var message = new $root.PROTOCOL_WAR.CMD_WAR_MOVE();
-            if (object.seat != null)
-                message.seat = object.seat | 0;
-            if (object.moveX != null)
-                message.moveX = Number(object.moveX);
-            if (object.moveY != null)
-                message.moveY = Number(object.moveY);
+            var message = new $root.PROTOCOLWAR.WarMove();
+            if (object.Seat != null)
+                message.Seat = object.Seat | 0;
+            if (object.MoveX != null)
+                message.MoveX = Number(object.MoveX);
+            if (object.MoveY != null)
+                message.MoveY = Number(object.MoveY);
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_WAR_MOVE message. Also converts values to other types if specified.
+         * Creates a plain object from a WarMove message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @static
-         * @param {PROTOCOL_WAR.CMD_WAR_MOVE} message CMD_WAR_MOVE
+         * @param {PROTOCOLWAR.WarMove} message WarMove
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_WAR_MOVE.toObject = function toObject(message, options) {
+        WarMove.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.seat != null && message.hasOwnProperty("seat")) {
-                object.seat = message.seat;
-                if (options.oneofs)
-                    object._seat = "seat";
+            if (options.defaults) {
+                object.Seat = 0;
+                object.MoveX = 0;
+                object.MoveY = 0;
             }
-            if (message.moveX != null && message.hasOwnProperty("moveX")) {
-                object.moveX = options.json && !isFinite(message.moveX) ? String(message.moveX) : message.moveX;
-                if (options.oneofs)
-                    object._moveX = "moveX";
-            }
-            if (message.moveY != null && message.hasOwnProperty("moveY")) {
-                object.moveY = options.json && !isFinite(message.moveY) ? String(message.moveY) : message.moveY;
-                if (options.oneofs)
-                    object._moveY = "moveY";
-            }
+            if (message.Seat != null && message.hasOwnProperty("Seat"))
+                object.Seat = message.Seat;
+            if (message.MoveX != null && message.hasOwnProperty("MoveX"))
+                object.MoveX = options.json && !isFinite(message.MoveX) ? String(message.MoveX) : message.MoveX;
+            if (message.MoveY != null && message.hasOwnProperty("MoveY"))
+                object.MoveY = options.json && !isFinite(message.MoveY) ? String(message.MoveY) : message.MoveY;
             return object;
         };
 
         /**
-         * Converts this CMD_WAR_MOVE to JSON.
+         * Converts this WarMove to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_WAR.CMD_WAR_MOVE
+         * @memberof PROTOCOLWAR.WarMove
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_WAR_MOVE.prototype.toJSON = function toJSON() {
+        WarMove.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_WAR_MOVE;
+        return WarMove;
     })();
 
-    PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE = (function() {
+    PROTOCOLWAR.WarSequenceNotice = (function() {
 
         /**
-         * Properties of a CMD_WAR_SEQUENCE_NOTICE.
-         * @memberof PROTOCOL_WAR
-         * @interface ICMD_WAR_SEQUENCE_NOTICE
-         * @property {number|null} [sequence] CMD_WAR_SEQUENCE_NOTICE sequence
+         * Properties of a WarSequenceNotice.
+         * @memberof PROTOCOLWAR
+         * @interface IWarSequenceNotice
+         * @property {number|null} [Sequence] WarSequenceNotice Sequence
          */
 
         /**
-         * Constructs a new CMD_WAR_SEQUENCE_NOTICE.
-         * @memberof PROTOCOL_WAR
-         * @classdesc Represents a CMD_WAR_SEQUENCE_NOTICE.
-         * @implements ICMD_WAR_SEQUENCE_NOTICE
+         * Constructs a new WarSequenceNotice.
+         * @memberof PROTOCOLWAR
+         * @classdesc Represents a WarSequenceNotice.
+         * @implements IWarSequenceNotice
          * @constructor
-         * @param {PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE=} [properties] Properties to set
+         * @param {PROTOCOLWAR.IWarSequenceNotice=} [properties] Properties to set
          */
-        function CMD_WAR_SEQUENCE_NOTICE(properties) {
+        function WarSequenceNotice(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1115,89 +1011,75 @@ $root.PROTOCOL_WAR = (function() {
         }
 
         /**
-         * CMD_WAR_SEQUENCE_NOTICE sequence.
-         * @member {number|null|undefined} sequence
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * WarSequenceNotice Sequence.
+         * @member {number} Sequence
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @instance
          */
-        CMD_WAR_SEQUENCE_NOTICE.prototype.sequence = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        WarSequenceNotice.prototype.Sequence = 0;
 
         /**
-         * CMD_WAR_SEQUENCE_NOTICE _sequence.
-         * @member {"sequence"|undefined} _sequence
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
-         * @instance
-         */
-        Object.defineProperty(CMD_WAR_SEQUENCE_NOTICE.prototype, "_sequence", {
-            get: $util.oneOfGetter($oneOfFields = ["sequence"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new CMD_WAR_SEQUENCE_NOTICE instance using the specified properties.
+         * Creates a new WarSequenceNotice instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
-         * @param {PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE=} [properties] Properties to set
-         * @returns {PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE} CMD_WAR_SEQUENCE_NOTICE instance
+         * @param {PROTOCOLWAR.IWarSequenceNotice=} [properties] Properties to set
+         * @returns {PROTOCOLWAR.WarSequenceNotice} WarSequenceNotice instance
          */
-        CMD_WAR_SEQUENCE_NOTICE.create = function create(properties) {
-            return new CMD_WAR_SEQUENCE_NOTICE(properties);
+        WarSequenceNotice.create = function create(properties) {
+            return new WarSequenceNotice(properties);
         };
 
         /**
-         * Encodes the specified CMD_WAR_SEQUENCE_NOTICE message. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE.verify|verify} messages.
+         * Encodes the specified WarSequenceNotice message. Does not implicitly {@link PROTOCOLWAR.WarSequenceNotice.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
-         * @param {PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE} message CMD_WAR_SEQUENCE_NOTICE message or plain object to encode
+         * @param {PROTOCOLWAR.IWarSequenceNotice} message WarSequenceNotice message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_WAR_SEQUENCE_NOTICE.encode = function encode(message, writer) {
+        WarSequenceNotice.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.sequence != null && Object.hasOwnProperty.call(message, "sequence"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.sequence);
+            if (message.Sequence != null && message.hasOwnProperty("Sequence"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.Sequence);
             return writer;
         };
 
         /**
-         * Encodes the specified CMD_WAR_SEQUENCE_NOTICE message, length delimited. Does not implicitly {@link PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE.verify|verify} messages.
+         * Encodes the specified WarSequenceNotice message, length delimited. Does not implicitly {@link PROTOCOLWAR.WarSequenceNotice.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
-         * @param {PROTOCOL_WAR.ICMD_WAR_SEQUENCE_NOTICE} message CMD_WAR_SEQUENCE_NOTICE message or plain object to encode
+         * @param {PROTOCOLWAR.IWarSequenceNotice} message WarSequenceNotice message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        CMD_WAR_SEQUENCE_NOTICE.encodeDelimited = function encodeDelimited(message, writer) {
+        WarSequenceNotice.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a CMD_WAR_SEQUENCE_NOTICE message from the specified reader or buffer.
+         * Decodes a WarSequenceNotice message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE} CMD_WAR_SEQUENCE_NOTICE
+         * @returns {PROTOCOLWAR.WarSequenceNotice} WarSequenceNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_WAR_SEQUENCE_NOTICE.decode = function decode(reader, length) {
+        WarSequenceNotice.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLWAR.WarSequenceNotice();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.sequence = reader.int32();
+                    message.Sequence = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1208,122 +1090,118 @@ $root.PROTOCOL_WAR = (function() {
         };
 
         /**
-         * Decodes a CMD_WAR_SEQUENCE_NOTICE message from the specified reader or buffer, length delimited.
+         * Decodes a WarSequenceNotice message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE} CMD_WAR_SEQUENCE_NOTICE
+         * @returns {PROTOCOLWAR.WarSequenceNotice} WarSequenceNotice
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CMD_WAR_SEQUENCE_NOTICE.decodeDelimited = function decodeDelimited(reader) {
+        WarSequenceNotice.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a CMD_WAR_SEQUENCE_NOTICE message.
+         * Verifies a WarSequenceNotice message.
          * @function verify
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        CMD_WAR_SEQUENCE_NOTICE.verify = function verify(message) {
+        WarSequenceNotice.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.sequence != null && message.hasOwnProperty("sequence")) {
-                properties._sequence = 1;
-                if (!$util.isInteger(message.sequence))
-                    return "sequence: integer expected";
-            }
+            if (message.Sequence != null && message.hasOwnProperty("Sequence"))
+                if (!$util.isInteger(message.Sequence))
+                    return "Sequence: integer expected";
             return null;
         };
 
         /**
-         * Creates a CMD_WAR_SEQUENCE_NOTICE message from a plain object. Also converts values to their respective internal types.
+         * Creates a WarSequenceNotice message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE} CMD_WAR_SEQUENCE_NOTICE
+         * @returns {PROTOCOLWAR.WarSequenceNotice} WarSequenceNotice
          */
-        CMD_WAR_SEQUENCE_NOTICE.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE)
+        WarSequenceNotice.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLWAR.WarSequenceNotice)
                 return object;
-            var message = new $root.PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE();
-            if (object.sequence != null)
-                message.sequence = object.sequence | 0;
+            var message = new $root.PROTOCOLWAR.WarSequenceNotice();
+            if (object.Sequence != null)
+                message.Sequence = object.Sequence | 0;
             return message;
         };
 
         /**
-         * Creates a plain object from a CMD_WAR_SEQUENCE_NOTICE message. Also converts values to other types if specified.
+         * Creates a plain object from a WarSequenceNotice message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @static
-         * @param {PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE} message CMD_WAR_SEQUENCE_NOTICE
+         * @param {PROTOCOLWAR.WarSequenceNotice} message WarSequenceNotice
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        CMD_WAR_SEQUENCE_NOTICE.toObject = function toObject(message, options) {
+        WarSequenceNotice.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.sequence != null && message.hasOwnProperty("sequence")) {
-                object.sequence = message.sequence;
-                if (options.oneofs)
-                    object._sequence = "sequence";
-            }
+            if (options.defaults)
+                object.Sequence = 0;
+            if (message.Sequence != null && message.hasOwnProperty("Sequence"))
+                object.Sequence = message.Sequence;
             return object;
         };
 
         /**
-         * Converts this CMD_WAR_SEQUENCE_NOTICE to JSON.
+         * Converts this WarSequenceNotice to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_WAR.CMD_WAR_SEQUENCE_NOTICE
+         * @memberof PROTOCOLWAR.WarSequenceNotice
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        CMD_WAR_SEQUENCE_NOTICE.prototype.toJSON = function toJSON() {
+        WarSequenceNotice.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return CMD_WAR_SEQUENCE_NOTICE;
+        return WarSequenceNotice;
     })();
 
-    return PROTOCOL_WAR;
+    return PROTOCOLWAR;
 })();
 
-$root.PROTOCOL_COMMON = (function() {
+$root.PROTOCOLCOMMON = (function() {
 
     /**
-     * Namespace PROTOCOL_COMMON.
-     * @exports PROTOCOL_COMMON
+     * Namespace PROTOCOLCOMMON.
+     * @exports PROTOCOLCOMMON
      * @namespace
      */
-    var PROTOCOL_COMMON = {};
+    var PROTOCOLCOMMON = {};
 
-    PROTOCOL_COMMON.UserInfo = (function() {
+    PROTOCOLCOMMON.UserInfo = (function() {
 
         /**
          * Properties of a UserInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @interface IUserInfo
-         * @property {string|null} [userName] UserInfo userName
-         * @property {number|null} [userSeat] UserInfo userSeat
+         * @property {string|null} [UserName] UserInfo UserName
+         * @property {number|null} [UserSeat] UserInfo UserSeat
          */
 
         /**
          * Constructs a new UserInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @classdesc Represents a UserInfo.
          * @implements IUserInfo
          * @constructor
-         * @param {PROTOCOL_COMMON.IUserInfo=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IUserInfo=} [properties] Properties to set
          */
         function UserInfo(properties) {
             if (properties)
@@ -1333,83 +1211,58 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * UserInfo userName.
-         * @member {string|null|undefined} userName
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * UserInfo UserName.
+         * @member {string} UserName
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          */
-        UserInfo.prototype.userName = null;
+        UserInfo.prototype.UserName = "";
 
         /**
-         * UserInfo userSeat.
-         * @member {number|null|undefined} userSeat
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * UserInfo UserSeat.
+         * @member {number} UserSeat
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          */
-        UserInfo.prototype.userSeat = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * UserInfo _userName.
-         * @member {"userName"|undefined} _userName
-         * @memberof PROTOCOL_COMMON.UserInfo
-         * @instance
-         */
-        Object.defineProperty(UserInfo.prototype, "_userName", {
-            get: $util.oneOfGetter($oneOfFields = ["userName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * UserInfo _userSeat.
-         * @member {"userSeat"|undefined} _userSeat
-         * @memberof PROTOCOL_COMMON.UserInfo
-         * @instance
-         */
-        Object.defineProperty(UserInfo.prototype, "_userSeat", {
-            get: $util.oneOfGetter($oneOfFields = ["userSeat"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        UserInfo.prototype.UserSeat = 0;
 
         /**
          * Creates a new UserInfo instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo instance
+         * @param {PROTOCOLCOMMON.IUserInfo=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo instance
          */
         UserInfo.create = function create(properties) {
             return new UserInfo(properties);
         };
 
         /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo} message UserInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IUserInfo} message UserInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
         UserInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.userName != null && Object.hasOwnProperty.call(message, "userName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.userName);
-            if (message.userSeat != null && Object.hasOwnProperty.call(message, "userSeat"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.userSeat);
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.UserName);
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.UserSeat);
             return writer;
         };
 
         /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo} message UserInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IUserInfo} message UserInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -1420,26 +1273,26 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a UserInfo message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         UserInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.UserInfo();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.UserInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.userName = reader.string();
+                    message.UserName = reader.string();
                     break;
                 case 2:
-                    message.userSeat = reader.int32();
+                    message.UserSeat = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1452,10 +1305,10 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a UserInfo message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -1468,7 +1321,7 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Verifies a UserInfo message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1476,45 +1329,40 @@ $root.PROTOCOL_COMMON = (function() {
         UserInfo.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.userName != null && message.hasOwnProperty("userName")) {
-                properties._userName = 1;
-                if (!$util.isString(message.userName))
-                    return "userName: string expected";
-            }
-            if (message.userSeat != null && message.hasOwnProperty("userSeat")) {
-                properties._userSeat = 1;
-                if (!$util.isInteger(message.userSeat))
-                    return "userSeat: integer expected";
-            }
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                if (!$util.isString(message.UserName))
+                    return "UserName: string expected";
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                if (!$util.isInteger(message.UserSeat))
+                    return "UserSeat: integer expected";
             return null;
         };
 
         /**
          * Creates a UserInfo message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          */
         UserInfo.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.UserInfo)
+            if (object instanceof $root.PROTOCOLCOMMON.UserInfo)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.UserInfo();
-            if (object.userName != null)
-                message.userName = String(object.userName);
-            if (object.userSeat != null)
-                message.userSeat = object.userSeat | 0;
+            var message = new $root.PROTOCOLCOMMON.UserInfo();
+            if (object.UserName != null)
+                message.UserName = String(object.UserName);
+            if (object.UserSeat != null)
+                message.UserSeat = object.UserSeat | 0;
             return message;
         };
 
         /**
          * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.UserInfo} message UserInfo
+         * @param {PROTOCOLCOMMON.UserInfo} message UserInfo
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -1522,23 +1370,21 @@ $root.PROTOCOL_COMMON = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.userName != null && message.hasOwnProperty("userName")) {
-                object.userName = message.userName;
-                if (options.oneofs)
-                    object._userName = "userName";
+            if (options.defaults) {
+                object.UserName = "";
+                object.UserSeat = 0;
             }
-            if (message.userSeat != null && message.hasOwnProperty("userSeat")) {
-                object.userSeat = message.userSeat;
-                if (options.oneofs)
-                    object._userSeat = "userSeat";
-            }
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                object.UserName = message.UserName;
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                object.UserSeat = message.UserSeat;
             return object;
         };
 
         /**
          * Converts this UserInfo to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -1549,27 +1395,27 @@ $root.PROTOCOL_COMMON = (function() {
         return UserInfo;
     })();
 
-    PROTOCOL_COMMON.RoomInfo = (function() {
+    PROTOCOLCOMMON.RoomInfo = (function() {
 
         /**
          * Properties of a RoomInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @interface IRoomInfo
-         * @property {string|null} [roomName] RoomInfo roomName
-         * @property {Array.<PROTOCOL_COMMON.IUserInfo>|null} [userList] RoomInfo userList
-         * @property {number|null} [roomUniqueId] RoomInfo roomUniqueId
+         * @property {string|null} [RoomName] RoomInfo RoomName
+         * @property {Array.<PROTOCOLCOMMON.IUserInfo>|null} [UserList] RoomInfo UserList
+         * @property {number|null} [RoomUniqueId] RoomInfo RoomUniqueId
          */
 
         /**
          * Constructs a new RoomInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @classdesc Represents a RoomInfo.
          * @implements IRoomInfo
          * @constructor
-         * @param {PROTOCOL_COMMON.IRoomInfo=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IRoomInfo=} [properties] Properties to set
          */
         function RoomInfo(properties) {
-            this.userList = [];
+            this.UserList = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1577,94 +1423,69 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * RoomInfo roomName.
-         * @member {string|null|undefined} roomName
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo RoomName.
+         * @member {string} RoomName
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.roomName = null;
+        RoomInfo.prototype.RoomName = "";
 
         /**
-         * RoomInfo userList.
-         * @member {Array.<PROTOCOL_COMMON.IUserInfo>} userList
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo UserList.
+         * @member {Array.<PROTOCOLCOMMON.IUserInfo>} UserList
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.userList = $util.emptyArray;
+        RoomInfo.prototype.UserList = $util.emptyArray;
 
         /**
-         * RoomInfo roomUniqueId.
-         * @member {number|null|undefined} roomUniqueId
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo RoomUniqueId.
+         * @member {number} RoomUniqueId
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.roomUniqueId = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * RoomInfo _roomName.
-         * @member {"roomName"|undefined} _roomName
-         * @memberof PROTOCOL_COMMON.RoomInfo
-         * @instance
-         */
-        Object.defineProperty(RoomInfo.prototype, "_roomName", {
-            get: $util.oneOfGetter($oneOfFields = ["roomName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * RoomInfo _roomUniqueId.
-         * @member {"roomUniqueId"|undefined} _roomUniqueId
-         * @memberof PROTOCOL_COMMON.RoomInfo
-         * @instance
-         */
-        Object.defineProperty(RoomInfo.prototype, "_roomUniqueId", {
-            get: $util.oneOfGetter($oneOfFields = ["roomUniqueId"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        RoomInfo.prototype.RoomUniqueId = 0;
 
         /**
          * Creates a new RoomInfo instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo instance
+         * @param {PROTOCOLCOMMON.IRoomInfo=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo instance
          */
         RoomInfo.create = function create(properties) {
             return new RoomInfo(properties);
         };
 
         /**
-         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo} message RoomInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IRoomInfo} message RoomInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
         RoomInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomName != null && Object.hasOwnProperty.call(message, "roomName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.roomName);
-            if (message.userList != null && message.userList.length)
-                for (var i = 0; i < message.userList.length; ++i)
-                    $root.PROTOCOL_COMMON.UserInfo.encode(message.userList[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.roomUniqueId != null && Object.hasOwnProperty.call(message, "roomUniqueId"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.roomUniqueId);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.RoomName);
+            if (message.UserList != null && message.UserList.length)
+                for (var i = 0; i < message.UserList.length; ++i)
+                    $root.PROTOCOLCOMMON.UserInfo.encode(message.UserList[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.RoomUniqueId);
             return writer;
         };
 
         /**
-         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo} message RoomInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IRoomInfo} message RoomInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -1675,31 +1496,31 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a RoomInfo message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         RoomInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.RoomInfo();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.RoomInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.roomName = reader.string();
+                    message.RoomName = reader.string();
                     break;
                 case 2:
-                    if (!(message.userList && message.userList.length))
-                        message.userList = [];
-                    message.userList.push($root.PROTOCOL_COMMON.UserInfo.decode(reader, reader.uint32()));
+                    if (!(message.UserList && message.UserList.length))
+                        message.UserList = [];
+                    message.UserList.push($root.PROTOCOLCOMMON.UserInfo.decode(reader, reader.uint32()));
                     break;
                 case 3:
-                    message.roomUniqueId = reader.int32();
+                    message.RoomUniqueId = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1712,10 +1533,10 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a RoomInfo message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -1728,7 +1549,7 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Verifies a RoomInfo message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1736,64 +1557,59 @@ $root.PROTOCOL_COMMON = (function() {
         RoomInfo.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                properties._roomName = 1;
-                if (!$util.isString(message.roomName))
-                    return "roomName: string expected";
-            }
-            if (message.userList != null && message.hasOwnProperty("userList")) {
-                if (!Array.isArray(message.userList))
-                    return "userList: array expected";
-                for (var i = 0; i < message.userList.length; ++i) {
-                    var error = $root.PROTOCOL_COMMON.UserInfo.verify(message.userList[i]);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                if (!$util.isString(message.RoomName))
+                    return "RoomName: string expected";
+            if (message.UserList != null && message.hasOwnProperty("UserList")) {
+                if (!Array.isArray(message.UserList))
+                    return "UserList: array expected";
+                for (var i = 0; i < message.UserList.length; ++i) {
+                    var error = $root.PROTOCOLCOMMON.UserInfo.verify(message.UserList[i]);
                     if (error)
-                        return "userList." + error;
+                        return "UserList." + error;
                 }
             }
-            if (message.roomUniqueId != null && message.hasOwnProperty("roomUniqueId")) {
-                properties._roomUniqueId = 1;
-                if (!$util.isInteger(message.roomUniqueId))
-                    return "roomUniqueId: integer expected";
-            }
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                if (!$util.isInteger(message.RoomUniqueId))
+                    return "RoomUniqueId: integer expected";
             return null;
         };
 
         /**
          * Creates a RoomInfo message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          */
         RoomInfo.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.RoomInfo)
+            if (object instanceof $root.PROTOCOLCOMMON.RoomInfo)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.RoomInfo();
-            if (object.roomName != null)
-                message.roomName = String(object.roomName);
-            if (object.userList) {
-                if (!Array.isArray(object.userList))
-                    throw TypeError(".PROTOCOL_COMMON.RoomInfo.userList: array expected");
-                message.userList = [];
-                for (var i = 0; i < object.userList.length; ++i) {
-                    if (typeof object.userList[i] !== "object")
-                        throw TypeError(".PROTOCOL_COMMON.RoomInfo.userList: object expected");
-                    message.userList[i] = $root.PROTOCOL_COMMON.UserInfo.fromObject(object.userList[i]);
+            var message = new $root.PROTOCOLCOMMON.RoomInfo();
+            if (object.RoomName != null)
+                message.RoomName = String(object.RoomName);
+            if (object.UserList) {
+                if (!Array.isArray(object.UserList))
+                    throw TypeError(".PROTOCOLCOMMON.RoomInfo.UserList: array expected");
+                message.UserList = [];
+                for (var i = 0; i < object.UserList.length; ++i) {
+                    if (typeof object.UserList[i] !== "object")
+                        throw TypeError(".PROTOCOLCOMMON.RoomInfo.UserList: object expected");
+                    message.UserList[i] = $root.PROTOCOLCOMMON.UserInfo.fromObject(object.UserList[i]);
                 }
             }
-            if (object.roomUniqueId != null)
-                message.roomUniqueId = object.roomUniqueId | 0;
+            if (object.RoomUniqueId != null)
+                message.RoomUniqueId = object.RoomUniqueId | 0;
             return message;
         };
 
         /**
          * Creates a plain object from a RoomInfo message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.RoomInfo} message RoomInfo
+         * @param {PROTOCOLCOMMON.RoomInfo} message RoomInfo
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -1802,29 +1618,27 @@ $root.PROTOCOL_COMMON = (function() {
                 options = {};
             var object = {};
             if (options.arrays || options.defaults)
-                object.userList = [];
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                object.roomName = message.roomName;
-                if (options.oneofs)
-                    object._roomName = "roomName";
+                object.UserList = [];
+            if (options.defaults) {
+                object.RoomName = "";
+                object.RoomUniqueId = 0;
             }
-            if (message.userList && message.userList.length) {
-                object.userList = [];
-                for (var j = 0; j < message.userList.length; ++j)
-                    object.userList[j] = $root.PROTOCOL_COMMON.UserInfo.toObject(message.userList[j], options);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                object.RoomName = message.RoomName;
+            if (message.UserList && message.UserList.length) {
+                object.UserList = [];
+                for (var j = 0; j < message.UserList.length; ++j)
+                    object.UserList[j] = $root.PROTOCOLCOMMON.UserInfo.toObject(message.UserList[j], options);
             }
-            if (message.roomUniqueId != null && message.hasOwnProperty("roomUniqueId")) {
-                object.roomUniqueId = message.roomUniqueId;
-                if (options.oneofs)
-                    object._roomUniqueId = "roomUniqueId";
-            }
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                object.RoomUniqueId = message.RoomUniqueId;
             return object;
         };
 
         /**
          * Converts this RoomInfo to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -1835,24 +1649,24 @@ $root.PROTOCOL_COMMON = (function() {
         return RoomInfo;
     })();
 
-    PROTOCOL_COMMON.pre_battle_data = (function() {
+    PROTOCOLCOMMON.PreBattleData = (function() {
 
         /**
-         * Properties of a pre_battle_data.
-         * @memberof PROTOCOL_COMMON
-         * @interface Ipre_battle_data
-         * @property {string|null} [levelName] pre_battle_data levelName
+         * Properties of a PreBattleData.
+         * @memberof PROTOCOLCOMMON
+         * @interface IPreBattleData
+         * @property {string|null} [LevelName] PreBattleData LevelName
          */
 
         /**
-         * Constructs a new pre_battle_data.
-         * @memberof PROTOCOL_COMMON
-         * @classdesc Represents a pre_battle_data.
-         * @implements Ipre_battle_data
+         * Constructs a new PreBattleData.
+         * @memberof PROTOCOLCOMMON
+         * @classdesc Represents a PreBattleData.
+         * @implements IPreBattleData
          * @constructor
-         * @param {PROTOCOL_COMMON.Ipre_battle_data=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IPreBattleData=} [properties] Properties to set
          */
-        function pre_battle_data(properties) {
+        function PreBattleData(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1860,89 +1674,75 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * pre_battle_data levelName.
-         * @member {string|null|undefined} levelName
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * PreBattleData LevelName.
+         * @member {string} LevelName
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @instance
          */
-        pre_battle_data.prototype.levelName = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        PreBattleData.prototype.LevelName = "";
 
         /**
-         * pre_battle_data _levelName.
-         * @member {"levelName"|undefined} _levelName
-         * @memberof PROTOCOL_COMMON.pre_battle_data
-         * @instance
-         */
-        Object.defineProperty(pre_battle_data.prototype, "_levelName", {
-            get: $util.oneOfGetter($oneOfFields = ["levelName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new pre_battle_data instance using the specified properties.
+         * Creates a new PreBattleData instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data instance
+         * @param {PROTOCOLCOMMON.IPreBattleData=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData instance
          */
-        pre_battle_data.create = function create(properties) {
-            return new pre_battle_data(properties);
+        PreBattleData.create = function create(properties) {
+            return new PreBattleData(properties);
         };
 
         /**
-         * Encodes the specified pre_battle_data message. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
+         * Encodes the specified PreBattleData message. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data} message pre_battle_data message or plain object to encode
+         * @param {PROTOCOLCOMMON.IPreBattleData} message PreBattleData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        pre_battle_data.encode = function encode(message, writer) {
+        PreBattleData.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.levelName != null && Object.hasOwnProperty.call(message, "levelName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.levelName);
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.LevelName);
             return writer;
         };
 
         /**
-         * Encodes the specified pre_battle_data message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
+         * Encodes the specified PreBattleData message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data} message pre_battle_data message or plain object to encode
+         * @param {PROTOCOLCOMMON.IPreBattleData} message PreBattleData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        pre_battle_data.encodeDelimited = function encodeDelimited(message, writer) {
+        PreBattleData.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer.
+         * Decodes a PreBattleData message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        pre_battle_data.decode = function decode(reader, length) {
+        PreBattleData.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.pre_battle_data();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.PreBattleData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.levelName = reader.string();
+                    message.LevelName = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1953,94 +1753,90 @@ $root.PROTOCOL_COMMON = (function() {
         };
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer, length delimited.
+         * Decodes a PreBattleData message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        pre_battle_data.decodeDelimited = function decodeDelimited(reader) {
+        PreBattleData.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a pre_battle_data message.
+         * Verifies a PreBattleData message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        pre_battle_data.verify = function verify(message) {
+        PreBattleData.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.levelName != null && message.hasOwnProperty("levelName")) {
-                properties._levelName = 1;
-                if (!$util.isString(message.levelName))
-                    return "levelName: string expected";
-            }
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                if (!$util.isString(message.LevelName))
+                    return "LevelName: string expected";
             return null;
         };
 
         /**
-         * Creates a pre_battle_data message from a plain object. Also converts values to their respective internal types.
+         * Creates a PreBattleData message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          */
-        pre_battle_data.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.pre_battle_data)
+        PreBattleData.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLCOMMON.PreBattleData)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.pre_battle_data();
-            if (object.levelName != null)
-                message.levelName = String(object.levelName);
+            var message = new $root.PROTOCOLCOMMON.PreBattleData();
+            if (object.LevelName != null)
+                message.LevelName = String(object.LevelName);
             return message;
         };
 
         /**
-         * Creates a plain object from a pre_battle_data message. Also converts values to other types if specified.
+         * Creates a plain object from a PreBattleData message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.pre_battle_data} message pre_battle_data
+         * @param {PROTOCOLCOMMON.PreBattleData} message PreBattleData
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        pre_battle_data.toObject = function toObject(message, options) {
+        PreBattleData.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.levelName != null && message.hasOwnProperty("levelName")) {
-                object.levelName = message.levelName;
-                if (options.oneofs)
-                    object._levelName = "levelName";
-            }
+            if (options.defaults)
+                object.LevelName = "";
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                object.LevelName = message.LevelName;
             return object;
         };
 
         /**
-         * Converts this pre_battle_data to JSON.
+         * Converts this PreBattleData to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        pre_battle_data.prototype.toJSON = function toJSON() {
+        PreBattleData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return pre_battle_data;
+        return PreBattleData;
     })();
 
-    return PROTOCOL_COMMON;
+    return PROTOCOLCOMMON;
 })();
 
 module.exports = $root;

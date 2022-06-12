@@ -9,32 +9,32 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.PROTOCOL_COMMON = (function() {
+$root.PROTOCOLCOMMON = (function() {
 
     /**
-     * Namespace PROTOCOL_COMMON.
-     * @exports PROTOCOL_COMMON
+     * Namespace PROTOCOLCOMMON.
+     * @exports PROTOCOLCOMMON
      * @namespace
      */
-    var PROTOCOL_COMMON = {};
+    var PROTOCOLCOMMON = {};
 
-    PROTOCOL_COMMON.UserInfo = (function() {
+    PROTOCOLCOMMON.UserInfo = (function() {
 
         /**
          * Properties of a UserInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @interface IUserInfo
-         * @property {string|null} [userName] UserInfo userName
-         * @property {number|null} [userSeat] UserInfo userSeat
+         * @property {string|null} [UserName] UserInfo UserName
+         * @property {number|null} [UserSeat] UserInfo UserSeat
          */
 
         /**
          * Constructs a new UserInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @classdesc Represents a UserInfo.
          * @implements IUserInfo
          * @constructor
-         * @param {PROTOCOL_COMMON.IUserInfo=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IUserInfo=} [properties] Properties to set
          */
         function UserInfo(properties) {
             if (properties)
@@ -44,83 +44,58 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * UserInfo userName.
-         * @member {string|null|undefined} userName
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * UserInfo UserName.
+         * @member {string} UserName
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          */
-        UserInfo.prototype.userName = null;
+        UserInfo.prototype.UserName = "";
 
         /**
-         * UserInfo userSeat.
-         * @member {number|null|undefined} userSeat
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * UserInfo UserSeat.
+         * @member {number} UserSeat
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          */
-        UserInfo.prototype.userSeat = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * UserInfo _userName.
-         * @member {"userName"|undefined} _userName
-         * @memberof PROTOCOL_COMMON.UserInfo
-         * @instance
-         */
-        Object.defineProperty(UserInfo.prototype, "_userName", {
-            get: $util.oneOfGetter($oneOfFields = ["userName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * UserInfo _userSeat.
-         * @member {"userSeat"|undefined} _userSeat
-         * @memberof PROTOCOL_COMMON.UserInfo
-         * @instance
-         */
-        Object.defineProperty(UserInfo.prototype, "_userSeat", {
-            get: $util.oneOfGetter($oneOfFields = ["userSeat"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        UserInfo.prototype.UserSeat = 0;
 
         /**
          * Creates a new UserInfo instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo instance
+         * @param {PROTOCOLCOMMON.IUserInfo=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo instance
          */
         UserInfo.create = function create(properties) {
             return new UserInfo(properties);
         };
 
         /**
-         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo} message UserInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IUserInfo} message UserInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
         UserInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.userName != null && Object.hasOwnProperty.call(message, "userName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.userName);
-            if (message.userSeat != null && Object.hasOwnProperty.call(message, "userSeat"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.userSeat);
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.UserName);
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.UserSeat);
             return writer;
         };
 
         /**
-         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.UserInfo.verify|verify} messages.
+         * Encodes the specified UserInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.UserInfo.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.IUserInfo} message UserInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IUserInfo} message UserInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -131,26 +106,26 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a UserInfo message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         UserInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.UserInfo();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.UserInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.userName = reader.string();
+                    message.UserName = reader.string();
                     break;
                 case 2:
-                    message.userSeat = reader.int32();
+                    message.UserSeat = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -163,10 +138,10 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a UserInfo message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -179,7 +154,7 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Verifies a UserInfo message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -187,45 +162,40 @@ $root.PROTOCOL_COMMON = (function() {
         UserInfo.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.userName != null && message.hasOwnProperty("userName")) {
-                properties._userName = 1;
-                if (!$util.isString(message.userName))
-                    return "userName: string expected";
-            }
-            if (message.userSeat != null && message.hasOwnProperty("userSeat")) {
-                properties._userSeat = 1;
-                if (!$util.isInteger(message.userSeat))
-                    return "userSeat: integer expected";
-            }
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                if (!$util.isString(message.UserName))
+                    return "UserName: string expected";
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                if (!$util.isInteger(message.UserSeat))
+                    return "UserSeat: integer expected";
             return null;
         };
 
         /**
          * Creates a UserInfo message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.UserInfo} UserInfo
+         * @returns {PROTOCOLCOMMON.UserInfo} UserInfo
          */
         UserInfo.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.UserInfo)
+            if (object instanceof $root.PROTOCOLCOMMON.UserInfo)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.UserInfo();
-            if (object.userName != null)
-                message.userName = String(object.userName);
-            if (object.userSeat != null)
-                message.userSeat = object.userSeat | 0;
+            var message = new $root.PROTOCOLCOMMON.UserInfo();
+            if (object.UserName != null)
+                message.UserName = String(object.UserName);
+            if (object.UserSeat != null)
+                message.UserSeat = object.UserSeat | 0;
             return message;
         };
 
         /**
          * Creates a plain object from a UserInfo message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @static
-         * @param {PROTOCOL_COMMON.UserInfo} message UserInfo
+         * @param {PROTOCOLCOMMON.UserInfo} message UserInfo
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -233,23 +203,21 @@ $root.PROTOCOL_COMMON = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.userName != null && message.hasOwnProperty("userName")) {
-                object.userName = message.userName;
-                if (options.oneofs)
-                    object._userName = "userName";
+            if (options.defaults) {
+                object.UserName = "";
+                object.UserSeat = 0;
             }
-            if (message.userSeat != null && message.hasOwnProperty("userSeat")) {
-                object.userSeat = message.userSeat;
-                if (options.oneofs)
-                    object._userSeat = "userSeat";
-            }
+            if (message.UserName != null && message.hasOwnProperty("UserName"))
+                object.UserName = message.UserName;
+            if (message.UserSeat != null && message.hasOwnProperty("UserSeat"))
+                object.UserSeat = message.UserSeat;
             return object;
         };
 
         /**
          * Converts this UserInfo to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.UserInfo
+         * @memberof PROTOCOLCOMMON.UserInfo
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -260,27 +228,27 @@ $root.PROTOCOL_COMMON = (function() {
         return UserInfo;
     })();
 
-    PROTOCOL_COMMON.RoomInfo = (function() {
+    PROTOCOLCOMMON.RoomInfo = (function() {
 
         /**
          * Properties of a RoomInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @interface IRoomInfo
-         * @property {string|null} [roomName] RoomInfo roomName
-         * @property {Array.<PROTOCOL_COMMON.IUserInfo>|null} [userList] RoomInfo userList
-         * @property {number|null} [roomUniqueId] RoomInfo roomUniqueId
+         * @property {string|null} [RoomName] RoomInfo RoomName
+         * @property {Array.<PROTOCOLCOMMON.IUserInfo>|null} [UserList] RoomInfo UserList
+         * @property {number|null} [RoomUniqueId] RoomInfo RoomUniqueId
          */
 
         /**
          * Constructs a new RoomInfo.
-         * @memberof PROTOCOL_COMMON
+         * @memberof PROTOCOLCOMMON
          * @classdesc Represents a RoomInfo.
          * @implements IRoomInfo
          * @constructor
-         * @param {PROTOCOL_COMMON.IRoomInfo=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IRoomInfo=} [properties] Properties to set
          */
         function RoomInfo(properties) {
-            this.userList = [];
+            this.UserList = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -288,94 +256,69 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * RoomInfo roomName.
-         * @member {string|null|undefined} roomName
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo RoomName.
+         * @member {string} RoomName
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.roomName = null;
+        RoomInfo.prototype.RoomName = "";
 
         /**
-         * RoomInfo userList.
-         * @member {Array.<PROTOCOL_COMMON.IUserInfo>} userList
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo UserList.
+         * @member {Array.<PROTOCOLCOMMON.IUserInfo>} UserList
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.userList = $util.emptyArray;
+        RoomInfo.prototype.UserList = $util.emptyArray;
 
         /**
-         * RoomInfo roomUniqueId.
-         * @member {number|null|undefined} roomUniqueId
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * RoomInfo RoomUniqueId.
+         * @member {number} RoomUniqueId
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          */
-        RoomInfo.prototype.roomUniqueId = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * RoomInfo _roomName.
-         * @member {"roomName"|undefined} _roomName
-         * @memberof PROTOCOL_COMMON.RoomInfo
-         * @instance
-         */
-        Object.defineProperty(RoomInfo.prototype, "_roomName", {
-            get: $util.oneOfGetter($oneOfFields = ["roomName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * RoomInfo _roomUniqueId.
-         * @member {"roomUniqueId"|undefined} _roomUniqueId
-         * @memberof PROTOCOL_COMMON.RoomInfo
-         * @instance
-         */
-        Object.defineProperty(RoomInfo.prototype, "_roomUniqueId", {
-            get: $util.oneOfGetter($oneOfFields = ["roomUniqueId"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        RoomInfo.prototype.RoomUniqueId = 0;
 
         /**
          * Creates a new RoomInfo instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo instance
+         * @param {PROTOCOLCOMMON.IRoomInfo=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo instance
          */
         RoomInfo.create = function create(properties) {
             return new RoomInfo(properties);
         };
 
         /**
-         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo} message RoomInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IRoomInfo} message RoomInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
         RoomInfo.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.roomName != null && Object.hasOwnProperty.call(message, "roomName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.roomName);
-            if (message.userList != null && message.userList.length)
-                for (var i = 0; i < message.userList.length; ++i)
-                    $root.PROTOCOL_COMMON.UserInfo.encode(message.userList[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.roomUniqueId != null && Object.hasOwnProperty.call(message, "roomUniqueId"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.roomUniqueId);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.RoomName);
+            if (message.UserList != null && message.UserList.length)
+                for (var i = 0; i < message.UserList.length; ++i)
+                    $root.PROTOCOLCOMMON.UserInfo.encode(message.UserList[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.RoomUniqueId);
             return writer;
         };
 
         /**
-         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.RoomInfo.verify|verify} messages.
+         * Encodes the specified RoomInfo message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.RoomInfo.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.IRoomInfo} message RoomInfo message or plain object to encode
+         * @param {PROTOCOLCOMMON.IRoomInfo} message RoomInfo message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -386,31 +329,31 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a RoomInfo message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         RoomInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.RoomInfo();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.RoomInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.roomName = reader.string();
+                    message.RoomName = reader.string();
                     break;
                 case 2:
-                    if (!(message.userList && message.userList.length))
-                        message.userList = [];
-                    message.userList.push($root.PROTOCOL_COMMON.UserInfo.decode(reader, reader.uint32()));
+                    if (!(message.UserList && message.UserList.length))
+                        message.UserList = [];
+                    message.UserList.push($root.PROTOCOLCOMMON.UserInfo.decode(reader, reader.uint32()));
                     break;
                 case 3:
-                    message.roomUniqueId = reader.int32();
+                    message.RoomUniqueId = reader.int32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -423,10 +366,10 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Decodes a RoomInfo message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -439,7 +382,7 @@ $root.PROTOCOL_COMMON = (function() {
         /**
          * Verifies a RoomInfo message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -447,64 +390,59 @@ $root.PROTOCOL_COMMON = (function() {
         RoomInfo.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                properties._roomName = 1;
-                if (!$util.isString(message.roomName))
-                    return "roomName: string expected";
-            }
-            if (message.userList != null && message.hasOwnProperty("userList")) {
-                if (!Array.isArray(message.userList))
-                    return "userList: array expected";
-                for (var i = 0; i < message.userList.length; ++i) {
-                    var error = $root.PROTOCOL_COMMON.UserInfo.verify(message.userList[i]);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                if (!$util.isString(message.RoomName))
+                    return "RoomName: string expected";
+            if (message.UserList != null && message.hasOwnProperty("UserList")) {
+                if (!Array.isArray(message.UserList))
+                    return "UserList: array expected";
+                for (var i = 0; i < message.UserList.length; ++i) {
+                    var error = $root.PROTOCOLCOMMON.UserInfo.verify(message.UserList[i]);
                     if (error)
-                        return "userList." + error;
+                        return "UserList." + error;
                 }
             }
-            if (message.roomUniqueId != null && message.hasOwnProperty("roomUniqueId")) {
-                properties._roomUniqueId = 1;
-                if (!$util.isInteger(message.roomUniqueId))
-                    return "roomUniqueId: integer expected";
-            }
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                if (!$util.isInteger(message.RoomUniqueId))
+                    return "RoomUniqueId: integer expected";
             return null;
         };
 
         /**
          * Creates a RoomInfo message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.RoomInfo} RoomInfo
+         * @returns {PROTOCOLCOMMON.RoomInfo} RoomInfo
          */
         RoomInfo.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.RoomInfo)
+            if (object instanceof $root.PROTOCOLCOMMON.RoomInfo)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.RoomInfo();
-            if (object.roomName != null)
-                message.roomName = String(object.roomName);
-            if (object.userList) {
-                if (!Array.isArray(object.userList))
-                    throw TypeError(".PROTOCOL_COMMON.RoomInfo.userList: array expected");
-                message.userList = [];
-                for (var i = 0; i < object.userList.length; ++i) {
-                    if (typeof object.userList[i] !== "object")
-                        throw TypeError(".PROTOCOL_COMMON.RoomInfo.userList: object expected");
-                    message.userList[i] = $root.PROTOCOL_COMMON.UserInfo.fromObject(object.userList[i]);
+            var message = new $root.PROTOCOLCOMMON.RoomInfo();
+            if (object.RoomName != null)
+                message.RoomName = String(object.RoomName);
+            if (object.UserList) {
+                if (!Array.isArray(object.UserList))
+                    throw TypeError(".PROTOCOLCOMMON.RoomInfo.UserList: array expected");
+                message.UserList = [];
+                for (var i = 0; i < object.UserList.length; ++i) {
+                    if (typeof object.UserList[i] !== "object")
+                        throw TypeError(".PROTOCOLCOMMON.RoomInfo.UserList: object expected");
+                    message.UserList[i] = $root.PROTOCOLCOMMON.UserInfo.fromObject(object.UserList[i]);
                 }
             }
-            if (object.roomUniqueId != null)
-                message.roomUniqueId = object.roomUniqueId | 0;
+            if (object.RoomUniqueId != null)
+                message.RoomUniqueId = object.RoomUniqueId | 0;
             return message;
         };
 
         /**
          * Creates a plain object from a RoomInfo message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @static
-         * @param {PROTOCOL_COMMON.RoomInfo} message RoomInfo
+         * @param {PROTOCOLCOMMON.RoomInfo} message RoomInfo
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -513,29 +451,27 @@ $root.PROTOCOL_COMMON = (function() {
                 options = {};
             var object = {};
             if (options.arrays || options.defaults)
-                object.userList = [];
-            if (message.roomName != null && message.hasOwnProperty("roomName")) {
-                object.roomName = message.roomName;
-                if (options.oneofs)
-                    object._roomName = "roomName";
+                object.UserList = [];
+            if (options.defaults) {
+                object.RoomName = "";
+                object.RoomUniqueId = 0;
             }
-            if (message.userList && message.userList.length) {
-                object.userList = [];
-                for (var j = 0; j < message.userList.length; ++j)
-                    object.userList[j] = $root.PROTOCOL_COMMON.UserInfo.toObject(message.userList[j], options);
+            if (message.RoomName != null && message.hasOwnProperty("RoomName"))
+                object.RoomName = message.RoomName;
+            if (message.UserList && message.UserList.length) {
+                object.UserList = [];
+                for (var j = 0; j < message.UserList.length; ++j)
+                    object.UserList[j] = $root.PROTOCOLCOMMON.UserInfo.toObject(message.UserList[j], options);
             }
-            if (message.roomUniqueId != null && message.hasOwnProperty("roomUniqueId")) {
-                object.roomUniqueId = message.roomUniqueId;
-                if (options.oneofs)
-                    object._roomUniqueId = "roomUniqueId";
-            }
+            if (message.RoomUniqueId != null && message.hasOwnProperty("RoomUniqueId"))
+                object.RoomUniqueId = message.RoomUniqueId;
             return object;
         };
 
         /**
          * Converts this RoomInfo to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.RoomInfo
+         * @memberof PROTOCOLCOMMON.RoomInfo
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -546,24 +482,24 @@ $root.PROTOCOL_COMMON = (function() {
         return RoomInfo;
     })();
 
-    PROTOCOL_COMMON.pre_battle_data = (function() {
+    PROTOCOLCOMMON.PreBattleData = (function() {
 
         /**
-         * Properties of a pre_battle_data.
-         * @memberof PROTOCOL_COMMON
-         * @interface Ipre_battle_data
-         * @property {string|null} [levelName] pre_battle_data levelName
+         * Properties of a PreBattleData.
+         * @memberof PROTOCOLCOMMON
+         * @interface IPreBattleData
+         * @property {string|null} [LevelName] PreBattleData LevelName
          */
 
         /**
-         * Constructs a new pre_battle_data.
-         * @memberof PROTOCOL_COMMON
-         * @classdesc Represents a pre_battle_data.
-         * @implements Ipre_battle_data
+         * Constructs a new PreBattleData.
+         * @memberof PROTOCOLCOMMON
+         * @classdesc Represents a PreBattleData.
+         * @implements IPreBattleData
          * @constructor
-         * @param {PROTOCOL_COMMON.Ipre_battle_data=} [properties] Properties to set
+         * @param {PROTOCOLCOMMON.IPreBattleData=} [properties] Properties to set
          */
-        function pre_battle_data(properties) {
+        function PreBattleData(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -571,89 +507,75 @@ $root.PROTOCOL_COMMON = (function() {
         }
 
         /**
-         * pre_battle_data levelName.
-         * @member {string|null|undefined} levelName
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * PreBattleData LevelName.
+         * @member {string} LevelName
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @instance
          */
-        pre_battle_data.prototype.levelName = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
+        PreBattleData.prototype.LevelName = "";
 
         /**
-         * pre_battle_data _levelName.
-         * @member {"levelName"|undefined} _levelName
-         * @memberof PROTOCOL_COMMON.pre_battle_data
-         * @instance
-         */
-        Object.defineProperty(pre_battle_data.prototype, "_levelName", {
-            get: $util.oneOfGetter($oneOfFields = ["levelName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new pre_battle_data instance using the specified properties.
+         * Creates a new PreBattleData instance using the specified properties.
          * @function create
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data=} [properties] Properties to set
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data instance
+         * @param {PROTOCOLCOMMON.IPreBattleData=} [properties] Properties to set
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData instance
          */
-        pre_battle_data.create = function create(properties) {
-            return new pre_battle_data(properties);
+        PreBattleData.create = function create(properties) {
+            return new PreBattleData(properties);
         };
 
         /**
-         * Encodes the specified pre_battle_data message. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
+         * Encodes the specified PreBattleData message. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
          * @function encode
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data} message pre_battle_data message or plain object to encode
+         * @param {PROTOCOLCOMMON.IPreBattleData} message PreBattleData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        pre_battle_data.encode = function encode(message, writer) {
+        PreBattleData.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.levelName != null && Object.hasOwnProperty.call(message, "levelName"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.levelName);
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.LevelName);
             return writer;
         };
 
         /**
-         * Encodes the specified pre_battle_data message, length delimited. Does not implicitly {@link PROTOCOL_COMMON.pre_battle_data.verify|verify} messages.
+         * Encodes the specified PreBattleData message, length delimited. Does not implicitly {@link PROTOCOLCOMMON.PreBattleData.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.Ipre_battle_data} message pre_battle_data message or plain object to encode
+         * @param {PROTOCOLCOMMON.IPreBattleData} message PreBattleData message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        pre_battle_data.encodeDelimited = function encodeDelimited(message, writer) {
+        PreBattleData.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer.
+         * Decodes a PreBattleData message from the specified reader or buffer.
          * @function decode
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        pre_battle_data.decode = function decode(reader, length) {
+        PreBattleData.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOL_COMMON.pre_battle_data();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROTOCOLCOMMON.PreBattleData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.levelName = reader.string();
+                    message.LevelName = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -664,94 +586,90 @@ $root.PROTOCOL_COMMON = (function() {
         };
 
         /**
-         * Decodes a pre_battle_data message from the specified reader or buffer, length delimited.
+         * Decodes a PreBattleData message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        pre_battle_data.decodeDelimited = function decodeDelimited(reader) {
+        PreBattleData.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a pre_battle_data message.
+         * Verifies a PreBattleData message.
          * @function verify
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        pre_battle_data.verify = function verify(message) {
+        PreBattleData.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.levelName != null && message.hasOwnProperty("levelName")) {
-                properties._levelName = 1;
-                if (!$util.isString(message.levelName))
-                    return "levelName: string expected";
-            }
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                if (!$util.isString(message.LevelName))
+                    return "LevelName: string expected";
             return null;
         };
 
         /**
-         * Creates a pre_battle_data message from a plain object. Also converts values to their respective internal types.
+         * Creates a PreBattleData message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROTOCOL_COMMON.pre_battle_data} pre_battle_data
+         * @returns {PROTOCOLCOMMON.PreBattleData} PreBattleData
          */
-        pre_battle_data.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROTOCOL_COMMON.pre_battle_data)
+        PreBattleData.fromObject = function fromObject(object) {
+            if (object instanceof $root.PROTOCOLCOMMON.PreBattleData)
                 return object;
-            var message = new $root.PROTOCOL_COMMON.pre_battle_data();
-            if (object.levelName != null)
-                message.levelName = String(object.levelName);
+            var message = new $root.PROTOCOLCOMMON.PreBattleData();
+            if (object.LevelName != null)
+                message.LevelName = String(object.LevelName);
             return message;
         };
 
         /**
-         * Creates a plain object from a pre_battle_data message. Also converts values to other types if specified.
+         * Creates a plain object from a PreBattleData message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @static
-         * @param {PROTOCOL_COMMON.pre_battle_data} message pre_battle_data
+         * @param {PROTOCOLCOMMON.PreBattleData} message PreBattleData
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        pre_battle_data.toObject = function toObject(message, options) {
+        PreBattleData.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
-            if (message.levelName != null && message.hasOwnProperty("levelName")) {
-                object.levelName = message.levelName;
-                if (options.oneofs)
-                    object._levelName = "levelName";
-            }
+            if (options.defaults)
+                object.LevelName = "";
+            if (message.LevelName != null && message.hasOwnProperty("LevelName"))
+                object.LevelName = message.LevelName;
             return object;
         };
 
         /**
-         * Converts this pre_battle_data to JSON.
+         * Converts this PreBattleData to JSON.
          * @function toJSON
-         * @memberof PROTOCOL_COMMON.pre_battle_data
+         * @memberof PROTOCOLCOMMON.PreBattleData
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        pre_battle_data.prototype.toJSON = function toJSON() {
+        PreBattleData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return pre_battle_data;
+        return PreBattleData;
     })();
 
-    return PROTOCOL_COMMON;
+    return PROTOCOLCOMMON;
 })();
 
 module.exports = $root;

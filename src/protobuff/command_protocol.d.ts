@@ -2,205 +2,193 @@ import * as $protobuf from "protobufjs";
 /** Namespace PROTOCOL. */
 export namespace PROTOCOL {
 
-    /** Properties of a CMD_HEART_BEAT_REQ. */
-    interface ICMD_HEART_BEAT_REQ {
+    /** Properties of a HeartBeatReq. */
+    interface IHeartBeatReq {
 
-        /** CMD_HEART_BEAT_REQ id */
-        id?: (number|null);
+        /** HeartBeatReq Id */
+        Id?: (number|null);
 
-        /** CMD_HEART_BEAT_REQ name */
-        name?: (string|null);
+        /** HeartBeatReq Name */
+        Name?: (string|null);
     }
 
-    /** Represents a CMD_HEART_BEAT_REQ. */
-    class CMD_HEART_BEAT_REQ implements ICMD_HEART_BEAT_REQ {
+    /** Represents a HeartBeatReq. */
+    class HeartBeatReq implements IHeartBeatReq {
 
         /**
-         * Constructs a new CMD_HEART_BEAT_REQ.
+         * Constructs a new HeartBeatReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL.ICMD_HEART_BEAT_REQ);
+        constructor(properties?: PROTOCOL.IHeartBeatReq);
 
-        /** CMD_HEART_BEAT_REQ id. */
-        public id?: (number|null);
+        /** HeartBeatReq Id. */
+        public Id: number;
 
-        /** CMD_HEART_BEAT_REQ name. */
-        public name?: (string|null);
-
-        /** CMD_HEART_BEAT_REQ _id. */
-        public _id?: "id";
-
-        /** CMD_HEART_BEAT_REQ _name. */
-        public _name?: "name";
+        /** HeartBeatReq Name. */
+        public Name: string;
 
         /**
-         * Creates a new CMD_HEART_BEAT_REQ instance using the specified properties.
+         * Creates a new HeartBeatReq instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_HEART_BEAT_REQ instance
+         * @returns HeartBeatReq instance
          */
-        public static create(properties?: PROTOCOL.ICMD_HEART_BEAT_REQ): PROTOCOL.CMD_HEART_BEAT_REQ;
+        public static create(properties?: PROTOCOL.IHeartBeatReq): PROTOCOL.HeartBeatReq;
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_REQ message. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_REQ.verify|verify} messages.
-         * @param message CMD_HEART_BEAT_REQ message or plain object to encode
+         * Encodes the specified HeartBeatReq message. Does not implicitly {@link PROTOCOL.HeartBeatReq.verify|verify} messages.
+         * @param message HeartBeatReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL.ICMD_HEART_BEAT_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOL.IHeartBeatReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_REQ message, length delimited. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_REQ.verify|verify} messages.
-         * @param message CMD_HEART_BEAT_REQ message or plain object to encode
+         * Encodes the specified HeartBeatReq message, length delimited. Does not implicitly {@link PROTOCOL.HeartBeatReq.verify|verify} messages.
+         * @param message HeartBeatReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL.ICMD_HEART_BEAT_REQ, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOL.IHeartBeatReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_HEART_BEAT_REQ message from the specified reader or buffer.
+         * Decodes a HeartBeatReq message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_HEART_BEAT_REQ
+         * @returns HeartBeatReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL.CMD_HEART_BEAT_REQ;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL.HeartBeatReq;
 
         /**
-         * Decodes a CMD_HEART_BEAT_REQ message from the specified reader or buffer, length delimited.
+         * Decodes a HeartBeatReq message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_HEART_BEAT_REQ
+         * @returns HeartBeatReq
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL.CMD_HEART_BEAT_REQ;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL.HeartBeatReq;
 
         /**
-         * Verifies a CMD_HEART_BEAT_REQ message.
+         * Verifies a HeartBeatReq message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_HEART_BEAT_REQ message from a plain object. Also converts values to their respective internal types.
+         * Creates a HeartBeatReq message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_HEART_BEAT_REQ
+         * @returns HeartBeatReq
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL.CMD_HEART_BEAT_REQ;
+        public static fromObject(object: { [k: string]: any }): PROTOCOL.HeartBeatReq;
 
         /**
-         * Creates a plain object from a CMD_HEART_BEAT_REQ message. Also converts values to other types if specified.
-         * @param message CMD_HEART_BEAT_REQ
+         * Creates a plain object from a HeartBeatReq message. Also converts values to other types if specified.
+         * @param message HeartBeatReq
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL.CMD_HEART_BEAT_REQ, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOL.HeartBeatReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_HEART_BEAT_REQ to JSON.
+         * Converts this HeartBeatReq to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a CMD_HEART_BEAT_RSP. */
-    interface ICMD_HEART_BEAT_RSP {
+    /** Properties of a HeartBeatRsp. */
+    interface IHeartBeatRsp {
 
-        /** CMD_HEART_BEAT_RSP id */
-        id?: (number|null);
+        /** HeartBeatRsp Id */
+        Id?: (number|null);
 
-        /** CMD_HEART_BEAT_RSP name */
-        name?: (string|null);
+        /** HeartBeatRsp Name */
+        Name?: (string|null);
     }
 
-    /** Represents a CMD_HEART_BEAT_RSP. */
-    class CMD_HEART_BEAT_RSP implements ICMD_HEART_BEAT_RSP {
+    /** Represents a HeartBeatRsp. */
+    class HeartBeatRsp implements IHeartBeatRsp {
 
         /**
-         * Constructs a new CMD_HEART_BEAT_RSP.
+         * Constructs a new HeartBeatRsp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROTOCOL.ICMD_HEART_BEAT_RSP);
+        constructor(properties?: PROTOCOL.IHeartBeatRsp);
 
-        /** CMD_HEART_BEAT_RSP id. */
-        public id?: (number|null);
+        /** HeartBeatRsp Id. */
+        public Id: number;
 
-        /** CMD_HEART_BEAT_RSP name. */
-        public name?: (string|null);
-
-        /** CMD_HEART_BEAT_RSP _id. */
-        public _id?: "id";
-
-        /** CMD_HEART_BEAT_RSP _name. */
-        public _name?: "name";
+        /** HeartBeatRsp Name. */
+        public Name: string;
 
         /**
-         * Creates a new CMD_HEART_BEAT_RSP instance using the specified properties.
+         * Creates a new HeartBeatRsp instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns CMD_HEART_BEAT_RSP instance
+         * @returns HeartBeatRsp instance
          */
-        public static create(properties?: PROTOCOL.ICMD_HEART_BEAT_RSP): PROTOCOL.CMD_HEART_BEAT_RSP;
+        public static create(properties?: PROTOCOL.IHeartBeatRsp): PROTOCOL.HeartBeatRsp;
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_RSP message. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_RSP.verify|verify} messages.
-         * @param message CMD_HEART_BEAT_RSP message or plain object to encode
+         * Encodes the specified HeartBeatRsp message. Does not implicitly {@link PROTOCOL.HeartBeatRsp.verify|verify} messages.
+         * @param message HeartBeatRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROTOCOL.ICMD_HEART_BEAT_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: PROTOCOL.IHeartBeatRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CMD_HEART_BEAT_RSP message, length delimited. Does not implicitly {@link PROTOCOL.CMD_HEART_BEAT_RSP.verify|verify} messages.
-         * @param message CMD_HEART_BEAT_RSP message or plain object to encode
+         * Encodes the specified HeartBeatRsp message, length delimited. Does not implicitly {@link PROTOCOL.HeartBeatRsp.verify|verify} messages.
+         * @param message HeartBeatRsp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROTOCOL.ICMD_HEART_BEAT_RSP, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: PROTOCOL.IHeartBeatRsp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a CMD_HEART_BEAT_RSP message from the specified reader or buffer.
+         * Decodes a HeartBeatRsp message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns CMD_HEART_BEAT_RSP
+         * @returns HeartBeatRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL.CMD_HEART_BEAT_RSP;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROTOCOL.HeartBeatRsp;
 
         /**
-         * Decodes a CMD_HEART_BEAT_RSP message from the specified reader or buffer, length delimited.
+         * Decodes a HeartBeatRsp message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns CMD_HEART_BEAT_RSP
+         * @returns HeartBeatRsp
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL.CMD_HEART_BEAT_RSP;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROTOCOL.HeartBeatRsp;
 
         /**
-         * Verifies a CMD_HEART_BEAT_RSP message.
+         * Verifies a HeartBeatRsp message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a CMD_HEART_BEAT_RSP message from a plain object. Also converts values to their respective internal types.
+         * Creates a HeartBeatRsp message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns CMD_HEART_BEAT_RSP
+         * @returns HeartBeatRsp
          */
-        public static fromObject(object: { [k: string]: any }): PROTOCOL.CMD_HEART_BEAT_RSP;
+        public static fromObject(object: { [k: string]: any }): PROTOCOL.HeartBeatRsp;
 
         /**
-         * Creates a plain object from a CMD_HEART_BEAT_RSP message. Also converts values to other types if specified.
-         * @param message CMD_HEART_BEAT_RSP
+         * Creates a plain object from a HeartBeatRsp message. Also converts values to other types if specified.
+         * @param message HeartBeatRsp
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROTOCOL.CMD_HEART_BEAT_RSP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: PROTOCOL.HeartBeatRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this CMD_HEART_BEAT_RSP to JSON.
+         * Converts this HeartBeatRsp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
